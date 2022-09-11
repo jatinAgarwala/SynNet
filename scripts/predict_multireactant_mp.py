@@ -20,8 +20,12 @@ if __name__ == '__main__':
                         help="Number of cpus")
     parser.add_argument("-n", "--num", type=int, default=-1,
                         help="Number of molecules to predict.")
-    parser.add_argument("-d", "--data", type=str, default='test',
-                        help="Choose from ['train', 'valid', 'test', 'chembl']")
+    parser.add_argument(
+        "-d",
+        "--data",
+        type=str,
+        default='test',
+        help="Choose from ['train', 'valid', 'test', 'chembl']")
     args = parser.parse_args()
 
     # load the query molecules (i.e. molecules to decode)
@@ -44,22 +48,23 @@ if __name__ == '__main__':
         results = pool.map(predict.func, smis_query)
 
     smis_decoded = [r[0] for r in results]
-    similarities  = [r[1] for r in results]
-    trees        = [r[2] for r in results]
+    similarities = [r[1] for r in results]
+    trees = [r[2] for r in results]
 
     print('Finish decoding')
-    print(f'Recovery rate {args.data}: {np.sum(np.array(similarities) == 1.0) / len(similarities)}')
+    print(
+        f'Recovery rate {args.data}: {np.sum(np.array(similarities) == 1.0) / len(similarities)}')
     print(f'Average similarity {args.data}: {np.mean(np.array(similarities))}')
 
     print('Saving ......')
     save_path = '../results/'
-    df = pd.DataFrame({'query SMILES' : smis_query, 
-                       'decode SMILES': smis_decoded, 
-                       'similarity'   : similarities})
-    df.to_csv(f'{save_path}decode_result_{args.data}.csv.gz', 
-              compression='gzip', 
+    df = pd.DataFrame({'query SMILES': smis_query,
+                       'decode SMILES': smis_decoded,
+                       'similarity': similarities})
+    df.to_csv(f'{save_path}decode_result_{args.data}.csv.gz',
+              compression='gzip',
               index=False)
-    
+
     synthetic_tree_set = SyntheticTreeSet(sts=trees)
     synthetic_tree_set.save(f'{save_path}decoded_st_{args.data}.json.gz')
 

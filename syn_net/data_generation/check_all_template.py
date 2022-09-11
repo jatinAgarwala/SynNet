@@ -1,5 +1,5 @@
 """
-This file checks if a set of reactions are represented by a set of reaction 
+This file checks if a set of reactions are represented by a set of reaction
 templates. Originally written by Jake. Wenhao edited.
 """
 import rdkit.Chem as Chem
@@ -18,10 +18,10 @@ def split_rxn_parts(rxn):
     Returns:
         list: Contains sets of reactants, agents, and products as RDKit molecules.
     '''
-    rxn_parts     = rxn.strip().split('>')
+    rxn_parts = rxn.strip().split('>')
     rxn_reactants = set(rxn_parts[0].split('.'))
-    rxn_agents    = None if not rxn_parts[1] else set(rxn_parts[1].split('.'))
-    rxn_products  = set(rxn_parts[2].split('.'))
+    rxn_agents = None if not rxn_parts[1] else set(rxn_parts[1].split('.'))
+    rxn_products = set(rxn_parts[2].split('.'))
 
     reactants, agents, products = set(), set(), set()
 
@@ -73,14 +73,16 @@ def rxn_template(rxn_smiles, templates):
                 if not t.IsMoleculeAgent(a):
                     agents_match = False
 
-        # if reactants and agents matched, check whether all products match template
+        # if reactants and agents matched, check whether all products match
+        # template
         if agents_match:
             products_match = True
             for p in products:
                 if not t.IsMoleculeProduct(p):
                     products_match = False
 
-        # if reactants, agents, and products match template, add template to matches
+        # if reactants, agents, and products match template, add template to
+        # matches
         if products_match:
             temp_match = t
 
@@ -116,6 +118,7 @@ def route_templates(route, templates):
 
     return synth_route
 
+
 if __name__ == '__main__':
 
     disable_RDLogger = True  # disables RDKit warnings
@@ -128,8 +131,8 @@ if __name__ == '__main__':
     templates = {}
 
     for rxn in rxn_set:
-        rxn_name  = rxn.split('|')[0]
-        template  =  rxn.split('|')[1].strip()
+        rxn_name = rxn.split('|')[0]
+        template = rxn.split('|')[1].strip()
         rdkit_rxn = AllChem.ReactionFromSmarts(template)
         rdChemReactions.ChemicalReaction.Initialize(rdkit_rxn)
         templates[rdkit_rxn] = rxn_name
@@ -141,7 +144,6 @@ if __name__ == '__main__':
     synthesis_route = [
         'C(CCc1ccccc1)N(Cc1ccccc1)CC(O)c1ccc(O)c(C(N)=O)c1>>CC(CCc1ccccc1)NCC(O)c1ccc(O)c(C(N)=O)c1',
         'CC(CCc1ccccc1)N(CC(=O)c1ccc(O)c(C(N)=O)c1)Cc1ccccc1>>CC(CCc1ccccc1)N(Cc1ccccc1)CC(O)c1ccc(O)c(C(N)=O)c1',
-        'CC(CCc1ccccc1)NCc1ccccc1.NC(=O)c1cc(C(=O)CBr)ccc1O>>CC(CCc1ccccc1)N(CC(=O)c1ccc(O)c(C(N)=O)c1)Cc1ccccc1'
-    ]
+        'CC(CCc1ccccc1)NCc1ccccc1.NC(=O)c1cc(C(=O)CBr)ccc1O>>CC(CCc1ccccc1)N(CC(=O)c1ccc(O)c(C(N)=O)c1)Cc1ccccc1']
     print(synthesis_route)
     print(route_templates(synthesis_route, templates))

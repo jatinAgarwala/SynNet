@@ -25,7 +25,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # load the query molecules (i.e. molecules to decode)
-    path_to_data = '/pool001/whgao/data/synth_net/st_' + args.rxn_template + '/st_' + args.data +'.json.gz'
+    path_to_data = '/pool001/whgao/data/synth_net/st_' + \
+        args.rxn_template + '/st_' + args.data + '.json.gz'
     print('Reading data from ', path_to_data)
     sts = SyntheticTreeSet()
     sts.load(path_to_data)
@@ -44,17 +45,24 @@ if __name__ == '__main__':
     trees = [r[2] for r in results]
 
     print("Finish decoding")
-    print(f"Recovery rate {args.data}: {np.sum(np.array(similaritys) == 1.0) / len(similaritys)}")
+    print(
+        f"Recovery rate {args.data}: {np.sum(np.array(similaritys) == 1.0) / len(similaritys)}")
     print(f"Average similarity {args.data}: {np.mean(np.array(similaritys))}")
 
     print('Saving ......')
     save_path = '../results/' + args.rxn_template + '_' + args.featurize + '/'
-    df = pd.DataFrame({'query SMILES': smis_query, 'decode SMILES': smis_decoded, 'similarity': similaritys})
-    df.to_csv(save_path + 'decode_result_' + args.data + '.csv.gz', compression='gzip', index=False)
-    
+    df = pd.DataFrame({'query SMILES': smis_query,
+                       'decode SMILES': smis_decoded,
+                       'similarity': similaritys})
+    df.to_csv(
+        save_path +
+        'decode_result_' +
+        args.data +
+        '.csv.gz',
+        compression='gzip',
+        index=False)
+
     synthetic_tree_set = SyntheticTreeSet(sts=trees)
     synthetic_tree_set.save(save_path + 'decoded_st_' + args.data + '.json.gz')
 
     print('Finish!')
-
-

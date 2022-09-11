@@ -35,16 +35,17 @@ class TestDataPrep(unittest.TestCase):
 
         # load the reference building blocks (100 here)
         path_to_building_blocks = f"{TEST_DIR}/data/building_blocks_matched.csv.gz"
-        building_blocks = pd.read_csv(path_to_building_blocks, compression="gzip")[
-            "SMILES"
-        ].tolist()
+        building_blocks = pd.read_csv(
+            path_to_building_blocks,
+            compression="gzip")["SMILES"].tolist()
 
         # load the reaction templates
         rxn_templates = []
         with open(path_to_rxn_templates, "rt") as rxn_template_file:
             for line in rxn_template_file:
                 rxn = Reaction(line.split("|")[1].strip())
-                rxn.set_available_reactants(building_block_list=building_blocks)
+                rxn.set_available_reactants(
+                    building_block_list=building_blocks)
                 rxn_templates.append(rxn)
 
         # save the templates as a ReactionSet
@@ -77,9 +78,9 @@ class TestDataPrep(unittest.TestCase):
 
         # load the reference building blocks (100 here)
         path_to_building_blocks = f"{TEST_DIR}/data/building_blocks_matched.csv.gz"
-        building_blocks = pd.read_csv(path_to_building_blocks, compression="gzip")[
-            "SMILES"
-        ].tolist()
+        building_blocks = pd.read_csv(
+            path_to_building_blocks,
+            compression="gzip")["SMILES"].tolist()
 
         num_trials = 25
         num_finish = 0
@@ -88,7 +89,8 @@ class TestDataPrep(unittest.TestCase):
 
         trees = []
         for _ in tqdm(range(num_trials)):
-            tree, action = synthetic_tree_generator(building_blocks, rxns, max_step=5)
+            tree, action = synthetic_tree_generator(
+                building_blocks, rxns, max_step=5)
             if action == 3:
                 trees.append(tree)
                 num_finish += 1
@@ -158,8 +160,10 @@ class TestDataPrep(unittest.TestCase):
             if not os.path.exists(save_dir):
                 os.makedirs(save_dir)
 
-            sparse.save_npz(f"{save_dir}states_{save_idx}_{dataset_type}.npz", states)
-            sparse.save_npz(f"{save_dir}steps_{save_idx}_{dataset_type}.npz", steps)
+            sparse.save_npz(
+                f"{save_dir}states_{save_idx}_{dataset_type}.npz", states)
+            sparse.save_npz(
+                f"{save_dir}steps_{save_idx}_{dataset_type}.npz", steps)
 
         # load the reference data, which we will compare against
         states_ref = sparse.load_npz(
@@ -185,8 +189,11 @@ class TestDataPrep(unittest.TestCase):
         """
         main_dir = f"{TEST_DIR}/data/"
         ref_dir = f"{TEST_DIR}/data/ref/"
-        # copy data from the reference directory to use for this particular test
-        copyfile(f"{ref_dir}states_0_train.npz", f"{main_dir}states_0_train.npz")
+        # copy data from the reference directory to use for this particular
+        # test
+        copyfile(
+            f"{ref_dir}states_0_train.npz",
+            f"{main_dir}states_0_train.npz")
         copyfile(f"{ref_dir}steps_0_train.npz", f"{main_dir}steps_0_train.npz")
 
         # the lines below will save Action-, Reactant 1-, Reaction-, and Reactant 2-
@@ -251,14 +258,15 @@ class TestDataPrep(unittest.TestCase):
         # define model to use for molecular embedding
         model_type = "gin_supervised_contextpred"
         device = "cpu"
-        model = load_pretrained(model_type).to(device)  # used to learn embedding
+        model = load_pretrained(model_type).to(
+            device)  # used to learn embedding
         model.eval()
 
         # load the building blocks
         path_to_building_blocks = f"{TEST_DIR}/data/building_blocks_matched.csv.gz"
-        building_blocks = pd.read_csv(path_to_building_blocks, compression="gzip")[
-            "SMILES"
-        ].tolist()
+        building_blocks = pd.read_csv(
+            path_to_building_blocks,
+            compression="gzip")["SMILES"].tolist()
 
         # compute the building block embeddings
         embeddings = []

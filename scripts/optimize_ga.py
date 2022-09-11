@@ -25,15 +25,16 @@ def dock_drd3(smi):
         float: Predicted docking score against the DRD3 target.
     """
     # define the oracle function from the TDC
-    _drd3 = Oracle(name = 'drd3_docking')
+    _drd3 = Oracle(name='drd3_docking')
 
     if smi is None:
         return 0.0
     else:
         try:
             return - _drd3(smi)
-        except:
+        except BaseException:
             return 0.0
+
 
 def dock_7l11(smi):
     """
@@ -46,13 +47,13 @@ def dock_7l11(smi):
         float: Predicted docking score against the 7L11 target.
     """
     # define the oracle function from the TDC
-    _7l11 = Oracle(name = '7l11_docking')
+    _7l11 = Oracle(name='7l11_docking')
     if smi is None:
         return 0.0
     else:
         try:
             return - _7l11(smi)
-        except:
+        except BaseException:
             return 0.0
 
 
@@ -78,28 +79,28 @@ def fitness(embs, _pool, obj):
             embeddings.
     """
     results = _pool.map(decode.func, embs)
-    smiles  = [r[0] for r in results]
-    trees   = [r[1] for r in results]
+    smiles = [r[0] for r in results]
+    trees = [r[1] for r in results]
 
     if obj == 'qed':
         # define the oracle function from the TDC
-        qed   = Oracle(name = 'QED')
+        qed = Oracle(name='QED')
         scores = [qed(smi) for smi in smiles]
     elif obj == 'logp':
         # define the oracle function from the TDC
-        logp  = Oracle(name = 'LogP')
+        logp = Oracle(name='LogP')
         scores = [logp(smi) for smi in smiles]
     elif obj == 'jnk':
         # define the oracle function from the TDC
-        jnk   = Oracle(name = 'JNK3')
+        jnk = Oracle(name='JNK3')
         scores = [jnk(smi) if smi is not None else 0.0 for smi in smiles]
     elif obj == 'gsk':
         # define the oracle function from the TDC
-        gsk   = Oracle(name = 'GSK3B')
+        gsk = Oracle(name='GSK3B')
         scores = [gsk(smi) if smi is not None else 0.0 for smi in smiles]
     elif obj == 'drd2':
         # define the oracle function from the TDC
-        drd2  = Oracle(name = 'DRD2')
+        drd2 = Oracle(name='DRD2')
         scores = [drd2(smi) if smi is not None else 0.0 for smi in smiles]
     elif obj == '7l11':
         scores = [dock_7l11(smi) for smi in smiles]
@@ -122,10 +123,11 @@ def distribution_schedule(n, total):
     Returns:
         str: Describes a type of probability distribution.
     """
-    if n < 4 * total/5:
+    if n < 4 * total / 5:
         return 'linear'
     else:
         return 'softmax_linear'
+
 
 def num_mut_per_ele_scheduler(n, total):
     """
@@ -145,6 +147,7 @@ def num_mut_per_ele_scheduler(n, total):
     #     return 512
     return 24
 
+
 def mut_probability_scheduler(n, total):
     """
     Determines the probability of mutating a vector, based on the number of elapsed
@@ -157,10 +160,11 @@ def mut_probability_scheduler(n, total):
     Returns:
         float: The probability of mutation.
     """
-    if n < total/2:
+    if n < total / 2:
         return 0.5
     else:
         return 0.5
+
 
 if __name__ == '__main__':
 
@@ -176,8 +180,11 @@ if __name__ == '__main__':
                         help="Number of Bits for Morgan fingerprint.")
     parser.add_argument("--num_population", type=int, default=100,
                         help="Number of parents sets to keep.")
-    parser.add_argument("--num_offspring", type=int, default=300,
-                        help="Number of offsprings to generate each iteration.")
+    parser.add_argument(
+        "--num_offspring",
+        type=int,
+        default=300,
+        help="Number of offsprings to generate each iteration.")
     parser.add_argument("--num_gen", type=int, default=30,
                         help="Number of generations to proceed.")
     parser.add_argument("--ncpu", type=int, default=16,
@@ -198,25 +205,33 @@ if __name__ == '__main__':
         print(f"Starting with {len(population)} fps from {args.input_file}")
     else:
         if args.input_file is None:
-            population = np.ceil(np.random.random(size=(args.num_population, args.nbits)) * 2 - 1)
-            print(f"Starting with {args.num_population} fps with {args.nbits} bits")
+            population = np.ceil(
+                np.random.random(
+                    size=(
+                        args.num_population,
+                        args.nbits)) * 2 - 1)
+            print(
+                f"Starting with {args.num_population} fps with {args.nbits} bits")
         else:
-            starting_smiles = pd.read_csv(args.input_file).sample(args.num_population)
+            starting_smiles = pd.read_csv(
+                args.input_file).sample(
+                args.num_population)
             starting_smiles = starting_smiles['smiles'].tolist()
             population = np.array(
-                [mol_fp(smi, args.radius, args.nbits) for smi in starting_smiles]
-            )
-            print(f"Starting with {len(starting_smiles)} fps from {args.input_file}")
+                [mol_fp(smi, args.radius, args.nbits)
+                 for smi in starting_smiles])
+            print(
+                f"Starting with {len(starting_smiles)} fps from {args.input_file}")
 
     with mp.Pool(processes=args.ncpu) as pool:
         scores, mols, trees = fitness(embs=population,
                                       _pool=pool,
                                       obj=args.objective)
-    scores     = np.array(scores)
-    score_x    = np.argsort(scores)
+    scores = np.array(scores)
+    score_x = np.argsort(scores)
     population = population[score_x[::-1]]
-    mols       = [mols[i] for i in score_x[::-1]]
-    scores     = scores[score_x[::-1]]
+    mols = [mols[i] for i in score_x[::-1]]
+    scores = scores[score_x[::-1]]
     print(f"Initial: {scores.mean():.3f} +/- {scores.std():.3f}")
     print(f"Scores: {scores}")
     print(f"Top-3 Smiles: {mols[:3]}")
@@ -227,7 +242,7 @@ if __name__ == '__main__':
 
         t = time.time()
 
-        dist_            = distribution_schedule(n, args.num_gen)
+        dist_ = distribution_schedule(n, args.num_gen)
         num_mut_per_ele_ = num_mut_per_ele_scheduler(n, args.num_gen)
         mut_probability_ = mut_probability_scheduler(n, args.num_gen)
 
@@ -237,9 +252,11 @@ if __name__ == '__main__':
         offspring = mutation(offspring_crossover=offspring,
                              num_mut_per_ele=num_mut_per_ele_,
                              mut_probability=mut_probability_)
-        new_population = np.unique(np.concatenate([population, offspring], axis=0), axis=0)
+        new_population = np.unique(np.concatenate(
+            [population, offspring], axis=0), axis=0)
         with mp.Pool(processes=args.ncpu) as pool:
-            new_scores, new_mols, trees = fitness(new_population, pool, args.objective)
+            new_scores, new_mols, trees = fitness(
+                new_population, pool, args.objective)
         new_scores = np.array(new_scores)
         scores = []
         mols = []
@@ -272,14 +289,15 @@ if __name__ == '__main__':
         if len(recent_scores) > 10:
             del recent_scores[0]
 
-        np.save('population_' + args.objective + '_' + str(n+1) + '.npy', population)
+        np.save('population_' + args.objective +
+                '_' + str(n + 1) + '.npy', population)
 
         data = {'objective': args.objective,
-                'top1'     : np.mean(scores[:1]),
-                'top10'    : np.mean(scores[:10]),
-                'top100'   : np.mean(scores[:100]),
-                'smiles'   : mols,
-                'scores'   : scores.tolist()}
+                'top1': np.mean(scores[:1]),
+                'top10': np.mean(scores[:10]),
+                'top100': np.mean(scores[:100]),
+                'smiles': mols,
+                'scores': scores.tolist()}
         with open('opt_' + args.objective + '.json', 'w') as f:
             json.dump(data, f)
 
@@ -288,11 +306,11 @@ if __name__ == '__main__':
             break
 
     data = {'objective': args.objective,
-            'top1'     : np.mean(scores[:1]),
-            'top10'    : np.mean(scores[:10]),
-            'top100'   : np.mean(scores[:100]),
-            'smiles'   : mols,
-            'scores'   : scores.tolist()}
+            'top1': np.mean(scores[:1]),
+            'top10': np.mean(scores[:10]),
+            'top100': np.mean(scores[:100]),
+            'smiles': mols,
+            'scores': scores.tolist()}
     with open('opt_' + args.objective + '.json', 'w') as f:
         json.dump(data, f)
 

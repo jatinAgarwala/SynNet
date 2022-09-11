@@ -52,17 +52,27 @@ if __name__ == '__main__':
     mol_embedder.eval()
 
     # load the purchasable building block embeddings
-    bb_emb = np.load('/pool001/whgao/data/synth_net/st_' + args.rxn_template + '/enamine_us_emb.npy')
+    bb_emb = np.load(
+        '/pool001/whgao/data/synth_net/st_' +
+        args.rxn_template +
+        '/enamine_us_emb.npy')
 
     # define path to the reaction templates and purchasable building blocks
-    path_to_reaction_file   = ('/pool001/whgao/data/synth_net/st_' + args.rxn_template
-                               + '/reactions_' + args.rxn_template + '.json.gz')
-    path_to_building_blocks = ('/pool001/whgao/data/synth_net/st_' + args.rxn_template
-                               + '/enamine_us_matched.csv.gz')
+    path_to_reaction_file = (
+        '/pool001/whgao/data/synth_net/st_' +
+        args.rxn_template +
+        '/reactions_' +
+        args.rxn_template +
+        '.json.gz')
+    path_to_building_blocks = (
+        '/pool001/whgao/data/synth_net/st_' +
+        args.rxn_template +
+        '/enamine_us_matched.csv.gz')
 
     # define paths to pretrained modules
-    param_path  = (f"/home/rociomer/SynthNet/pre-trained-models/{args.rxn_template}"
-                   f"_{args.featurize}_{args.radius}_{args.nbits}_v{args.version}/")
+    param_path = (
+        f"/home/rociomer/SynthNet/pre-trained-models/{args.rxn_template}"
+        f"_{args.featurize}_{args.radius}_{args.nbits}_v{args.version}/")
     path_to_act = param_path + 'act.ckpt'
     path_to_rt1 = param_path + 'rt1.ckpt'
     path_to_rxn = param_path + 'rxn.ckpt'
@@ -71,7 +81,9 @@ if __name__ == '__main__':
     np.random.seed(6)
 
     # load the purchasable building block SMILES to a dictionary
-    building_blocks = pd.read_csv(path_to_building_blocks, compression='gzip')['SMILES'].tolist()
+    building_blocks = pd.read_csv(
+        path_to_building_blocks,
+        compression='gzip')['SMILES'].tolist()
     bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
 
     # load the reaction templates as a ReactionSet object
@@ -133,10 +145,10 @@ if __name__ == '__main__':
     else:
         query_smis = query_smis[:args.num]
 
-    output_smis  = []
-    similaritys  = []
-    trees        = []
-    num_finish   = 0
+    output_smis = []
+    similaritys = []
+    trees = []
+    num_finish = 0
     num_unfinish = 0
 
     print('Start to decode!')
@@ -157,9 +169,11 @@ if __name__ == '__main__':
         else:
             num_finish += 1
             output_smis.append(tree.root.smiles)
-            ms  = [Chem.MolFromSmiles(sm) for sm in [smi, tree.root.smiles]]
+            ms = [Chem.MolFromSmiles(sm) for sm in [smi, tree.root.smiles]]
             fps = [Chem.RDKFingerprint(x) for x in ms]
-            similaritys.append(DataStructs.FingerprintSimilarity(fps[0],fps[1]))
+            similaritys.append(
+                DataStructs.FingerprintSimilarity(
+                    fps[0], fps[1]))
             trees.append(tree)
 
     print('Saving ......')
@@ -167,17 +181,19 @@ if __name__ == '__main__':
     if not os.path.exists(save_path):
         os.makedirs(save_path)
     df = pd.DataFrame(
-        {'query SMILES' : query_smis,
+        {'query SMILES': query_smis,
          'decode SMILES': output_smis,
-         'similarity'   : similaritys}
+         'similarity': similaritys}
     )
     print("mean similarities", df['similarity'].mean(), df['similarity'].std())
     print("NAs", df.isna().sum())
-    df.to_csv(f'{save_path}decode_result_{args.data}_robw_{str(args.beam_width)}.csv.gz',
-              compression='gzip',
-              index=False)
+    df.to_csv(
+        f'{save_path}decode_result_{args.data}_robw_{str(args.beam_width)}.csv.gz',
+        compression='gzip',
+        index=False)
 
     synthetic_tree_set = SyntheticTreeSet(sts=trees)
-    synthetic_tree_set.save(f'{save_path}decoded_st_robw_{str(args.beam_width)}_{args.data}.json.gz')
+    synthetic_tree_set.save(
+        f'{save_path}decoded_st_robw_{str(args.beam_width)}_{args.data}.json.gz')
 
     print('Finish!')

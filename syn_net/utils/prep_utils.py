@@ -8,7 +8,7 @@ from tdc.chem_utils import MolConvert
 from sklearn.preprocessing import OneHotEncoder
 from syn_net.utils.data_utils import SyntheticTree
 from syn_net.utils.predict_utils import (can_react, get_action_mask,
-                                         get_reaction_mask, mol_fp, 
+                                         get_reaction_mask, mol_fp,
                                          get_mol_embedding)
 
 
@@ -26,14 +26,14 @@ def rdkit2d_embedding(smi):
         return np.zeros(200).reshape((-1, ))
     else:
         # define the RDKit 2D descriptor
-        rdkit2d = MolConvert(src = 'SMILES', dst = 'RDKit2D')
+        rdkit2d = MolConvert(src='SMILES', dst='RDKit2D')
         return rdkit2d(smi).reshape(-1, )
 
 
-def organize(st, d_mol=300, target_embedding='fp', radius=2, nBits=4096, 
+def organize(st, d_mol=300, target_embedding='fp', radius=2, nBits=4096,
              output_embedding='gin'):
     """
-    Organizes the states and steps from the input synthetic tree into sparse 
+    Organizes the states and steps from the input synthetic tree into sparse
     matrices.
 
     Args:
@@ -57,8 +57,8 @@ def organize(st, d_mol=300, target_embedding='fp', radius=2, nBits=4096,
     """
     # define model to use for molecular embedding
     model_type = 'gin_supervised_contextpred'
-    device     = 'cpu'
-    model      = load_pretrained(model_type).to(device)
+    device = 'cpu'
+    model = load_pretrained(model_type).to(device)
     model.eval()
 
     states = []
@@ -81,15 +81,17 @@ def organize(st, d_mol=300, target_embedding='fp', radius=2, nBits=4096,
         raise ValueError('Target embedding only supports fp and gin.')
 
     most_recent_mol = None
-    other_root_mol  = None
+    other_root_mol = None
     for i, action in enumerate(st.actions):
 
-        most_recent_mol_embedding = mol_fp(most_recent_mol, radius, nBits).tolist()
-        other_root_mol_embedding  = mol_fp(other_root_mol, radius, nBits).tolist()
+        most_recent_mol_embedding = mol_fp(
+            most_recent_mol, radius, nBits).tolist()
+        other_root_mol_embedding = mol_fp(
+            other_root_mol, radius, nBits).tolist()
         state = most_recent_mol_embedding + other_root_mol_embedding + target
 
         if action == 3:
-            step = [3] + [0]*d_mol + [-1] + [0]*d_mol + [0]*nBits
+            step = [3] + [0] * d_mol + [-1] + [0] * d_mol + [0] * nBits
 
         else:
             r = st.reactions[i]
@@ -102,26 +104,26 @@ def organize(st, d_mol=300, target_embedding='fp', radius=2, nBits=4096,
             if output_embedding == 'gin':
                 step = ([action]
                         + get_mol_embedding(mol1, model=model).tolist()
-                        + [r.rxn_id] 
-                        + get_mol_embedding(mol2, model=model).tolist() 
+                        + [r.rxn_id]
+                        + get_mol_embedding(mol2, model=model).tolist()
                         + mol_fp(mol1, radius, nBits).tolist())
             elif output_embedding == 'fp_4096':
-                step = ([action] 
-                        + mol_fp(mol1, 2, 4096).tolist() 
-                        + [r.rxn_id] 
-                        + mol_fp(mol2, 2, 4096).tolist() 
+                step = ([action]
+                        + mol_fp(mol1, 2, 4096).tolist()
+                        + [r.rxn_id]
+                        + mol_fp(mol2, 2, 4096).tolist()
                         + mol_fp(mol1, radius, nBits).tolist())
             elif output_embedding == 'fp_256':
-                step = ([action] 
+                step = ([action]
                         + mol_fp(mol1, 2, 256).tolist()
                         + [r.rxn_id]
                         + mol_fp(mol2, 2, 256).tolist()
                         + mol_fp(mol1, radius, nBits).tolist())
             elif output_embedding == 'rdkit2d':
-                step = ([action] 
-                        + rdkit2d_embedding(mol1).tolist() 
-                        + [r.rxn_id] 
-                        + rdkit2d_embedding(mol2).tolist() 
+                step = ([action]
+                        + rdkit2d_embedding(mol1).tolist()
+                        + [r.rxn_id]
+                        + rdkit2d_embedding(mol2).tolist()
                         + mol_fp(mol1, radius, nBits).tolist())
 
         if action == 2:
@@ -138,7 +140,10 @@ def organize(st, d_mol=300, target_embedding='fp', radius=2, nBits=4096,
         states.append(state)
         steps.append(step)
 
-    return sparse.csc_matrix(np.array(states)), sparse.csc_matrix(np.array(steps))
+    return sparse.csc_matrix(
+        np.array(states)), sparse.csc_matrix(
+        np.array(steps))
+
 
 def synthetic_tree_generator(building_blocks, reaction_templates, max_step=15):
     """
@@ -187,8 +192,8 @@ def synthetic_tree_generator(building_blocks, reaction_templates, max_step=15):
             reaction_proba = np.random.rand(len(reaction_templates))
 
             if action != 2:
-                rxn_mask, available = get_reaction_mask(smi=mol1, 
-                                                        rxns=reaction_templates)
+                rxn_mask, available = get_reaction_mask(
+                    smi=mol1, rxns=reaction_templates)
             else:
                 _, rxn_mask = can_react(tree.get_state(), reaction_templates)
                 available = [[] for rxn in reaction_templates]
@@ -234,6 +239,7 @@ def synthetic_tree_generator(building_blocks, reaction_templates, max_step=15):
 
     return tree, action
 
+
 def prep_data(main_dir, num_rxn, out_dim):
     """
     Loads the states and steps from preprocessed *.npz files and saves data
@@ -252,8 +258,10 @@ def prep_data(main_dir, num_rxn, out_dim):
         states_list = []
         steps_list = []
         for i in range(1):
-            states_list.append(sparse.load_npz(f'{main_dir}states_{i}_{dataset}.npz'))
-            steps_list.append(sparse.load_npz(f'{main_dir}steps_{i}_{dataset}.npz'))
+            states_list.append(
+                sparse.load_npz(f'{main_dir}states_{i}_{dataset}.npz'))
+            steps_list.append(
+                sparse.load_npz(f'{main_dir}steps_{i}_{dataset}.npz'))
 
         states = sparse.csc_matrix(sparse.vstack(states_list))
         steps = sparse.csc_matrix(sparse.vstack(steps_list))
@@ -264,7 +272,8 @@ def prep_data(main_dir, num_rxn, out_dim):
         sparse.save_npz(f'{main_dir}X_act_{dataset}.npz', X)
         sparse.save_npz(f'{main_dir}y_act_{dataset}.npz', y)
 
-        states = sparse.csc_matrix(states.A[(steps[:, 0].A != 3).reshape(-1, )])
+        states = sparse.csc_matrix(
+            states.A[(steps[:, 0].A != 3).reshape(-1, )])
         steps = sparse.csc_matrix(steps.A[(steps[:, 0].A != 3).reshape(-1, )])
 
         # extract Reaction data
@@ -273,7 +282,8 @@ def prep_data(main_dir, num_rxn, out_dim):
         sparse.save_npz(f'{main_dir}X_rxn_{dataset}.npz', X)
         sparse.save_npz(f'{main_dir}y_rxn_{dataset}.npz', y)
 
-        states = sparse.csc_matrix(states.A[(steps[:, 0].A != 2).reshape(-1, )])
+        states = sparse.csc_matrix(
+            states.A[(steps[:, 0].A != 2).reshape(-1, )])
         steps = sparse.csc_matrix(steps.A[(steps[:, 0].A != 2).reshape(-1, )])
 
         enc = OneHotEncoder(handle_unknown='ignore')
@@ -282,20 +292,21 @@ def prep_data(main_dir, num_rxn, out_dim):
 
         # extract Reactant 2 data
         X = sparse.hstack(
-            [states, 
-             steps[:, (2 * out_dim + 2):], 
-             sparse.csc_matrix(enc.transform(steps[:, out_dim+1].A.reshape((-1, 1))).toarray())]
+            [states,
+             steps[:, (2 * out_dim + 2):],
+             sparse.csc_matrix(enc.transform(steps[:, out_dim + 1].A.reshape((-1, 1))).toarray())]
         )
-        y = steps[:, (out_dim+2): (2 * out_dim + 2)]
+        y = steps[:, (out_dim + 2): (2 * out_dim + 2)]
         sparse.save_npz(f'{main_dir}X_rt2_{dataset}.npz', X)
         sparse.save_npz(f'{main_dir}y_rt2_{dataset}.npz', y)
 
-        states = sparse.csc_matrix(states.A[(steps[:, 0].A != 1).reshape(-1, )])
+        states = sparse.csc_matrix(
+            states.A[(steps[:, 0].A != 1).reshape(-1, )])
         steps = sparse.csc_matrix(steps.A[(steps[:, 0].A != 1).reshape(-1, )])
 
         # extract Reactant 1 data
         X = states
-        y = steps[:, 1: (out_dim+1)]
+        y = steps[:, 1: (out_dim + 1)]
         sparse.save_npz(f'{main_dir}X_rt1_{dataset}.npz', X)
         sparse.save_npz(f'{main_dir}y_rt1_{dataset}.npz', y)
 

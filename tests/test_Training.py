@@ -43,10 +43,12 @@ class TestTraining(unittest.TestCase):
                 -1,
             )
         )
-        train_data_iter = load_array((X, y), batch_size, ncpu=ncpu, is_train=True)
+        train_data_iter = load_array(
+            (X, y), batch_size, ncpu=ncpu, is_train=True)
 
         # use the train data for validation too (just for the unit tests)
-        valid_data_iter = load_array((X, y), batch_size, ncpu=ncpu, is_train=False)
+        valid_data_iter = load_array(
+            (X, y), batch_size, ncpu=ncpu, is_train=False)
 
         pl.seed_everything(0)
         mlp = MLP(
@@ -98,10 +100,12 @@ class TestTraining(unittest.TestCase):
         X = torch.Tensor(X.A)
         y = sparse.load_npz(ref_dir + "y_rt1_train.npz")
         y = torch.Tensor(y.A)
-        train_data_iter = load_array((X, y), batch_size, ncpu=ncpu, is_train=True)
+        train_data_iter = load_array(
+            (X, y), batch_size, ncpu=ncpu, is_train=True)
 
         # use the train data for validation too (just for the unit tests)
-        valid_data_iter = load_array((X, y), batch_size, ncpu=ncpu, is_train=False)
+        valid_data_iter = load_array(
+            (X, y), batch_size, ncpu=ncpu, is_train=False)
 
         pl.seed_everything(0)
         mlp = MLP(
@@ -156,10 +160,12 @@ class TestTraining(unittest.TestCase):
                 -1,
             )
         )
-        train_data_iter = load_array((X, y), batch_size, ncpu=ncpu, is_train=True)
+        train_data_iter = load_array(
+            (X, y), batch_size, ncpu=ncpu, is_train=True)
 
         # use the train data for validation too (just for the unit tests)
-        valid_data_iter = load_array((X, y), batch_size, ncpu=ncpu, is_train=False)
+        valid_data_iter = load_array(
+            (X, y), batch_size, ncpu=ncpu, is_train=False)
 
         pl.seed_everything(0)
         mlp = MLP(
@@ -211,10 +217,12 @@ class TestTraining(unittest.TestCase):
         y = sparse.load_npz(ref_dir + "y_rt2_train.npz")
         X = torch.Tensor(X.A)
         y = torch.Tensor(y.A)
-        train_data_iter = load_array((X, y), batch_size, ncpu=ncpu, is_train=True)
+        train_data_iter = load_array(
+            (X, y), batch_size, ncpu=ncpu, is_train=True)
 
         # use the train data for validation too (just for the unit tests)
-        valid_data_iter = load_array((X, y), batch_size, ncpu=ncpu, is_train=False)
+        valid_data_iter = load_array(
+            (X, y), batch_size, ncpu=ncpu, is_train=False)
 
         pl.seed_everything(0)
         mlp = MLP(

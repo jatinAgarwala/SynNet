@@ -8,7 +8,6 @@ from syn_net.utils.data_utils import *
 from syn_net.utils.prep_utils import organize
 
 
-
 if __name__ == '__main__':
 
     import argparse
@@ -19,8 +18,12 @@ if __name__ == '__main__':
                         help="Increase output verbosity")
     parser.add_argument("-e", "--targetembedding", type=str, default='fp',
                         help="Choose from ['fp', 'gin']")
-    parser.add_argument("-o", "--outputembedding", type=str, default='gin',
-                        help="Choose from ['fp_4096', 'fp_256', 'gin', 'rdkit2d']")
+    parser.add_argument(
+        "-o",
+        "--outputembedding",
+        type=str,
+        default='gin',
+        help="Choose from ['fp_4096', 'fp_256', 'gin', 'rdkit2d']")
     parser.add_argument("-r", "--radius", type=int, default=2,
                         help="Radius for Morgan Fingerprint")
     parser.add_argument("-b", "--nbits", type=int, default=4096,
@@ -34,7 +37,8 @@ if __name__ == '__main__':
     dataset_type = args.datasettype
     embedding = args.targetembedding
     path_st = '/pool001/whgao/data/synth_net/st_hb/st_' + dataset_type + '.json.gz'
-    save_dir = '/pool001/whgao/data/synth_net/hb_' + embedding + '_' + str(args.radius) + '_' + str(args.nbits) + '_' + str(args.outputembedding) + '/'
+    save_dir = '/pool001/whgao/data/synth_net/hb_' + embedding + '_' + str(
+        args.radius) + '_' + str(args.nbits) + '_' + str(args.outputembedding) + '/'
 
     st_set = SyntheticTreeSet()
     st_set.load(path_st)
@@ -51,7 +55,9 @@ if __name__ == '__main__':
     save_idx = 0
     for st in tqdm(data):
         try:
-            state, step = organize(st, target_embedding=embedding, radius=args.radius, nBits=args.nbits, output_embedding=args.outputembedding)
+            state, step = organize(
+                st, target_embedding=embedding, radius=args.radius,
+                nBits=args.nbits, output_embedding=args.outputembedding)
         except Exception as e:
             print(e)
             continue
@@ -62,8 +68,22 @@ if __name__ == '__main__':
             print('Saving......')
             states = sparse.vstack(states)
             steps = sparse.vstack(steps)
-            sparse.save_npz(save_dir + 'states_' + str(save_idx) + '_' + dataset_type + '.npz', states)
-            sparse.save_npz(save_dir + 'steps_' + str(save_idx) + '_' + dataset_type + '.npz', steps)
+            sparse.save_npz(
+                save_dir +
+                'states_' +
+                str(save_idx) +
+                '_' +
+                dataset_type +
+                '.npz',
+                states)
+            sparse.save_npz(
+                save_dir +
+                'steps_' +
+                str(save_idx) +
+                '_' +
+                dataset_type +
+                '.npz',
+                steps)
             save_idx += 1
             del states
             del steps
@@ -80,7 +100,21 @@ if __name__ == '__main__':
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
 
-        sparse.save_npz(save_dir + 'states_' + str(save_idx) + '_' + dataset_type + '.npz', states)
-        sparse.save_npz(save_dir + 'steps_' + str(save_idx) + '_' + dataset_type + '.npz', steps)
+        sparse.save_npz(
+            save_dir +
+            'states_' +
+            str(save_idx) +
+            '_' +
+            dataset_type +
+            '.npz',
+            states)
+        sparse.save_npz(
+            save_dir +
+            'steps_' +
+            str(save_idx) +
+            '_' +
+            dataset_type +
+            '.npz',
+            steps)
 
     print('Finish!')

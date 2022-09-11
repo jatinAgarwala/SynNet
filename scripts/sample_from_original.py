@@ -1,11 +1,12 @@
 """
 Filters the synthetic trees by the QEDs of the root molecules.
 """
+from syn_net.utils.data_utils import *
+import pandas as pd
+import numpy as np
 from tdc import Oracle
 qed = Oracle(name='qed')
-import numpy as np
-import pandas as pd
-from syn_net.utils.data_utils import *
+
 
 def is_valid(smi):
     """
@@ -23,6 +24,7 @@ def is_valid(smi):
         return False
     else:
         return Chem.MolToSmiles(mol, isomericSmiles=False)
+
 
 if __name__ == '__main__':
 
@@ -50,7 +52,7 @@ if __name__ == '__main__':
                     original_qed.append(qed_value)
 
                     # filter the trees based on their QEDs
-                    if qed_value > threshold or np.random.random() < (qed_value/threshold):
+                    if qed_value > threshold or np.random.random() < (qed_value / threshold):
                         generated_smiles.append(valid_smiles)
                         filtered_data.append(t)
                         qeds.append(qed_value)
@@ -58,7 +60,7 @@ if __name__ == '__main__':
                         pass
             else:
                 pass
-        except:
+        except BaseException:
             pass
 
     print(f'Finish sampling, remaining {len(filtered_data)} synthetic trees.')
@@ -67,6 +69,9 @@ if __name__ == '__main__':
     st_set.save('/pool001/whgao/data/synth_net/st_pis/st_data_filtered.json.gz')
 
     df = pd.DataFrame({'SMILES': generated_smiles, 'qed': qeds})
-    df.to_csv('/pool001/whgao/data/synth_net/st_pis/filtered_smiles.csv.gz', compression='gzip', index=False)
+    df.to_csv(
+        '/pool001/whgao/data/synth_net/st_pis/filtered_smiles.csv.gz',
+        compression='gzip',
+        index=False)
 
     print('Finish!')

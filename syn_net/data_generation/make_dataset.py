@@ -10,14 +10,17 @@ from syn_net.utils.data_utils import SyntheticTreeSet
 from syn_net.utils.prep_utils import synthetic_tree_generator
 
 
-
 if __name__ == '__main__':
-    path_reaction_file = '/home/whgao/shared/Data/scGen/reactions_pis.pickle.gz'
-    path_to_building_blocks = '/home/whgao/shared/Data/scGen/enamine_building_blocks_nochiral_matched.csv.gz'
+    path_reaction_file = \
+        '/home/whgao/shared/Data/scGen/reactions_pis.pickle.gz'
+    path_to_building_blocks = \
+        '/home/whgao/shared/Data/scGen/enamine_building_blocks_nochiral_matched.csv.gz'
 
     np.random.seed(6)
 
-    building_blocks = pd.read_csv(path_to_building_blocks, compression='gzip')['SMILES'].tolist()
+    building_blocks = pd.read_csv(
+        path_to_building_blocks,
+        compression='gzip')['SMILES'].tolist()
     with gzip.open(path_reaction_file, 'rb') as f:
         rxns = pickle.load(f)
 
@@ -28,7 +31,8 @@ if __name__ == '__main__':
 
     trees = []
     for _ in tqdm(range(Trial)):
-        tree, action = synthetic_tree_generator(building_blocks, rxns, max_step=15)
+        tree, action = synthetic_tree_generator(
+            building_blocks, rxns, max_step=15)
         if action == 3:
             trees.append(tree)
             num_finish += 1

@@ -23,6 +23,7 @@ def softmax(x):
     e_x = np.exp(x - np.max(x))
     return e_x / e_x.sum(axis=0)
 
+
 def nn_search(_e, _tree, _k=1):
     """
     Conducts a nearest neighbor search to find the molecule from the tree most
@@ -40,6 +41,7 @@ def nn_search(_e, _tree, _k=1):
     """
     dist, ind = _tree.query(_e, k=_k)
     return dist[0], ind[0]
+
 
 def synthetic_tree_decoder(z_target,
                            building_blocks,
@@ -91,7 +93,7 @@ def synthetic_tree_decoder(z_target,
     # try:
     for i in range(max_step):
         # Encode current state
-        state = tree.get_state() # a set
+        state = tree.get_state()  # a set
         z_state = set_embedding(z_target, state, nbits=n_bits, mol_fp=mol_fp)
 
         # Predict action type, masked selection
@@ -116,11 +118,13 @@ def synthetic_tree_decoder(z_target,
             # Add
             # **don't try to sample more points than there are in the tree
             # beam search for mol1 candidates
-            dist, ind = nn_search(z_mol1, _tree=kdtree, _k=min(len(bb_emb), beam_width))
+            dist, ind = nn_search(
+                z_mol1, _tree=kdtree, _k=min(
+                    len(bb_emb), beam_width))
             try:
                 mol1_probas = softmax(- 0.1 * dist)
                 mol1_nlls = -np.log(mol1_probas)
-            except:  # exception for beam search of length 1
+            except BaseException:  # exception for beam search of length 1
                 mol1_nlls = [-np.log(0.5)]
             mol1_list = [building_blocks[idx] for idx in ind]
             nlls = mol1_nlls
@@ -129,10 +133,10 @@ def synthetic_tree_decoder(z_target,
             mol1_list = [mol_recent]
             nlls = [-np.log(0.5)]
 
-        rxn_list    = []
+        rxn_list = []
         rxn_id_list = []
-        mol2_list   = []
-        act_list    = [act] * beam_width
+        mol2_list = []
+        act_list = [act] * beam_width
         for mol1_idx, mol1 in enumerate(mol1_list):
 
             z_mol1 = mol_fp(mol1)
@@ -140,19 +144,24 @@ def synthetic_tree_decoder(z_target,
 
             # Select reaction
             z_mol1 = np.expand_dims(z_mol1, axis=0)
-            reaction_proba = rxn_net(torch.Tensor(np.concatenate([z_state, z_mol1], axis=1)))
+            reaction_proba = rxn_net(torch.Tensor(
+                np.concatenate([z_state, z_mol1], axis=1)))
             reaction_proba = reaction_proba.squeeze().detach().numpy()
 
             if act != 2:
-                reaction_mask, available_list = get_reaction_mask(mol1, reaction_templates)
+                reaction_mask, available_list = get_reaction_mask(
+                    mol1, reaction_templates)
             else:
-                _, reaction_mask = can_react(tree.get_state(), reaction_templates)
+                _, reaction_mask = can_react(
+                    tree.get_state(), reaction_templates)
                 available_list = [[] for rxn in reaction_templates]
 
             if reaction_mask is None:
                 if len(state) == 1:
                     act = 3
-                    nlls[mol1_idx] += -np.log(action_proba * reaction_mask)[act]  # correct the NLL
+                    # correct the NLL
+                    nlls[mol1_idx] += - \
+                        np.log(action_proba * reaction_mask)[act]
                     act_list[mol1_idx] = act
                     rxn_list.append(None)
                     rxn_id_list.append(None)
@@ -185,19 +194,32 @@ def synthetic_tree_decoder(z_target,
                 else:
                     # Add or Expand
                     if rxn_template == 'hb':
-                        z_mol2 = reactant2_net(torch.Tensor(np.concatenate([z_state, z_mol1, one_hot_encoder(rxn_id, 91)], axis=1)))
+                        z_mol2 = reactant2_net(
+                            torch.Tensor(
+                                np.concatenate(
+                                    [z_state, z_mol1,
+                                     one_hot_encoder(rxn_id, 91)],
+                                    axis=1)))
                     elif rxn_template == 'pis':
-                        z_mol2 = reactant2_net(torch.Tensor(np.concatenate([z_state, z_mol1, one_hot_encoder(rxn_id, 4700)], axis=1)))
+                        z_mol2 = reactant2_net(
+                            torch.Tensor(
+                                np.concatenate(
+                                    [z_state, z_mol1,
+                                     one_hot_encoder(rxn_id, 4700)],
+                                    axis=1)))
                     z_mol2 = z_mol2.detach().numpy()
                     available = available_list[rxn_id]
-                    available = [bb_dict[available[i]] for i in range(len(available))]
+                    available = [bb_dict[available[i]]
+                                 for i in range(len(available))]
                     temp_emb = bb_emb[available]
                     available_tree = BallTree(temp_emb, metric=cosine_distance)
-                    dist, ind = nn_search(z_mol2, _tree=available_tree, _k=min(len(temp_emb), beam_width))
+                    dist, ind = nn_search(
+                        z_mol2, _tree=available_tree, _k=min(
+                            len(temp_emb), beam_width))
                     try:
                         mol2_probas = softmax(-dist)
                         mol2_nll = -np.log(mol2_probas)[0]
-                    except:
+                    except BaseException:
                         mol2_nll = 0.0
                     mol2 = building_blocks[available[ind[0]]]
                     nlls[mol1_idx] += mol2_nll
@@ -209,13 +231,13 @@ def synthetic_tree_decoder(z_target,
         # Run reaction until get a valid (non-None) product
         for i in range(0, len(nlls)):
             best_idx = np.argsort(nlls)[i]
-            rxn      = rxn_list[best_idx]
-            rxn_id   = rxn_id_list[best_idx]
-            mol2     = mol2_list[best_idx]
-            act      = act_list[best_idx]
+            rxn = rxn_list[best_idx]
+            rxn_id = rxn_id_list[best_idx]
+            mol2 = mol2_list[best_idx]
+            act = act_list[best_idx]
             try:
                 mol_product = rxn.run_reaction([mol1, mol2])
-            except:
+            except BaseException:
                 mol_product = None
             else:
                 if mol_product is None:
@@ -240,6 +262,7 @@ def synthetic_tree_decoder(z_target,
         tree.update(act, None, None, None, None)
 
     return tree, act
+
 
 def set_embedding_fullbeam(z_target, state, _mol_embedding, nbits):
     """
@@ -271,6 +294,7 @@ def set_embedding_fullbeam(z_target, state, _mol_embedding, nbits):
             e2 = np.expand_dims(e2, axis=0)
         z_target = np.expand_dims(z_target, axis=0)
         return np.concatenate([e1, e2, z_target], axis=1)
+
 
 def synthetic_tree_decoder_fullbeam(z_target,
                                     building_blocks,
@@ -319,7 +343,7 @@ def synthetic_tree_decoder_fullbeam(z_target,
     # try:
     for i in range(max_step):
         # Encode current state
-        state = tree.get_state() # a set
+        state = tree.get_state()  # a set
         z_state = set_embedding_fullbeam(z_target, state, mol_fp, nbits=n_bits)
 
         # Predict action type, masked selection
@@ -329,7 +353,8 @@ def synthetic_tree_decoder_fullbeam(z_target,
         action_mask = get_action_mask(tree.get_state(), reaction_templates)
         act = np.argmax(action_proba * action_mask)
 
-        z_mol1 = reactant1_net(torch.Tensor(np.concatenate([z_state, one_hot_encoder(act, 4)], axis=1)))
+        z_mol1 = reactant1_net(torch.Tensor(np.concatenate(
+            [z_state, one_hot_encoder(act, 4)], axis=1)))
         z_mol1 = z_mol1.detach().numpy()
 
         # Select first molecule
@@ -341,11 +366,13 @@ def synthetic_tree_decoder_fullbeam(z_target,
             # Add
             # **don't try to sample more points than there are in the tree
             # beam search for mol1 candidates
-            dist, ind = nn_search(z_mol1, _tree=kdtree, _k=min(len(bb_emb), beam_width))
+            dist, ind = nn_search(
+                z_mol1, _tree=kdtree, _k=min(
+                    len(bb_emb), beam_width))
             try:
                 mol1_probas = softmax(- 0.1 * dist)
                 mol1_nlls = -np.log(mol1_probas)
-            except:  # exception for beam search of length 1
+            except BaseException:  # exception for beam search of length 1
                 mol1_nlls = [-np.log(0.5)]
             mol1_list = [building_blocks[idx] for idx in ind]
         else:
@@ -354,7 +381,7 @@ def synthetic_tree_decoder_fullbeam(z_target,
             mol1_nlls = [-np.log(0.5)]
 
         action_tuples = []  # list of action tuples created by beam search
-        act_list      = [act] * beam_width
+        act_list = [act] * beam_width
         for mol1_idx, mol1 in enumerate(mol1_list):
 
             z_mol1 = mol_fp(mol1, nBits=n_bits)
@@ -362,31 +389,39 @@ def synthetic_tree_decoder_fullbeam(z_target,
 
             # Select reaction
             z_mol1 = np.expand_dims(z_mol1, axis=0)
-            reaction_proba = rxn_net(torch.Tensor(np.concatenate([z_state, z_mol1], axis=1)))
+            reaction_proba = rxn_net(torch.Tensor(
+                np.concatenate([z_state, z_mol1], axis=1)))
             reaction_proba = reaction_proba.squeeze().detach().numpy()
 
             if act != 2:
-                reaction_mask, available_list = get_reaction_mask(mol1, reaction_templates)
+                reaction_mask, available_list = get_reaction_mask(
+                    mol1, reaction_templates)
             else:
-                _, reaction_mask = can_react(tree.get_state(), reaction_templates)
+                _, reaction_mask = can_react(
+                    tree.get_state(), reaction_templates)
                 available_list = [[] for rxn in reaction_templates]
 
             if reaction_mask is None:
                 if len(state) == 1:
                     act = 3
-                    mol1_nlls[mol1_idx] += -np.log(action_proba * reaction_mask)[act]  # correct the NLL
+                    # correct the NLL
+                    mol1_nlls[mol1_idx] += - \
+                        np.log(action_proba * reaction_mask)[act]
                     act_list[mol1_idx] = act
                     #                     nll,                 act, mol1, rxn, rxn_id, mol2
-                    action_tuples.append([mol1_nlls[mol1_idx], act, mol1, None, None, None])
+                    action_tuples.append(
+                        [mol1_nlls[mol1_idx], act, mol1, None, None, None])
                     continue
                 else:
                     act_list[mol1_idx] = act
                     #                     nll,                 act, mol1, rxn, rxn_id, mol2
-                    action_tuples.append([mol1_nlls[mol1_idx], act, mol1, None, None, None])
+                    action_tuples.append(
+                        [mol1_nlls[mol1_idx], act, mol1, None, None, None])
                     continue
 
             rxn_ids = np.argsort(-reaction_proba * reaction_mask)[:beam_width]
-            rxn_nlls = mol1_nlls[mol1_idx] - np.log(reaction_proba * reaction_mask)
+            rxn_nlls = mol1_nlls[mol1_idx] - \
+                np.log(reaction_proba * reaction_mask)
 
             for rxn_id in rxn_ids:
                 rxn = reaction_templates[rxn_id]
@@ -394,7 +429,8 @@ def synthetic_tree_decoder_fullbeam(z_target,
 
                 if np.isinf(rxn_nll):
                     #                     nll,     act, mol1, rxn, rxn_id, mol2
-                    action_tuples.append([rxn_nll, act, mol1, rxn, rxn_id, None])
+                    action_tuples.append(
+                        [rxn_nll, act, mol1, rxn, rxn_id, None])
                     continue
                 elif rxn.num_reactant == 2:
                     # Select second molecule
@@ -403,45 +439,63 @@ def synthetic_tree_decoder_fullbeam(z_target,
                         temp = set(state) - set([mol1])
                         mol2 = temp.pop()
                         #                     nll,     act, mol1, rxn, rxn_id, mol2
-                        action_tuples.append([rxn_nll, act, mol1, rxn, rxn_id, mol2])
+                        action_tuples.append(
+                            [rxn_nll, act, mol1, rxn, rxn_id, mol2])
                     else:
                         # Add or Expand
                         if rxn_template == 'hb':
-                            z_mol2 = reactant2_net(torch.Tensor(np.concatenate([z_state, z_mol1, one_hot_encoder(rxn_id, 91)], axis=1)))
+                            z_mol2 = reactant2_net(
+                                torch.Tensor(
+                                    np.concatenate(
+                                        [z_state, z_mol1,
+                                         one_hot_encoder(rxn_id, 91)],
+                                        axis=1)))
                         elif rxn_template == 'pis':
-                            z_mol2 = reactant2_net(torch.Tensor(np.concatenate([z_state, z_mol1, one_hot_encoder(rxn_id, 4700)], axis=1)))
+                            z_mol2 = reactant2_net(
+                                torch.Tensor(
+                                    np.concatenate(
+                                        [z_state, z_mol1,
+                                         one_hot_encoder(rxn_id, 4700)],
+                                        axis=1)))
 
                         z_mol2 = z_mol2.detach().numpy()
                         available = available_list[rxn_id]
-                        available = [bb_dict[available[i]] for i in range(len(available))]
+                        available = [bb_dict[available[i]]
+                                     for i in range(len(available))]
                         temp_emb = bb_emb[available]
                         available_tree = KDTree(temp_emb, metric='euclidean')
-                        dist, ind = nn_search(z_mol2, _tree=available_tree, _k=min(len(temp_emb), beam_width))
+                        dist, ind = nn_search(
+                            z_mol2, _tree=available_tree, _k=min(
+                                len(temp_emb), beam_width))
                         try:
                             mol2_probas = softmax(-dist)
                             mol2_nlls = rxn_nll - np.log(mol2_probas)
-                        except:
+                        except BaseException:
                             mol2_nlls = [rxn_nll + 0.0]
-                        mol2_list = [building_blocks[available[idc]] for idc in ind]
+                        mol2_list = [building_blocks[available[idc]]
+                                     for idc in ind]
                         for mol2_idx, mol2 in enumerate(mol2_list):
                             #                     nll,                 act, mol1, rxn, rxn_id, mol2
-                            action_tuples.append([mol2_nlls[mol2_idx], act, mol1, rxn, rxn_id, mol2])
+                            action_tuples.append(
+                                [mol2_nlls[mol2_idx],
+                                 act, mol1, rxn, rxn_id, mol2])
                 else:
                     #                     nll,     act, mol1, rxn, rxn_id, mol2
-                    action_tuples.append([rxn_nll, act, mol1, rxn, rxn_id, None])
+                    action_tuples.append(
+                        [rxn_nll, act, mol1, rxn, rxn_id, None])
 
         # Run reaction until get a valid (non-None) product
         for i in range(0, len(action_tuples)):
-            nlls     = list(zip(*action_tuples))[0]
+            nlls = list(zip(*action_tuples))[0]
             best_idx = np.argsort(nlls)[i]
-            act      = action_tuples[best_idx][1]
-            mol1     = action_tuples[best_idx][2]
-            rxn      = action_tuples[best_idx][3]
-            rxn_id   = action_tuples[best_idx][4]
-            mol2     = action_tuples[best_idx][5]
+            act = action_tuples[best_idx][1]
+            mol1 = action_tuples[best_idx][2]
+            rxn = action_tuples[best_idx][3]
+            rxn_id = action_tuples[best_idx][4]
+            mol2 = action_tuples[best_idx][5]
             try:
                 mol_product = rxn.run_reaction([mol1, mol2])
-            except:
+            except BaseException:
                 mol_product = None
             else:
                 if mol_product is None:

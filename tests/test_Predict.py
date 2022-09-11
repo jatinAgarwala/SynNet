@@ -37,7 +37,7 @@ class TestPredict(unittest.TestCase):
         rxn_template = "unittest"
         ncpu = 2
 
-        ### load the purchasable building block embeddings
+        # load the purchasable building block embeddings
         bb_emb = np.load(f"{ref_dir}building_blocks_emb.npy")
 
         # define path to the reaction templates and purchasable building blocks
@@ -51,9 +51,9 @@ class TestPredict(unittest.TestCase):
         path_to_rt2 = f"{ref_dir}rt2.ckpt"
 
         # load the purchasable building block SMILES to a dictionary
-        building_blocks = pd.read_csv(path_to_building_blocks, compression="gzip")[
-            "SMILES"
-        ].tolist()
+        building_blocks = pd.read_csv(
+            path_to_building_blocks,
+            compression="gzip")["SMILES"].tolist()
         bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
 
         # load the reaction templates as a ReactionSet object
@@ -80,7 +80,8 @@ class TestPredict(unittest.TestCase):
         sts.load(path_to_data)
         smis_query = [st.root.smiles for st in sts.sts]
 
-        # start to decode the query molecules (no multiprocessing for the unit tests here)
+        # start to decode the query molecules (no multiprocessing for the unit
+        # tests here)
         smis_decoded = []
         similarities = []
         trees = []
@@ -108,7 +109,8 @@ class TestPredict(unittest.TestCase):
             trees.append(tree)
 
         # check the results and compare to the reference values
-        recovery_rate = np.sum(np.array(similarities) == 1.0) / len(similarities)
+        recovery_rate = np.sum(np.array(similarities) ==
+                               1.0) / len(similarities)
         average_similarity = np.mean(np.array(similarities))
 
         recovery_rate_ref = 0.0

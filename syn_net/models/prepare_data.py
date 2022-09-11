@@ -18,14 +18,18 @@ if __name__ == '__main__':
                         help="Radius for Morgan fingerprint.")
     parser.add_argument("--nbits", type=int, default=4096,
                         help="Number of Bits for Morgan fingerprint.")
-    parser.add_argument("--outputembedding", type=str, default='gin',
-                        help="Choose from ['fp_4096', 'fp_256', 'gin', 'rdkit2d']")
+    parser.add_argument(
+        "--outputembedding",
+        type=str,
+        default='gin',
+        help="Choose from ['fp_4096', 'fp_256', 'gin', 'rdkit2d']")
     args = parser.parse_args()
     rxn_template = args.rxn_template
     featurize = args.featurize
     output_emb = args.outputembedding
 
-    main_dir = '/pool001/whgao/data/synth_net/' + rxn_template + '_' + featurize + '_' + str(args.radius) + '_' + str(args.nbits) + '_' + str(args.outputembedding) + '/'
+    main_dir = '/pool001/whgao/data/synth_net/' + rxn_template + '_' + featurize + '_' + \
+        str(args.radius) + '_' + str(args.nbits) + '_' + str(args.outputembedding) + '/'
     if rxn_template == 'hb':
         num_rxn = 91
     elif rxn_template == 'pis':
@@ -41,6 +45,5 @@ if __name__ == '__main__':
         out_dim = 256
 
     prep_data(main_dir=main_dir, out_dim=out_dim)
-
 
     print('Finish!')

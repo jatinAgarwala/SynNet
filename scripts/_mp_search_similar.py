@@ -15,7 +15,11 @@ st_set = SyntheticTreeSet()
 st_set.load(data_path)
 data = st_set.sts
 data_train = [t.root.smiles for t in data]
-fps_train = [AllChem.GetMorganFingerprintAsBitVect(Chem.MolFromSmiles(smi), 2, nBits=1024) for smi in data_train]
+fps_train = [
+    AllChem.GetMorganFingerprintAsBitVect(
+        Chem.MolFromSmiles(smi),
+        2,
+        nBits=1024) for smi in data_train]
 
 
 def func(fp):
@@ -30,5 +34,6 @@ def func(fp):
         np.float: The maximum similarity found to the training set fingerprints.
         np.ndarray: Fingerprint of the most similar training set molecule.
     """
-    dists = np.array([DataStructs.FingerprintSimilarity(fp, fp_, metric=DataStructs.TanimotoSimilarity) for fp_ in fps_train])
+    dists = np.array([DataStructs.FingerprintSimilarity(
+        fp, fp_, metric=DataStructs.TanimotoSimilarity) for fp_ in fps_train])
     return dists.max(), dists.argmax()

@@ -22,4 +22,6 @@ if __name__ == '__main__':
     print('Matched building blocks number:', len(matched_mols))
 
     df = pd.DataFrame({'SMILES': list(matched_mols)})
-    df.to_csv('/pool001/whgao/data/synth_net/st_pis/enamine_us_matched.csv.gz', compression='gzip')
+    df.to_csv(
+        '/pool001/whgao/data/synth_net/st_pis/enamine_us_matched.csv.gz',
+        compression='gzip')

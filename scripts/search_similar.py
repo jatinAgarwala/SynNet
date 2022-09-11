@@ -33,20 +33,34 @@ if __name__ == '__main__':
     data = st_set.sts
     data_valid = [t.root.smiles for t in data]
 
-    fps_valid = [AllChem.GetMorganFingerprintAsBitVect(Chem.MolFromSmiles(smi), 2, nBits=1024) for smi in data_valid]
-    fps_test = [AllChem.GetMorganFingerprintAsBitVect(Chem.MolFromSmiles(smi), 2, nBits=1024) for smi in data_test]
+    fps_valid = [
+        AllChem.GetMorganFingerprintAsBitVect(
+            Chem.MolFromSmiles(smi),
+            2,
+            nBits=1024) for smi in data_valid]
+    fps_test = [
+        AllChem.GetMorganFingerprintAsBitVect(
+            Chem.MolFromSmiles(smi),
+            2,
+            nBits=1024) for smi in data_test]
 
     with mp.Pool(processes=ncpu) as pool:
         results = pool.map(func, fps_valid)
     similaritys = [r[0] for r in results]
     indices = [data_train[r[1]] for r in results]
-    df1 = pd.DataFrame({'smiles': data_valid, 'split': 'valid', 'most similar': indices, 'similarity': similaritys})
+    df1 = pd.DataFrame({'smiles': data_valid,
+                        'split': 'valid',
+                        'most similar': indices,
+                        'similarity': similaritys})
 
     with mp.Pool(processes=ncpu) as pool:
         results = pool.map(func, fps_test)
     similaritys = [r[0] for r in results]
     indices = [data_train[r[1]] for r in results]
-    df2 = pd.DataFrame({'smiles': data_test, 'split': 'test', 'most similar': indices, 'similarity': similaritys})
+    df2 = pd.DataFrame({'smiles': data_test,
+                        'split': 'test',
+                        'most similar': indices,
+                        'similarity': similaritys})
 
     df = pd.concat([df1, df2], axis=0, ignore_index=True)
     df.to_csv('data_similarity.csv', index=False)

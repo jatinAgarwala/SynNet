@@ -42,9 +42,9 @@ if __name__ == '__main__':
     else:
         raise ValueError
 
-    main_dir   = f'/pool001/whgao/data/synth_net/{args.rxn_template}_{args.featurize}_{args.radius}_{args.nbits}_{validation_option[12:]}/'
+    main_dir = f'/pool001/whgao/data/synth_net/{args.rxn_template}_{args.featurize}_{args.radius}_{args.nbits}_{validation_option[12:]}/'
     batch_size = args.batch_size
-    ncpu       = args.ncpu
+    ncpu = args.ncpu
 
     X = sparse.load_npz(main_dir + 'X_act_train.npz')
     y = sparse.load_npz(main_dir + 'y_act_train.npz')
@@ -88,9 +88,14 @@ if __name__ == '__main__':
                   val_freq=10,
                   ncpu=ncpu)
 
-    tb_logger = pl_loggers.TensorBoardLogger(f'act_{args.rxn_template}_{args.featurize}_{args.radius}_{args.nbits}_logs/')
-    trainer   = pl.Trainer(gpus=[0], max_epochs=args.epoch, progress_bar_refresh_rate=20, logger=tb_logger)
-    t         = time.time()
+    tb_logger = pl_loggers.TensorBoardLogger(
+        f'act_{args.rxn_template}_{args.featurize}_{args.radius}_{args.nbits}_logs/')
+    trainer = pl.Trainer(
+        gpus=[0],
+        max_epochs=args.epoch,
+        progress_bar_refresh_rate=20,
+        logger=tb_logger)
+    t = time.time()
     trainer.fit(mlp, train_data_iter, valid_data_iter)
     print(time.time() - t, 's')
 

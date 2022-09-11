@@ -14,7 +14,9 @@ from syn_net.utils.data_utils import ReactionSet
 path_reaction_file = '/pool001/whgao/data/synth_net/st_pis/reactions_pis.json.gz'
 path_to_building_blocks = '/pool001/whgao/data/synth_net/st_pis/enamine_us_matched.csv.gz'
 
-building_blocks = pd.read_csv(path_to_building_blocks, compression='gzip')['SMILES'].tolist()
+building_blocks = pd.read_csv(
+    path_to_building_blocks,
+    compression='gzip')['SMILES'].tolist()
 r_set = ReactionSet()
 r_set.load(path_reaction_file)
 rxns = r_set.rxns
@@ -22,6 +24,7 @@ rxns = r_set.rxns
 #     rxns = pickle.load(f)
 
 print('Finish reading the templates and building blocks list!')
+
 
 def func(_):
     np.random.seed(_)

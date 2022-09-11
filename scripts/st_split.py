@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     data_train = data[:num_train]
     data_valid = data[num_train: num_train + num_valid]
-    data_test = data[num_train + num_valid: ]
+    data_test = data[num_train + num_valid:]
 
     print("Saving training dataset: ", len(data_train))
     tree_set = SyntheticTreeSet(data_train)
