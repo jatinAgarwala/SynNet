@@ -57,7 +57,7 @@ if __name__ == '__main__':
         try:
             state, step = organize(
                 st, target_embedding=embedding, radius=args.radius,
-                nBits=args.nbits, output_embedding=args.outputembedding)
+                n_bits=args.nbits, output_embedding=args.outputembedding)
         except Exception as e:
             print(e)
             continue

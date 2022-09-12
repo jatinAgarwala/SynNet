@@ -11,7 +11,7 @@ import gzip
 import json
 import pandas as pd
 from tqdm import tqdm
-import rdkit.Chem as Chem
+from rdkit import Chem
 from rdkit.Chem import Draw
 from rdkit.Chem import AllChem
 from rdkit.Chem import rdChemReactions
@@ -854,15 +854,15 @@ if __name__ == '__main__':
     """
     A test run to find available reactants for a set of reaction templates.
     """
-    path_to_building_blocks = '/home/whgao/shared/Data/scGen/enamine_5k.csv.gz'
-    # path_to_rxn_templates = '/home/whgao/shared/Data/scGen/rxn_set_hartenfeller.txt'
-    path_to_rxn_templates = '/home/whgao/shared/Data/scGen/rxn_set_pis_test.txt'
+    PATH_TO_BUILDING_BLOCKS = '/home/whgao/shared/Data/scGen/enamine_5k.csv.gz'
+    # PATH_TO_RXN_TEMPLATE = '/home/whgao/shared/Data/scGen/rxn_set_hartenfeller.txt'
+    PATH_TO_RXN_TEMPLATE = '/home/whgao/shared/Data/scGen/rxn_set_pis_test.txt'
 
     building_blocks = pd.read_csv(
-        path_to_building_blocks,
+        PATH_TO_BUILDING_BLOCKS,
         compression='gzip')['SMILES'].tolist()
     rxns = []
-    for line in open(path_to_rxn_templates, 'rt'):
+    for line in open(PATH_TO_RXN_TEMPLATE, 'rt'):
         rxn = Reaction(line.split('|')[1].strip())
         rxn.set_available_reactants(building_blocks)
         rxns.append(rxn)

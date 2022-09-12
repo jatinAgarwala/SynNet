@@ -31,19 +31,19 @@ if __name__ == '__main__':
     main_dir = '/pool001/whgao/data/synth_net/' + rxn_template + '_' + featurize + '_' + \
         str(args.radius) + '_' + str(args.nbits) + '_' + str(args.outputembedding) + '/'
     if rxn_template == 'hb':
-        num_rxn = 91
+        NUM_RXN = 91
     elif rxn_template == 'pis':
-        num_rxn = 4700
+        NUM_RXN = 4700
 
     if output_emb == 'gin':
-        out_dim = 300
+        OUT_DIM = 300
     elif output_emb == 'rdkit2d':
-        out_dim = 200
+        OUT_DIM = 200
     elif output_emb == 'fp_4096':
-        out_dim = 4096
+        OUT_DIM = 4096
     elif output_emb == 'fp_256':
-        out_dim = 256
+        OUT_DIM = 256
 
-    prep_data(main_dir=main_dir, out_dim=out_dim)
+    prep_data(main_dir=main_dir, num_rxn=NUM_RXN, out_dim=OUT_DIM)
 
     print('Finish!')

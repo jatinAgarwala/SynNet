@@ -4,10 +4,10 @@ Reactant1 network (for predicting 1st reactant).
 import time
 import numpy as np
 import torch
+from scipy import sparse
 import pytorch_lightning as pl
 from pytorch_lightning import loggers as pl_loggers
 from syn_net.models.mlp import MLP, load_array
-from scipy import sparse
 
 
 if __name__ == '__main__':
@@ -33,17 +33,18 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if args.out_dim == 300:
-        validation_option = 'nn_accuracy_gin'
+        VALIDATION_OPTION = 'nn_accuracy_gin'
     elif args.out_dim == 4096:
-        validation_option = 'nn_accuracy_fp_4096'
+        VALIDATION_OPTION = 'nn_accuracy_fp_4096'
     elif args.out_dim == 256:
-        validation_option = 'nn_accuracy_fp_256'
+        VALIDATION_OPTION = 'nn_accuracy_fp_256'
     elif args.out_dim == 200:
-        validation_option = 'nn_accuracy_rdkit2d'
+        VALIDATION_OPTION = 'nn_accuracy_rdkit2d'
     else:
         raise ValueError
 
-    main_dir = f'/pool001/whgao/data/synth_net/{args.rxn_template}_{args.featurize}_{args.radius}_{args.nbits}_{validation_option[12:]}/'
+    main_dir = f'/pool001/whgao/data/synth_net/\
+        {args.rxn_template}_{args.featurize}_{args.radius}_{args.nbits}_{VALIDATION_OPTION[12:]}/'
     batch_size = args.batch_size
     ncpu = args.ncpu
 
@@ -75,7 +76,7 @@ if __name__ == '__main__':
                   num_dropout_layers=1,
                   task='regression',
                   loss='mse',
-                  valid_loss=validation_option,
+                  valid_loss=VALIDATION_OPTION,
                   optimizer='adam',
                   learning_rate=1e-4,
                   val_freq=10,
@@ -89,13 +90,14 @@ if __name__ == '__main__':
                   num_dropout_layers=1,
                   task='regression',
                   loss='mse',
-                  valid_loss=validation_option,
+                  valid_loss=VALIDATION_OPTION,
                   optimizer='adam',
                   learning_rate=1e-4,
                   val_freq=10,
                   ncpu=ncpu)
     tb_logger = pl_loggers.TensorBoardLogger(
-        f'rt1_{args.rxn_template}_{args.featurize}_{args.radius}_{args.nbits}_{validation_option[12:]}_logs/'
+        f'rt1_{args.rxn_template}_{args.featurize}_{args.radius}_\
+            {args.nbits}_{VALIDATION_OPTION[12:]}_logs/'
     )
 
     trainer = pl.Trainer(

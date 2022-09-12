@@ -384,7 +384,7 @@ def synthetic_tree_decoder_fullbeam(z_target,
         act_list = [act] * beam_width
         for mol1_idx, mol1 in enumerate(mol1_list):
 
-            z_mol1 = mol_fp(mol1, nBits=n_bits)
+            z_mol1 = mol_fp(mol1, n_bits=n_bits)
             act = act_list[mol1_idx]
 
             # Select reaction

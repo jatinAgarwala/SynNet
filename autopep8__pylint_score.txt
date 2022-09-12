@@ -1,0 +1,2720 @@
+************* Module syn_net.data_generation.make_dataset
+syn_net/data_generation/make_dataset.py:14:4: C0103: Constant name "PATH_REACTION_FILE" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/make_dataset.py:16:4: C0103: Constant name "PATH_TO_BUILDING_BLOCKS" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/make_dataset.py:27:4: C0103: Constant name "TRIAL" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/make_dataset.py:28:4: C0103: Constant name "NUM_FINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/make_dataset.py:29:4: C0103: Constant name "NUM_ERROR" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/make_dataset.py:30:4: C0103: Constant name "NUM_UNFINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/make_dataset.py:5:0: C0411: standard import "import gzip" should be placed before "import dill as pickle" (wrong-import-order)
+************* Module syn_net.data_generation._mp_make
+syn_net/data_generation/_mp_make.py:14:0: C0103: Constant name "PATH_REACTION_FILE" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/_mp_make.py:15:0: C0103: Constant name "PATH_TO_BUILDING_BLOCKS" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/_mp_make.py:29:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module syn_net.data_generation._mp_process
+syn_net/data_generation/_mp_process.py:7:0: C0103: Constant name "PATH_TO_BUILDING_BLOCKS" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/_mp_process.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module syn_net.data_generation.filter_unmatch
+syn_net/data_generation/filter_unmatch.py:4:0: W0401: Wildcard import syn_net.utils.data_utils (wildcard-import)
+syn_net/data_generation/filter_unmatch.py:10:4: C0103: Constant name "R_PATH" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/filter_unmatch.py:11:4: C0103: Constant name "BB_PATH" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/filter_unmatch.py:5:0: C0411: third party import "import pandas as pd" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
+syn_net/data_generation/filter_unmatch.py:6:0: C0411: third party import "from tqdm import tqdm" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
+syn_net/data_generation/filter_unmatch.py:4:0: W0614: Unused import(s) gzip, json, Chem, Reaction, NodeChemical, NodeRxn, SyntheticTree, SyntheticTreeSet, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+************* Module syn_net.data_generation.make_dataset_mp
+syn_net/data_generation/make_dataset_mp.py:8:0: C0411: standard import "import multiprocessing as mp" should be placed before "import numpy as np" (wrong-import-order)
+syn_net/data_generation/make_dataset_mp.py:9:0: C0411: standard import "from time import time" should be placed before "import numpy as np" (wrong-import-order)
+syn_net/data_generation/make_dataset_mp.py:17:11: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
+************* Module syn_net.data_generation.process_rxn_mp
+syn_net/data_generation/process_rxn_mp.py:18:4: C0103: Constant name "name" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/process_rxn_mp.py:19:4: C0103: Constant name "path_to_rxn_templates" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/process_rxn_mp.py:21:16: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
+syn_net/data_generation/process_rxn_mp.py:21:16: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+syn_net/data_generation/process_rxn_mp.py:13:0: C0411: third party import "import shutup" should be placed before "from syn_net.utils.data_utils import Reaction, ReactionSet" (wrong-import-order)
+syn_net/data_generation/process_rxn_mp.py:25:11: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
+************* Module syn_net.data_generation.check_all_template
+syn_net/data_generation/check_all_template.py:145:0: C0301: Line too long (101/100) (line-too-long)
+syn_net/data_generation/check_all_template.py:146:0: C0301: Line too long (114/100) (line-too-long)
+syn_net/data_generation/check_all_template.py:147:0: C0301: Line too long (114/100) (line-too-long)
+syn_net/data_generation/check_all_template.py:5:0: R0402: Use 'from rdkit import Chem' instead (consider-using-from-import)
+syn_net/data_generation/check_all_template.py:11:20: W0621: Redefining name 'rxn' from outer scope (line 133) (redefined-outer-name)
+syn_net/data_generation/check_all_template.py:29:8: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
+syn_net/data_generation/check_all_template.py:30:22: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/data_generation/check_all_template.py:34:12: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)
+syn_net/data_generation/check_all_template.py:35:23: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/data_generation/check_all_template.py:38:8: C0103: Variable name "p" doesn't conform to snake_case naming style (invalid-name)
+syn_net/data_generation/check_all_template.py:39:21: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/data_generation/check_all_template.py:44:17: W0621: Redefining name 'rxn_smiles' from outer scope (line 140) (redefined-outer-name)
+syn_net/data_generation/check_all_template.py:44:29: W0621: Redefining name 'templates' from outer scope (line 131) (redefined-outer-name)
+syn_net/data_generation/check_all_template.py:59:8: C0103: Variable name "t" doesn't conform to snake_case naming style (invalid-name)
+syn_net/data_generation/check_all_template.py:65:12: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
+syn_net/data_generation/check_all_template.py:72:16: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)
+syn_net/data_generation/check_all_template.py:80:16: C0103: Variable name "p" doesn't conform to snake_case naming style (invalid-name)
+syn_net/data_generation/check_all_template.py:96:27: W0621: Redefining name 'templates' from outer scope (line 131) (redefined-outer-name)
+syn_net/data_generation/check_all_template.py:112:8: R1723: Unnecessary "else" after "break", remove the "else" and de-indent the code inside it (no-else-break)
+syn_net/data_generation/check_all_template.py:109:4: W0612: Unused variable 'tree_match' (unused-variable)
+syn_net/data_generation/check_all_template.py:124:4: C0103: Constant name "disable_RDLogger" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/check_all_template.py:128:4: C0103: Constant name "rxn_set_path" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/check_all_template.py:130:14: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+syn_net/data_generation/check_all_template.py:140:4: C0103: Constant name "rxn_smiles" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/check_all_template.py:130:14: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
+************* Module syn_net.utils.prep_utils
+syn_net/utils/prep_utils.py:25:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+syn_net/utils/prep_utils.py:33:13: C0103: Argument name "st" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/prep_utils.py:33:61: C0103: Argument name "n_bits" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/prep_utils.py:33:0: R0913: Too many arguments (6/5) (too-many-arguments)
+syn_net/utils/prep_utils.py:33:0: R0914: Too many local variables (23/15) (too-many-locals)
+syn_net/utils/prep_utils.py:97:12: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/prep_utils.py:33:0: R0912: Too many branches (19/12) (too-many-branches)
+syn_net/utils/prep_utils.py:33:0: R0915: Too many statements (53/50) (too-many-statements)
+syn_net/utils/prep_utils.py:148:0: R0914: Too many local variables (20/15) (too-many-locals)
+syn_net/utils/prep_utils.py:230:11: W0703: Catching too general exception Exception (broad-except)
+syn_net/utils/prep_utils.py:181:12: R1723: Unnecessary "elif" after "break", remove the leading "el" from "elif" (no-else-break)
+syn_net/utils/prep_utils.py:202:16: R1723: Unnecessary "else" after "break", remove the "else" and de-indent the code inside it (no-else-break)
+syn_net/utils/prep_utils.py:230:4: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/prep_utils.py:148:0: R0912: Too many branches (16/12) (too-many-branches)
+syn_net/utils/prep_utils.py:170:12: W0612: Unused variable 'i' (unused-variable)
+syn_net/utils/prep_utils.py:270:8: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/prep_utils.py:271:8: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/prep_utils.py:280:8: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/prep_utils.py:281:8: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/prep_utils.py:294:8: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/prep_utils.py:299:8: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/prep_utils.py:308:8: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/prep_utils.py:309:8: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+************* Module syn_net.utils.data_utils
+syn_net/utils/data_utils.py:14:0: R0402: Use 'from rdkit import Chem' instead (consider-using-from-import)
+syn_net/utils/data_utils.py:22:0: R0902: Too many instance attributes (11/7) (too-many-instance-attributes)
+syn_net/utils/data_utils.py:48:12: W0621: Redefining name 'rxn' from outer scope (line 866) (redefined-outer-name)
+syn_net/utils/data_utils.py:48:18: E1101: Module 'rdkit.Chem.AllChem' has no 'ReactionFromSmarts' member (no-member)
+syn_net/utils/data_utils.py:49:12: I1101: Module 'rdkit.Chem.rdChemReactions' has no 'ChemicalReaction' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+syn_net/utils/data_utils.py:69:4: R0913: Too many arguments (12/5) (too-many-arguments)
+syn_net/utils/data_utils.py:108:8: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+syn_net/utils/data_utils.py:109:19: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/utils/data_utils.py:110:29: E1101: Module 'rdkit.Chem' has no 'Mol' member (no-member)
+syn_net/utils/data_utils.py:128:8: W0621: Redefining name 'rxn' from outer scope (line 866) (redefined-outer-name)
+syn_net/utils/data_utils.py:128:14: E1101: Module 'rdkit.Chem.AllChem' has no 'ReactionFromSmarts' member (no-member)
+syn_net/utils/data_utils.py:129:14: E1101: Module 'rdkit.Chem.Draw' has no 'MolDraw2DCairo' member (no-member)
+syn_net/utils/data_utils.py:132:8: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
+syn_net/utils/data_utils.py:148:8: W0621: Redefining name 'rxn' from outer scope (line 866) (redefined-outer-name)
+syn_net/utils/data_utils.py:166:8: W0621: Redefining name 'rxn' from outer scope (line 866) (redefined-outer-name)
+syn_net/utils/data_utils.py:184:8: W0621: Redefining name 'rxn' from outer scope (line 866) (redefined-outer-name)
+syn_net/utils/data_utils.py:205:8: R1703: The if statement can be replaced with 'return bool(test)' (simplifiable-if-statement)
+syn_net/utils/data_utils.py:205:8: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+syn_net/utils/data_utils.py:206:12: E1101: Module 'rdkit.Chem' has no 'MolFromSmarts' member (no-member)
+syn_net/utils/data_utils.py:227:8: R1703: The if statement can be replaced with 'return bool(test)' (simplifiable-if-statement)
+syn_net/utils/data_utils.py:227:8: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+syn_net/utils/data_utils.py:228:12: E1101: Module 'rdkit.Chem' has no 'MolFromSmarts' member (no-member)
+syn_net/utils/data_utils.py:250:8: W0621: Redefining name 'rxn' from outer scope (line 866) (redefined-outer-name)
+syn_net/utils/data_utils.py:250:14: E1101: Module 'rdkit.Chem.AllChem' has no 'ReactionFromSmarts' member (no-member)
+syn_net/utils/data_utils.py:251:8: I1101: Module 'rdkit.Chem.rdChemReactions' has no 'ChemicalReaction' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+syn_net/utils/data_utils.py:288:8: W0621: Redefining name 'rxn' from outer scope (line 866) (redefined-outer-name)
+syn_net/utils/data_utils.py:294:20: W0621: Redefining name 'r' from outer scope (line 870) (redefined-outer-name)
+syn_net/utils/data_utils.py:294:20: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:296:20: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:300:45: E1101: Module 'rdkit.Chem' has no 'Mol' member (no-member)
+syn_net/utils/data_utils.py:301:16: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:310:12: C0103: Variable name "ps" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:314:16: C0103: Variable name "r1" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:315:16: C0103: Variable name "r2" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:323:16: C0103: Variable name "r1" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:323:20: C0103: Variable name "r2" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:327:12: C0103: Variable name "ps" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:333:12: C0103: Variable name "p" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:334:18: E1101: Module 'rdkit.Chem' has no 'MolToSmiles' member (no-member)
+syn_net/utils/data_utils.py:343:8: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+syn_net/utils/data_utils.py:276:4: R0912: Too many branches (18/12) (too-many-branches)
+syn_net/utils/data_utils.py:363:8: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+syn_net/utils/data_utils.py:382:4: R1711: Useless return at end of function or method (useless-return)
+syn_net/utils/data_utils.py:92:8: W0201: Attribute 'available_reactants' defined outside __init__ (attribute-defined-outside-init)
+syn_net/utils/data_utils.py:391:8: W0201: Attribute 'available_reactants' defined outside __init__ (attribute-defined-outside-init)
+syn_net/utils/data_utils.py:406:23: W0621: Redefining name 'rxns' from outer scope (line 864) (redefined-outer-name)
+syn_net/utils/data_utils.py:424:12: W0621: Redefining name 'r' from outer scope (line 870) (redefined-outer-name)
+syn_net/utils/data_utils.py:420:42: C0103: Variable name "f" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:424:12: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:436:42: C0103: Variable name "f" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:442:21: C0103: Argument name "x" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:444:15: W0621: Redefining name 'r' from outer scope (line 870) (redefined-outer-name)
+syn_net/utils/data_utils.py:444:15: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:465:4: R0913: Too many arguments (8/5) (too-many-arguments)
+syn_net/utils/data_utils.py:451:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+syn_net/utils/data_utils.py:491:4: W0102: Dangerous default value [] as argument (dangerous-default-value)
+syn_net/utils/data_utils.py:491:4: R0913: Too many arguments (7/5) (too-many-arguments)
+syn_net/utils/data_utils.py:476:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+syn_net/utils/data_utils.py:539:12: W0621: Redefining name 'r' from outer scope (line 870) (redefined-outer-name)
+syn_net/utils/data_utils.py:539:12: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:543:12: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:603:4: R0913: Too many arguments (6/5) (too-many-arguments)
+syn_net/utils/data_utils.py:603:4: R0915: Too many statements (61/50) (too-many-statements)
+syn_net/utils/data_utils.py:603:4: R1711: Useless return at end of function or method (useless-return)
+syn_net/utils/data_utils.py:819:42: C0103: Variable name "f" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:826:16: C0103: Variable name "st" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:839:42: C0103: Variable name "f" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:845:21: C0103: Argument name "x" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:847:15: W0621: Redefining name 'r' from outer scope (line 870) (redefined-outer-name)
+syn_net/utils/data_utils.py:847:15: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/data_utils.py:854:4: W0105: String statement has no effect (pointless-string-statement)
+syn_net/utils/data_utils.py:857:4: C0103: Constant name "PATH_TO_BUILDING_BLOCKS" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/utils/data_utils.py:859:4: C0103: Constant name "path_to_rxn_templates" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/utils/data_utils.py:865:16: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
+syn_net/utils/data_utils.py:865:16: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+************* Module syn_net.utils.ga_utils
+syn_net/utils/ga_utils.py:8:23: W0621: Redefining name 'offspring_size' from outer scope (line 120) (redefined-outer-name)
+syn_net/utils/ga_utils.py:28:4: W0621: Redefining name 'offspring' from outer scope (line 132) (redefined-outer-name)
+syn_net/utils/ga_utils.py:57:12: C0103: Variable name "p_" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/ga_utils.py:63:12: C0103: Variable name "p_" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/ga_utils.py:118:4: C0103: Constant name "num_parents" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/utils/ga_utils.py:119:4: C0103: Constant name "fp_size" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/utils/ga_utils.py:120:4: C0103: Constant name "offspring_size" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/utils/ga_utils.py:121:4: C0103: Constant name "ngen" doesn't conform to UPPER_CASE naming style (invalid-name)
+************* Module syn_net.utils.predict_utils
+syn_net/utils/predict_utils.py:1:0: C0302: Too many lines in module (1135/1000) (too-many-lines)
+syn_net/utils/predict_utils.py:14:0: W0404: Reimport 'AvgPooling' (imported line 13) (reimported)
+syn_net/utils/predict_utils.py:26:0: C0103: Constant name "model_type" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/utils/predict_utils.py:27:0: C0103: Constant name "device" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/utils/predict_utils.py:73:4: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+syn_net/utils/predict_utils.py:79:8: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+syn_net/utils/predict_utils.py:114:10: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/utils/predict_utils.py:160:15: W0703: Catching too general exception BaseException (broad-except)
+syn_net/utils/predict_utils.py:150:18: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/utils/predict_utils.py:154:12: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_utils.py:183:23: W0621: Redefining name 'device' from outer scope (line 27) (redefined-outer-name)
+syn_net/utils/predict_utils.py:196:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+syn_net/utils/predict_utils.py:199:14: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/utils/predict_utils.py:201:8: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_utils.py:205:8: C0103: Variable name "bg" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_utils.py:216:34: W0621: Redefining name 'device' from outer scope (line 27) (redefined-outer-name)
+syn_net/utils/predict_utils.py:231:10: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/utils/predict_utils.py:232:4: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_utils.py:236:4: C0103: Variable name "bg" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_utils.py:246:27: C0103: Argument name "_nBits" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_utils.py:259:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+syn_net/utils/predict_utils.py:262:14: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/utils/predict_utils.py:263:23: E1101: Module 'rdkit.Chem.AllChem' has no 'GetMorganFingerprintAsBitVect' member (no-member)
+syn_net/utils/predict_utils.py:268:20: C0103: Argument name "v1" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_utils.py:268:24: C0103: Argument name "v2" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_utils.py:285:16: C0103: Argument name "y" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_utils.py:321:0: E0102: function already defined line 134 (function-redefined)
+syn_net/utils/predict_utils.py:347:15: W0703: Catching too general exception BaseException (broad-except)
+syn_net/utils/predict_utils.py:337:18: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/utils/predict_utils.py:341:12: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_utils.py:370:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+syn_net/utils/predict_utils.py:373:8: C0103: Variable name "e1" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_utils.py:375:12: C0103: Variable name "e2" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_utils.py:377:12: C0103: Variable name "e2" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_utils.py:381:0: R0913: Too many arguments (13/5) (too-many-arguments)
+syn_net/utils/predict_utils.py:381:0: R0914: Too many local variables (40/15) (too-many-locals)
+syn_net/utils/predict_utils.py:447:8: R1723: Unnecessary "elif" after "break", remove the leading "el" from "elif" (no-else-break)
+syn_net/utils/predict_utils.py:464:15: W0703: Catching too general exception BaseException (broad-except)
+syn_net/utils/predict_utils.py:478:12: R1723: Unnecessary "else" after "break", remove the "else" and de-indent the code inside it (no-else-break)
+syn_net/utils/predict_utils.py:517:34: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/utils/predict_utils.py:518:12: R1723: Unnecessary "else" after "break", remove the "else" and de-indent the code inside it (no-else-break)
+syn_net/utils/predict_utils.py:529:8: W0127: Assigning the same variable 'tree' to itself (self-assigning-variable)
+syn_net/utils/predict_utils.py:381:0: R0912: Too many branches (22/12) (too-many-branches)
+syn_net/utils/predict_utils.py:381:0: R0915: Too many statements (74/50) (too-many-statements)
+syn_net/utils/predict_utils.py:385:27: W0613: Unused argument 'mol_embedder' (unused-argument)
+syn_net/utils/predict_utils.py:452:12: W0612: Unused variable 'dist' (unused-variable)
+syn_net/utils/predict_utils.py:536:0: C0116: Missing function or method docstring (missing-function-docstring)
+syn_net/utils/predict_utils.py:536:0: R0913: Too many arguments (9/5) (too-many-arguments)
+syn_net/utils/predict_utils.py:831:0: C0116: Missing function or method docstring (missing-function-docstring)
+syn_net/utils/predict_utils.py:836:0: R0913: Too many arguments (14/5) (too-many-arguments)
+syn_net/utils/predict_utils.py:836:0: R0914: Too many local variables (39/15) (too-many-locals)
+syn_net/utils/predict_utils.py:892:15: W0703: Catching too general exception BaseException (broad-except)
+syn_net/utils/predict_utils.py:908:8: R1723: Unnecessary "elif" after "break", remove the leading "el" from "elif" (no-else-break)
+syn_net/utils/predict_utils.py:914:28: E1120: No value for argument '_tree' in function call (no-value-for-parameter)
+syn_net/utils/predict_utils.py:931:15: W0703: Catching too general exception BaseException (broad-except)
+syn_net/utils/predict_utils.py:945:12: R1723: Unnecessary "else" after "break", remove the "else" and de-indent the code inside it (no-else-break)
+syn_net/utils/predict_utils.py:996:34: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/utils/predict_utils.py:1005:8: W0127: Assigning the same variable 'tree' to itself (self-assigning-variable)
+syn_net/utils/predict_utils.py:836:0: R0912: Too many branches (23/12) (too-many-branches)
+syn_net/utils/predict_utils.py:836:0: R0915: Too many statements (77/50) (too-many-statements)
+syn_net/utils/predict_utils.py:840:31: W0613: Unused argument 'mol_embedder' (unused-argument)
+syn_net/utils/predict_utils.py:914:16: W0612: Unused variable 'dist' (unused-variable)
+syn_net/utils/predict_utils.py:1012:0: R0913: Too many arguments (14/5) (too-many-arguments)
+syn_net/utils/predict_utils.py:1012:0: R0914: Too many local variables (25/15) (too-many-locals)
+syn_net/utils/predict_utils.py:1085:33: C0103: Argument name "_nBits" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_utils.py:1097:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+syn_net/utils/predict_utils.py:1100:14: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/utils/predict_utils.py:1101:23: E1101: Module 'rdkit.Chem.AllChem' has no 'GetMorganFingerprintAsBitVect' member (no-member)
+syn_net/utils/predict_utils.py:1104:8: E1101: Module 'rdkit.DataStructs' has no 'ConvertToNumpyArray' member (no-member)
+syn_net/utils/predict_utils.py:1108:0: C0116: Missing function or method docstring (missing-function-docstring)
+syn_net/utils/predict_utils.py:1112:0: C0116: Missing function or method docstring (missing-function-docstring)
+syn_net/utils/predict_utils.py:1116:0: C0116: Missing function or method docstring (missing-function-docstring)
+syn_net/utils/predict_utils.py:1120:0: C0116: Missing function or method docstring (missing-function-docstring)
+syn_net/utils/predict_utils.py:1124:0: C0116: Missing function or method docstring (missing-function-docstring)
+syn_net/utils/predict_utils.py:1128:0: C0116: Missing function or method docstring (missing-function-docstring)
+syn_net/utils/predict_utils.py:1132:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+************* Module syn_net.utils.predict_beam_utils
+syn_net/utils/predict_beam_utils.py:8:0: W0401: Wildcard import syn_net.utils.predict_utils (wildcard-import)
+syn_net/utils/predict_beam_utils.py:14:12: C0103: Argument name "x" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_beam_utils.py:27:0: E0102: function already defined line 8 (function-redefined)
+syn_net/utils/predict_beam_utils.py:46:0: E0102: function already defined line 8 (function-redefined)
+syn_net/utils/predict_beam_utils.py:46:0: R0913: Too many arguments (14/5) (too-many-arguments)
+syn_net/utils/predict_beam_utils.py:46:0: R0914: Too many local variables (53/15) (too-many-locals)
+syn_net/utils/predict_beam_utils.py:97:18: E1123: Unexpected keyword argument 'mol_fp' in function call (unexpected-keyword-arg)
+syn_net/utils/predict_beam_utils.py:113:8: R1723: Unnecessary "elif" after "break", remove the leading "el" from "elif" (no-else-break)
+syn_net/utils/predict_beam_utils.py:127:19: W0703: Catching too general exception BaseException (broad-except)
+syn_net/utils/predict_beam_utils.py:160:16: R1724: Unnecessary "else" after "continue", remove the "else" and de-indent the code inside it (no-else-continue)
+syn_net/utils/predict_beam_utils.py:185:12: R1724: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
+syn_net/utils/predict_beam_utils.py:222:27: W0703: Catching too general exception BaseException (broad-except)
+syn_net/utils/predict_beam_utils.py:240:19: W0703: Catching too general exception BaseException (broad-except)
+syn_net/utils/predict_beam_utils.py:239:48: W0631: Using possibly undefined loop variable 'mol1' (undefined-loop-variable)
+syn_net/utils/predict_beam_utils.py:243:16: R1724: Unnecessary "else" after "continue", remove the "else" and de-indent the code inside it (no-else-continue)
+syn_net/utils/predict_beam_utils.py:248:34: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/utils/predict_beam_utils.py:249:12: R1723: Unnecessary "else" after "break", remove the "else" and de-indent the code inside it (no-else-break)
+syn_net/utils/predict_beam_utils.py:256:38: W0631: Using possibly undefined loop variable 'mol1' (undefined-loop-variable)
+syn_net/utils/predict_beam_utils.py:260:8: W0127: Assigning the same variable 'tree' to itself (self-assigning-variable)
+syn_net/utils/predict_beam_utils.py:46:0: R0912: Too many branches (29/12) (too-many-branches)
+syn_net/utils/predict_beam_utils.py:46:0: R0915: Too many statements (117/50) (too-many-statements)
+syn_net/utils/predict_beam_utils.py:50:27: W0613: Unused argument 'mol_embedder' (unused-argument)
+syn_net/utils/predict_beam_utils.py:284:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+syn_net/utils/predict_beam_utils.py:288:8: C0103: Variable name "e1" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_beam_utils.py:289:8: C0103: Variable name "e1" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_beam_utils.py:291:12: C0103: Variable name "e2" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_beam_utils.py:293:12: C0103: Variable name "e2" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_beam_utils.py:294:12: C0103: Variable name "e2" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/predict_beam_utils.py:299:0: R0913: Too many arguments (14/5) (too-many-arguments)
+syn_net/utils/predict_beam_utils.py:299:0: R0914: Too many local variables (54/15) (too-many-locals)
+syn_net/utils/predict_beam_utils.py:361:8: R1723: Unnecessary "elif" after "break", remove the leading "el" from "elif" (no-else-break)
+syn_net/utils/predict_beam_utils.py:375:19: W0703: Catching too general exception BaseException (broad-except)
+syn_net/utils/predict_beam_utils.py:387:21: E1123: Unexpected keyword argument 'n_bits' in function call (unexpected-keyword-arg)
+syn_net/utils/predict_beam_utils.py:405:16: R1724: Unnecessary "else" after "continue", remove the "else" and de-indent the code inside it (no-else-continue)
+syn_net/utils/predict_beam_utils.py:430:16: R1724: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
+syn_net/utils/predict_beam_utils.py:473:31: W0703: Catching too general exception BaseException (broad-except)
+syn_net/utils/predict_beam_utils.py:344:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)
+syn_net/utils/predict_beam_utils.py:498:19: W0703: Catching too general exception BaseException (broad-except)
+syn_net/utils/predict_beam_utils.py:501:16: R1724: Unnecessary "else" after "continue", remove the "else" and de-indent the code inside it (no-else-continue)
+syn_net/utils/predict_beam_utils.py:506:34: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+syn_net/utils/predict_beam_utils.py:507:12: R1723: Unnecessary "else" after "break", remove the "else" and de-indent the code inside it (no-else-break)
+syn_net/utils/predict_beam_utils.py:518:8: W0127: Assigning the same variable 'tree' to itself (self-assigning-variable)
+syn_net/utils/predict_beam_utils.py:299:0: R0912: Too many branches (31/12) (too-many-branches)
+syn_net/utils/predict_beam_utils.py:299:0: R0915: Too many statements (109/50) (too-many-statements)
+syn_net/utils/predict_beam_utils.py:303:36: W0613: Unused argument 'mol_embedder' (unused-argument)
+syn_net/utils/predict_beam_utils.py:7:0: C0411: third party import "from sklearn.neighbors import BallTree, KDTree" should be placed before "from syn_net.utils.data_utils import SyntheticTree" (wrong-import-order)
+syn_net/utils/predict_beam_utils.py:8:0: C0412: Imports from package syn_net are not grouped (ungrouped-imports)
+syn_net/utils/predict_beam_utils.py:8:0: W0614: Unused import(s) synthetic_tree_decoder, rdkit, model_type, device, gin_pretrained_model, graph_construction_and_featurization, mol_embedding, get_mol_embedding, ce_distance, load_modules_from_checkpoint, tanimoto_similarity, nn_search_rt1, synthetic_tree_decoder_rt1, synthetic_tree_decoder_multireactant, fp_embedding, fp_4096, fp_2048, fp_1024, fp_512, fp_256, rdkit2d_embedding, tqdm, DataStructs, AllChem, AvgPooling, load_pretrained, mol_to_bigraph, PretrainAtomFeaturizer, PretrainBondFeaturizer, MolConvert and MLP from wildcard import of syn_net.utils.predict_utils (unused-wildcard-import)
+************* Module rt1
+syn_net/models/rt1.py:46:0: C0301: Line too long (137/100) (line-too-long)
+syn_net/models/rt1.py:98:0: C0301: Line too long (109/100) (line-too-long)
+syn_net/models/rt1.py:36:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/rt1.py:38:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/rt1.py:40:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/rt1.py:42:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/rt1.py:10:0: C0411: third party import "from scipy import sparse" should be placed before "from syn_net.models.mlp import MLP, load_array" (wrong-import-order)
+************* Module mlp
+syn_net/models/mlp.py:14:0: C0115: Missing class docstring (missing-class-docstring)
+syn_net/models/mlp.py:14:0: R0901: Too many ancestors (9/7) (too-many-ancestors)
+syn_net/models/mlp.py:16:4: R0913: Too many arguments (14/5) (too-many-arguments)
+syn_net/models/mlp.py:16:4: R0914: Too many local variables (16/15) (too-many-locals)
+syn_net/models/mlp.py:43:12: W0621: Redefining name 'i' from outer scope (line 183) (redefined-outer-name)
+syn_net/models/mlp.py:56:4: W0221: Number of parameters was 3 in 'LightningModule.forward' and is now 2 in overridden 'MLP.forward' method (arguments-differ)
+syn_net/models/mlp.py:56:4: W0221: Variadics removed in overridden 'MLP.forward' method (arguments-differ)
+syn_net/models/mlp.py:59:4: W0221: Number of parameters was 3 in 'LightningModule.training_step' and is now 3 in overridden 'MLP.training_step' method (arguments-differ)
+syn_net/models/mlp.py:59:4: W0221: Variadics removed in overridden 'MLP.training_step' method (arguments-differ)
+syn_net/models/mlp.py:60:11: W0621: Redefining name 'y' from outer scope (line 201) (redefined-outer-name)
+syn_net/models/mlp.py:60:8: C0103: Variable name "x" doesn't conform to snake_case naming style (invalid-name)
+syn_net/models/mlp.py:60:11: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+syn_net/models/mlp.py:59:35: W0613: Unused argument 'batch_idx' (unused-argument)
+syn_net/models/mlp.py:81:4: W0221: Number of parameters was 3 in 'LightningModule.validation_step' and is now 3 in overridden 'MLP.validation_step' method (arguments-differ)
+syn_net/models/mlp.py:81:4: W0221: Variadics removed in overridden 'MLP.validation_step' method (arguments-differ)
+syn_net/models/mlp.py:100:15: W0621: Redefining name 'y' from outer scope (line 201) (redefined-outer-name)
+syn_net/models/mlp.py:100:12: C0103: Variable name "x" doesn't conform to snake_case naming style (invalid-name)
+syn_net/models/mlp.py:100:15: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+syn_net/models/mlp.py:105:24: E1101: Module 'torch' has no 'argmax' member (no-member)
+syn_net/models/mlp.py:108:16: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+syn_net/models/mlp.py:81:4: R0912: Too many branches (13/12) (too-many-branches)
+syn_net/models/mlp.py:81:37: W0613: Unused argument 'batch_idx' (unused-argument)
+syn_net/models/mlp.py:146:0: C0116: Missing function or method docstring (missing-function-docstring)
+syn_net/models/mlp.py:146:28: W0621: Redefining name 'batch_size' from outer scope (line 206) (redefined-outer-name)
+syn_net/models/mlp.py:152:0: C0116: Missing function or method docstring (missing-function-docstring)
+syn_net/models/mlp.py:152:20: C0103: Argument name "v1" doesn't conform to snake_case naming style (invalid-name)
+syn_net/models/mlp.py:152:24: C0103: Argument name "v2" doesn't conform to snake_case naming style (invalid-name)
+syn_net/models/mlp.py:157:0: C0116: Missing function or method docstring (missing-function-docstring)
+syn_net/models/mlp.py:158:4: W0612: Unused variable 'dist' (unused-variable)
+syn_net/models/mlp.py:162:0: C0116: Missing function or method docstring (missing-function-docstring)
+syn_net/models/mlp.py:162:19: C0103: Argument name "y" doesn't conform to snake_case naming style (invalid-name)
+syn_net/models/mlp.py:162:19: W0621: Redefining name 'y' from outer scope (line 201) (redefined-outer-name)
+syn_net/models/mlp.py:163:4: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+syn_net/models/mlp.py:206:4: C0103: Constant name "batch_size" doesn't conform to UPPER_CASE naming style (invalid-name)
+************* Module rxn
+syn_net/models/rxn.py:49:0: C0301: Line too long (137/100) (line-too-long)
+syn_net/models/rxn.py:66:0: C0301: Line too long (142/100) (line-too-long)
+syn_net/models/rxn.py:39:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/rxn.py:41:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/rxn.py:43:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/rxn.py:45:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/rxn.py:9:0: C0411: third party import "from scipy import sparse" should be placed before "from syn_net.models.mlp import MLP, load_array" (wrong-import-order)
+************* Module prepare_data
+syn_net/models/prepare_data.py:34:8: C0103: Constant name "num_rxn" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/prepare_data.py:36:8: C0103: Constant name "num_rxn" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/prepare_data.py:39:8: C0103: Constant name "out_dim" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/prepare_data.py:41:8: C0103: Constant name "out_dim" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/prepare_data.py:43:8: C0103: Constant name "out_dim" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/prepare_data.py:45:8: C0103: Constant name "out_dim" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/prepare_data.py:47:4: E1120: No value for argument 'num_rxn' in function call (no-value-for-parameter)
+************* Module rt2
+syn_net/models/rt2.py:46:0: C0301: Line too long (137/100) (line-too-long)
+syn_net/models/rt2.py:129:0: C0301: Line too long (109/100) (line-too-long)
+syn_net/models/rt2.py:36:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/rt2.py:38:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/rt2.py:40:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/rt2.py:42:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/rt2.py:10:0: C0411: third party import "from scipy import sparse" should be placed before "from syn_net.models.mlp import MLP, load_array" (wrong-import-order)
+************* Module act
+syn_net/models/act.py:45:0: C0301: Line too long (137/100) (line-too-long)
+syn_net/models/act.py:35:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/act.py:37:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/act.py:39:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/act.py:41:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/models/act.py:9:0: C0411: third party import "from scipy import sparse" should be placed before "from syn_net.models.mlp import MLP, load_array" (wrong-import-order)
+************* Module scripts.search_similar
+scripts/search_similar.py:7:0: W0401: Wildcard import syn_net.utils.data_utils (wildcard-import)
+scripts/search_similar.py:16:4: C0103: Constant name "ncpu" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/search_similar.py:18:4: C0103: Constant name "data_path" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/search_similar.py:24:4: C0103: Constant name "data_path" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/search_similar.py:30:4: C0103: Constant name "data_path" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/search_similar.py:37:8: E1101: Module 'rdkit.Chem.AllChem' has no 'GetMorganFingerprintAsBitVect' member (no-member)
+scripts/search_similar.py:38:12: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+scripts/search_similar.py:42:8: E1101: Module 'rdkit.Chem.AllChem' has no 'GetMorganFingerprintAsBitVect' member (no-member)
+scripts/search_similar.py:43:12: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+scripts/search_similar.py:8:0: C0411: third party import "from rdkit import Chem" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
+scripts/search_similar.py:9:0: C0411: third party import "from rdkit.Chem import AllChem" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
+scripts/search_similar.py:10:0: C0411: standard import "import multiprocessing as mp" should be placed before "import numpy as np" (wrong-import-order)
+scripts/search_similar.py:5:0: W0611: Unused numpy imported as np (unused-import)
+scripts/search_similar.py:7:0: W0614: Unused import(s) gzip, json, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+************* Module scripts._mp_predict
+scripts/_mp_predict.py:8:0: C0301: Line too long (121/100) (line-too-long)
+scripts/_mp_predict.py:88:0: C0301: Line too long (143/100) (line-too-long)
+scripts/_mp_predict.py:11:0: C0103: Constant name "nbits" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:12:0: C0103: Constant name "out_dim" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:13:0: C0103: Constant name "rxn_template" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:14:0: C0103: Constant name "featurize" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:15:0: C0103: Constant name "param_dir" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:16:0: C0103: Constant name "ncpu" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:19:0: C0103: Constant name "model_type" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:20:0: C0103: Constant name "device" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:29:0: C0103: Constant name "path_to_reaction_file" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:31:0: C0103: Constant name "PATH_TO_BUILDING_BLOCKS" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:35:0: C0103: Constant name "param_path" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:36:0: C0103: Constant name "path_to_act" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:37:0: C0103: Constant name "path_to_rt1" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:38:0: C0103: Constant name "path_to_rxn" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:39:0: C0103: Constant name "path_to_rt2" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:84:11: W0703: Catching too general exception Exception (broad-except)
+scripts/_mp_predict.py:84:4: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+scripts/_mp_predict.py:96:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+scripts/_mp_predict.py:7:0: C0411: third party import "from dgllife.model import load_pretrained" should be placed before "from syn_net.utils.data_utils import ReactionSet" (wrong-import-order)
+scripts/_mp_predict.py:8:0: C0412: Imports from package syn_net are not grouped (ungrouped-imports)
+************* Module scripts.predict-beam-fullTree
+scripts/predict-beam-fullTree.py:18:0: C0301: Line too long (106/100) (line-too-long)
+scripts/predict-beam-fullTree.py:60:0: C0301: Line too long (121/100) (line-too-long)
+scripts/predict-beam-fullTree.py:61:0: C0301: Line too long (111/100) (line-too-long)
+scripts/predict-beam-fullTree.py:64:0: C0301: Line too long (143/100) (line-too-long)
+scripts/predict-beam-fullTree.py:1:0: C0103: Module name "predict-beam-fullTree" doesn't conform to snake_case naming style (invalid-name)
+scripts/predict-beam-fullTree.py:50:4: C0103: Constant name "model_type" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-fullTree.py:51:4: C0103: Constant name "device" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-fullTree.py:111:8: W0621: Redefining name 'tree' from outer scope (line 141) (redefined-outer-name)
+scripts/predict-beam-fullTree.py:111:14: W0621: Redefining name 'action' from outer scope (line 141) (redefined-outer-name)
+scripts/predict-beam-fullTree.py:108:23: E1123: Unexpected keyword argument 'n_bits' in function call (unexpected-keyword-arg)
+scripts/predict-beam-fullTree.py:110:23: E1120: No value for argument 'model' in function call (no-value-for-parameter)
+scripts/predict-beam-fullTree.py:134:4: C0103: Constant name "NUM_FINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-fullTree.py:135:4: C0103: Constant name "NUM_UNFINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-fullTree.py:142:15: W0703: Catching too general exception Exception (broad-except)
+scripts/predict-beam-fullTree.py:144:12: C0103: Constant name "action" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-fullTree.py:145:12: C0103: Constant name "tree" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-fullTree.py:155:18: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+scripts/predict-beam-fullTree.py:156:19: E1101: Module 'rdkit.Chem' has no 'RDKFingerprint' member (no-member)
+scripts/predict-beam-fullTree.py:15:0: C0411: third party import "from dgl.nn.pytorch.glob import AvgPooling" should be placed before "from syn_net.utils.data_utils import ReactionSet, SyntheticTreeSet" (wrong-import-order)
+scripts/predict-beam-fullTree.py:16:0: C0411: third party import "from dgllife.model import load_pretrained" should be placed before "from syn_net.utils.data_utils import ReactionSet, SyntheticTreeSet" (wrong-import-order)
+scripts/predict-beam-fullTree.py:17:0: C0412: Imports from package syn_net are not grouped (ungrouped-imports)
+************* Module scripts.sketch-synthetic-trees
+scripts/sketch-synthetic-trees.py:1:0: C0103: Module name "sketch-synthetic-trees" doesn't conform to snake_case naming style (invalid-name)
+scripts/sketch-synthetic-trees.py:4:0: W0401: Wildcard import syn_net.utils.data_utils (wildcard-import)
+scripts/sketch-synthetic-trees.py:7:0: E0611: No name 'MolFromSmiles' in module 'rdkit.Chem' (no-name-in-module)
+scripts/sketch-synthetic-trees.py:40:4: W0621: Redefining name 'states' from outer scope (line 284) (redefined-outer-name)
+scripts/sketch-synthetic-trees.py:41:4: W0621: Redefining name 'steps' from outer scope (line 284) (redefined-outer-name)
+scripts/sketch-synthetic-trees.py:51:12: W0621: Redefining name 'r' from outer scope (line 4) (redefined-outer-name)
+scripts/sketch-synthetic-trees.py:51:12: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
+scripts/sketch-synthetic-trees.py:78:0: R0914: Too many local variables (38/15) (too-many-locals)
+scripts/sketch-synthetic-trees.py:78:14: W0621: Redefining name 'states' from outer scope (line 284) (redefined-outer-name)
+scripts/sketch-synthetic-trees.py:78:28: W0621: Redefining name 'steps' from outer scope (line 284) (redefined-outer-name)
+scripts/sketch-synthetic-trees.py:88:4: C0103: Variable name "G" doesn't conform to snake_case naming style (invalid-name)
+scripts/sketch-synthetic-trees.py:107:12: R1724: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
+scripts/sketch-synthetic-trees.py:161:9: C0103: Variable name "ax" doesn't conform to snake_case naming style (invalid-name)
+scripts/sketch-synthetic-trees.py:168:17: R1721: Unnecessary use of a comprehension, use list(G.edges) instead. (unnecessary-comprehension)
+scripts/sketch-synthetic-trees.py:184:4: C0103: Variable name "x" doesn't conform to snake_case naming style (invalid-name)
+scripts/sketch-synthetic-trees.py:187:12: C0103: Variable name "x" doesn't conform to snake_case naming style (invalid-name)
+scripts/sketch-synthetic-trees.py:229:8: C0103: Variable name "n" doesn't conform to snake_case naming style (invalid-name)
+scripts/sketch-synthetic-trees.py:230:8: C0103: Variable name "xf" doesn't conform to snake_case naming style (invalid-name)
+scripts/sketch-synthetic-trees.py:230:12: C0103: Variable name "yf" doesn't conform to snake_case naming style (invalid-name)
+scripts/sketch-synthetic-trees.py:231:8: C0103: Variable name "xa" doesn't conform to snake_case naming style (invalid-name)
+scripts/sketch-synthetic-trees.py:231:12: C0103: Variable name "ya" doesn't conform to snake_case naming style (invalid-name)
+scripts/sketch-synthetic-trees.py:233:8: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)
+scripts/sketch-synthetic-trees.py:78:0: R0912: Too many branches (17/12) (too-many-branches)
+scripts/sketch-synthetic-trees.py:78:0: R0915: Too many statements (74/50) (too-many-statements)
+scripts/sketch-synthetic-trees.py:277:4: C0103: Constant name "trees_sketched" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/sketch-synthetic-trees.py:294:15: W0703: Catching too general exception Exception (broad-except)
+scripts/sketch-synthetic-trees.py:5:0: C0411: standard import "import argparse" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
+scripts/sketch-synthetic-trees.py:6:0: C0411: standard import "from typing import Tuple" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
+scripts/sketch-synthetic-trees.py:7:0: C0411: third party import "from rdkit.Chem import MolFromSmiles" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
+scripts/sketch-synthetic-trees.py:8:0: C0411: third party import "from rdkit.Chem.Draw import MolToImage" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
+scripts/sketch-synthetic-trees.py:9:0: C0411: third party import "import networkx as nx" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
+scripts/sketch-synthetic-trees.py:10:0: C0411: third party import "import matplotlib.pyplot as plt" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
+scripts/sketch-synthetic-trees.py:11:0: C0411: third party import "from matplotlib.patches import Rectangle" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
+scripts/sketch-synthetic-trees.py:4:0: W0614: Unused import(s) gzip, json, pd, Chem, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+************* Module scripts.compute_embedding_mp
+scripts/compute_embedding_mp.py:7:0: C0301: Line too long (115/100) (line-too-long)
+scripts/compute_embedding_mp.py:5:0: W0401: Wildcard import scripts.compute_embedding (wildcard-import)
+scripts/compute_embedding_mp.py:22:4: C0103: Constant name "path" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/compute_embedding_mp.py:6:0: C0411: third party import "from rdkit import RDLogger" should be placed before "from scripts.compute_embedding import *" (wrong-import-order)
+scripts/compute_embedding_mp.py:5:0: W0614: Unused import(s) embedding, get_mol_embedding_func, smi, tqdm and fp_embedding from wildcard import of scripts.compute_embedding (unused-wildcard-import)
+************* Module scripts._mp_predict_beam
+scripts/_mp_predict_beam.py:31:0: C0301: Line too long (107/100) (line-too-long)
+scripts/_mp_predict_beam.py:32:0: C0301: Line too long (102/100) (line-too-long)
+scripts/_mp_predict_beam.py:13:0: C0103: Constant name "nbits" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict_beam.py:14:0: C0103: Constant name "out_dim" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict_beam.py:15:0: C0103: Constant name "rxn_template" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict_beam.py:16:0: C0103: Constant name "featurize" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict_beam.py:17:0: C0103: Constant name "param_dir" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict_beam.py:18:0: C0103: Constant name "ncpu" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict_beam.py:21:0: C0103: Constant name "model_type" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict_beam.py:22:0: C0103: Constant name "device" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict_beam.py:94:11: W0703: Catching too general exception Exception (broad-except)
+scripts/_mp_predict_beam.py:94:4: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+scripts/_mp_predict_beam.py:98:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+scripts/_mp_predict_beam.py:7:0: C0411: third party import "from dgllife.model import load_pretrained" should be placed before "from syn_net.utils.data_utils import ReactionSet" (wrong-import-order)
+scripts/_mp_predict_beam.py:8:0: C0412: Imports from package syn_net are not grouped (ungrouped-imports)
+************* Module scripts._mp_decode
+scripts/_mp_decode.py:8:0: C0301: Line too long (113/100) (line-too-long)
+scripts/_mp_decode.py:30:0: C0301: Line too long (107/100) (line-too-long)
+scripts/_mp_decode.py:31:0: C0301: Line too long (102/100) (line-too-long)
+scripts/_mp_decode.py:12:0: C0103: Constant name "nbits" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_decode.py:13:0: C0103: Constant name "out_dim" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_decode.py:14:0: C0103: Constant name "rxn_template" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_decode.py:15:0: C0103: Constant name "featurize" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_decode.py:16:0: C0103: Constant name "param_dir" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_decode.py:17:0: C0103: Constant name "ncpu" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_decode.py:20:0: C0103: Constant name "model_type" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_decode.py:21:0: C0103: Constant name "device" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_decode.py:91:11: W0703: Catching too general exception Exception (broad-except)
+scripts/_mp_decode.py:91:4: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+scripts/_mp_decode.py:94:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+************* Module scripts.read_st_data
+scripts/read_st_data.py:4:0: W0401: Wildcard import syn_net.utils.data_utils (wildcard-import)
+scripts/read_st_data.py:10:4: C0103: Constant name "path_to_data" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/read_st_data.py:17:8: W0212: Access to a protected member _print of a client class (protected-access)
+scripts/read_st_data.py:4:0: W0614: Unused import(s) gzip, json, pd, Chem, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+************* Module scripts._mp_search_similar
+scripts/_mp_search_similar.py:10:0: W0401: Wildcard import syn_net.utils.data_utils (wildcard-import)
+scripts/_mp_search_similar.py:13:0: C0103: Constant name "data_path" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_search_similar.py:19:4: E1101: Module 'rdkit.Chem.AllChem' has no 'GetMorganFingerprintAsBitVect' member (no-member)
+scripts/_mp_search_similar.py:20:8: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+scripts/_mp_search_similar.py:25:9: C0103: Argument name "fp" doesn't conform to snake_case naming style (invalid-name)
+scripts/_mp_search_similar.py:38:24: E1101: Module 'rdkit.DataStructs' has no 'TanimotoSimilarity' member (no-member)
+scripts/_mp_search_similar.py:9:0: W0611: Unused pandas imported as pd (unused-import)
+scripts/_mp_search_similar.py:10:0: W0614: Unused import(s) pd, gzip, json, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+************* Module scripts.predict_multireactant_mp
+scripts/predict_multireactant_mp.py:33:0: C0301: Line too long (101/100) (line-too-long)
+scripts/predict_multireactant_mp.py:60:4: C0103: Constant name "save_path" doesn't conform to UPPER_CASE naming style (invalid-name)
+************* Module scripts.optimize_ga
+scripts/optimize_ga.py:30:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+scripts/optimize_ga.py:35:15: W0703: Catching too general exception BaseException (broad-except)
+scripts/optimize_ga.py:51:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+scripts/optimize_ga.py:56:15: W0703: Catching too general exception BaseException (broad-except)
+scripts/optimize_ga.py:83:4: W0621: Redefining name 'trees' from outer scope (line 227) (redefined-outer-name)
+scripts/optimize_ga.py:88:8: W0621: Redefining name 'scores' from outer scope (line 227) (redefined-outer-name)
+scripts/optimize_ga.py:114:26: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)
+scripts/optimize_ga.py:114:26: W0621: Redefining name 'n' from outer scope (line 241) (redefined-outer-name)
+scripts/optimize_ga.py:126:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+scripts/optimize_ga.py:132:30: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)
+scripts/optimize_ga.py:132:30: W0621: Redefining name 'n' from outer scope (line 241) (redefined-outer-name)
+scripts/optimize_ga.py:132:30: W0613: Unused argument 'n' (unused-argument)
+scripts/optimize_ga.py:132:33: W0613: Unused argument 'total' (unused-argument)
+scripts/optimize_ga.py:151:30: C0103: Argument name "n" doesn't conform to snake_case naming style (invalid-name)
+scripts/optimize_ga.py:151:30: W0621: Redefining name 'n' from outer scope (line 241) (redefined-outer-name)
+scripts/optimize_ga.py:163:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+scripts/optimize_ga.py:245:8: C0103: Constant name "dist_" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/optimize_ga.py:246:8: C0103: Constant name "num_mut_per_ele_" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/optimize_ga.py:247:8: C0103: Constant name "mut_probability_" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/optimize_ga.py:264:8: C0103: Constant name "parent_idx" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/optimize_ga.py:285:12: W0212: Access to a protected member _print of a client class (protected-access)
+scripts/optimize_ga.py:301:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+scripts/optimize_ga.py:314:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+scripts/optimize_ga.py:7:0: C0411: standard import "import multiprocessing as mp" should be placed before "from syn_net.utils.ga_utils import crossover, mutation" (wrong-import-order)
+scripts/optimize_ga.py:8:0: C0411: third party import "import numpy as np" should be placed before "from syn_net.utils.ga_utils import crossover, mutation" (wrong-import-order)
+scripts/optimize_ga.py:9:0: C0411: third party import "import pandas as pd" should be placed before "from syn_net.utils.ga_utils import crossover, mutation" (wrong-import-order)
+scripts/optimize_ga.py:10:0: C0411: standard import "import time" should be placed before "import numpy as np" (wrong-import-order)
+scripts/optimize_ga.py:11:0: C0411: standard import "import json" should be placed before "import numpy as np" (wrong-import-order)
+scripts/optimize_ga.py:14:0: C0411: third party import "from tdc import Oracle" should be placed before "from syn_net.utils.ga_utils import crossover, mutation" (wrong-import-order)
+scripts/optimize_ga.py:13:0: C0412: Imports from package syn_net are not grouped (ungrouped-imports)
+************* Module scripts._mp_sum
+scripts/_mp_sum.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module scripts._mp_predict_multireactant
+scripts/_mp_predict_multireactant.py:7:0: C0301: Line too long (114/100) (line-too-long)
+scripts/_mp_predict_multireactant.py:23:0: C0301: Line too long (107/100) (line-too-long)
+scripts/_mp_predict_multireactant.py:24:0: C0301: Line too long (102/100) (line-too-long)
+scripts/_mp_predict_multireactant.py:11:0: C0103: Constant name "nbits" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict_multireactant.py:12:0: C0103: Constant name "out_dim" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict_multireactant.py:13:0: C0103: Constant name "rxn_template" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict_multireactant.py:14:0: C0103: Constant name "featurize" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict_multireactant.py:15:0: C0103: Constant name "param_dir" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict_multireactant.py:16:0: C0103: Constant name "ncpu" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict_multireactant.py:88:11: W0703: Catching too general exception Exception (broad-except)
+scripts/_mp_predict_multireactant.py:88:4: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+scripts/_mp_predict_multireactant.py:92:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+************* Module scripts.st2steps
+scripts/st2steps.py:7:0: W0401: Wildcard import syn_net.utils.data_utils (wildcard-import)
+scripts/st2steps.py:54:4: C0103: Constant name "idx" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/st2steps.py:55:4: C0103: Constant name "save_idx" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/st2steps.py:61:15: W0703: Catching too general exception Exception (broad-except)
+scripts/st2steps.py:7:0: W0614: Unused import(s) gzip, json, pd, Chem, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+************* Module scripts.predict
+scripts/predict.py:47:4: C0103: Constant name "model_type" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict.py:48:4: C0103: Constant name "device" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict.py:118:8: W0621: Redefining name 'tree' from outer scope (line 154) (redefined-outer-name)
+scripts/predict.py:118:14: W0621: Redefining name 'action' from outer scope (line 154) (redefined-outer-name)
+scripts/predict.py:117:23: E1120: No value for argument 'model' in function call (no-value-for-parameter)
+scripts/predict.py:147:4: C0103: Constant name "NUM_FINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict.py:148:4: C0103: Constant name "NUM_UNFINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict.py:155:15: W0703: Catching too general exception Exception (broad-except)
+scripts/predict.py:157:12: C0103: Constant name "action" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict.py:158:12: C0103: Constant name "tree" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict.py:168:18: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+scripts/predict.py:169:19: E1101: Module 'rdkit.Chem' has no 'RDKFingerprint' member (no-member)
+scripts/predict.py:12:0: C0411: third party import "from dgl.nn.pytorch.glob import AvgPooling" should be placed before "from syn_net.utils.data_utils import ReactionSet, SyntheticTreeSet" (wrong-import-order)
+scripts/predict.py:13:0: C0411: third party import "from dgllife.model import load_pretrained" should be placed before "from syn_net.utils.data_utils import ReactionSet, SyntheticTreeSet" (wrong-import-order)
+scripts/predict.py:14:0: C0412: Imports from package syn_net are not grouped (ungrouped-imports)
+************* Module scripts.mrr
+scripts/mrr.py:134:0: C0301: Line too long (107/100) (line-too-long)
+scripts/mrr.py:136:0: C0301: Line too long (107/100) (line-too-long)
+scripts/mrr.py:138:0: C0301: Line too long (107/100) (line-too-long)
+scripts/mrr.py:140:0: C0301: Line too long (110/100) (line-too-long)
+scripts/mrr.py:142:0: C0301: Line too long (110/100) (line-too-long)
+scripts/mrr.py:144:0: C0301: Line too long (110/100) (line-too-long)
+scripts/mrr.py:41:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/mrr.py:43:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/mrr.py:45:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/mrr.py:47:8: C0103: Constant name "validation_option" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/mrr.py:6:0: C0411: third party import "from scipy import sparse" should be placed before "from syn_net.models.mlp import MLP, load_array" (wrong-import-order)
+scripts/mrr.py:7:0: C0411: third party import "import numpy as np" should be placed before "from syn_net.models.mlp import MLP, load_array" (wrong-import-order)
+scripts/mrr.py:8:0: C0411: third party import "from sklearn.neighbors import BallTree" should be placed before "from syn_net.models.mlp import MLP, load_array" (wrong-import-order)
+scripts/mrr.py:9:0: C0411: third party import "import torch" should be placed before "from syn_net.models.mlp import MLP, load_array" (wrong-import-order)
+scripts/mrr.py:10:0: C0412: Imports from package syn_net are not grouped (ungrouped-imports)
+************* Module scripts.predict-beam-reactantOnly
+scripts/predict-beam-reactantOnly.py:1:0: C0103: Module name "predict-beam-reactantOnly" doesn't conform to snake_case naming style (invalid-name)
+scripts/predict-beam-reactantOnly.py:49:4: C0103: Constant name "model_type" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-reactantOnly.py:50:4: C0103: Constant name "device" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-reactantOnly.py:122:8: W0621: Redefining name 'tree' from outer scope (line 158) (redefined-outer-name)
+scripts/predict-beam-reactantOnly.py:122:14: W0621: Redefining name 'action' from outer scope (line 158) (redefined-outer-name)
+scripts/predict-beam-reactantOnly.py:121:23: E1120: No value for argument 'model' in function call (no-value-for-parameter)
+scripts/predict-beam-reactantOnly.py:151:4: C0103: Constant name "NUM_FINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-reactantOnly.py:152:4: C0103: Constant name "NUM_UNFINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-reactantOnly.py:159:15: W0703: Catching too general exception Exception (broad-except)
+scripts/predict-beam-reactantOnly.py:161:12: C0103: Constant name "action" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-reactantOnly.py:162:12: C0103: Constant name "tree" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-reactantOnly.py:172:18: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+scripts/predict-beam-reactantOnly.py:173:19: E1101: Module 'rdkit.Chem' has no 'RDKFingerprint' member (no-member)
+scripts/predict-beam-reactantOnly.py:12:0: C0411: third party import "from dgl.nn.pytorch.glob import AvgPooling" should be placed before "from syn_net.utils.data_utils import ReactionSet, SyntheticTreeSet" (wrong-import-order)
+scripts/predict-beam-reactantOnly.py:13:0: C0411: third party import "from dgllife.model import load_pretrained" should be placed before "from syn_net.utils.data_utils import ReactionSet, SyntheticTreeSet" (wrong-import-order)
+scripts/predict-beam-reactantOnly.py:14:0: C0412: Imports from package syn_net are not grouped (ungrouped-imports)
+scripts/predict-beam-reactantOnly.py:14:0: W0611: Unused MLP imported from syn_net.models.mlp (unused-import)
+************* Module scripts.compute_embedding
+scripts/compute_embedding.py:22:27: W0621: Redefining name 'smi' from outer scope (line 58) (redefined-outer-name)
+scripts/compute_embedding.py:22:33: C0321: More than one statement on a single line (multiple-statements)
+scripts/compute_embedding.py:24:27: W0621: Redefining name 'smi' from outer scope (line 58) (redefined-outer-name)
+scripts/compute_embedding.py:24:33: C0321: More than one statement on a single line (multiple-statements)
+scripts/compute_embedding.py:26:27: W0621: Redefining name 'smi' from outer scope (line 58) (redefined-outer-name)
+scripts/compute_embedding.py:26:33: C0321: More than one statement on a single line (multiple-statements)
+scripts/compute_embedding.py:28:27: W0621: Redefining name 'smi' from outer scope (line 58) (redefined-outer-name)
+scripts/compute_embedding.py:28:33: C0321: More than one statement on a single line (multiple-statements)
+scripts/compute_embedding.py:30:27: W0621: Redefining name 'smi' from outer scope (line 58) (redefined-outer-name)
+scripts/compute_embedding.py:30:33: C0321: More than one statement on a single line (multiple-statements)
+scripts/compute_embedding.py:32:27: W0621: Redefining name 'smi' from outer scope (line 58) (redefined-outer-name)
+scripts/compute_embedding.py:32:33: C0321: More than one statement on a single line (multiple-statements)
+scripts/compute_embedding.py:48:4: C0103: Constant name "path" doesn't conform to UPPER_CASE naming style (invalid-name)
+************* Module scripts.st_split
+scripts/st_split.py:4:0: W0401: Wildcard import syn_net.utils.data_utils (wildcard-import)
+scripts/st_split.py:10:4: C0103: Constant name "path_to_data" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/st_split.py:4:0: W0614: Unused import(s) gzip, json, pd, Chem, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+************* Module scripts.sample_from_original
+scripts/sample_from_original.py:4:0: W0401: Wildcard import syn_net.utils.data_utils (wildcard-import)
+scripts/sample_from_original.py:22:10: E1101: Module 'rdkit.Chem' has no 'MolFromSmiles' member (no-member)
+scripts/sample_from_original.py:23:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+scripts/sample_from_original.py:26:15: E1101: Module 'rdkit.Chem' has no 'MolToSmiles' member (no-member)
+scripts/sample_from_original.py:31:4: C0103: Constant name "data_path" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/sample_from_original.py:42:4: C0103: Constant name "threshold" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/sample_from_original.py:63:15: W0703: Catching too general exception BaseException (broad-except)
+scripts/sample_from_original.py:5:0: C0411: third party import "import pandas as pd" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
+scripts/sample_from_original.py:6:0: C0411: third party import "import numpy as np" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
+scripts/sample_from_original.py:7:0: C0411: third party import "from tdc import Oracle" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
+scripts/sample_from_original.py:4:0: W0614: Unused import(s) gzip, json, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+************* Module scripts.evaluate_batch
+scripts/evaluate_batch.py:23:0: C0301: Line too long (113/100) (line-too-long)
+scripts/evaluate_batch.py:28:0: C0301: Line too long (127/100) (line-too-long)
+scripts/evaluate_batch.py:34:0: C0301: Line too long (128/100) (line-too-long)
+scripts/evaluate_batch.py:36:0: C0301: Line too long (144/100) (line-too-long)
+************* Module scripts.evaluate_batch_recovery
+scripts/evaluate_batch_recovery.py:43:4: C0103: Constant name "n_recovered" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/evaluate_batch_recovery.py:44:4: C0103: Constant name "n_unrecovered" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/evaluate_batch_recovery.py:45:4: C0103: Constant name "n_total" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/evaluate_batch_recovery.py:8:0: C0411: standard import "import glob" should be placed before "from tdc import Evaluator" (wrong-import-order)
+************* Module filter_unmatch_tests
+tests/filter_unmatch_tests.py:7:0: W0401: Wildcard import syn_net.utils.data_utils (wildcard-import)
+tests/filter_unmatch_tests.py:11:4: C0103: Constant name "R_PATH" doesn't conform to UPPER_CASE naming style (invalid-name)
+tests/filter_unmatch_tests.py:12:4: C0103: Constant name "BB_PATH" doesn't conform to UPPER_CASE naming style (invalid-name)
+tests/filter_unmatch_tests.py:7:0: W0614: Unused import(s) gzip, json, Chem, Reaction, NodeChemical, NodeRxn, SyntheticTree, SyntheticTreeSet, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+************* Module test_Optimization
+tests/test_Optimization.py:1:0: C0103: Module name "test_Optimization" doesn't conform to snake_case naming style (invalid-name)
+************* Module test_Training
+tests/test_Training.py:1:0: C0103: Module name "test_Training" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:25:4: R0914: Too many local variables (18/15) (too-many-locals)
+tests/test_Training.py:38:8: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:39:8: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:40:8: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:41:8: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:41:12: E1101: Module 'torch' has no 'LongTensor' member (no-member)
+tests/test_Training.py:84:4: R0914: Too many local variables (19/15) (too-many-locals)
+tests/test_Training.py:99:8: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:100:8: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:101:8: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:102:8: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:141:4: R0914: Too many local variables (19/15) (too-many-locals)
+tests/test_Training.py:155:8: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:156:8: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:157:8: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:158:8: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:158:12: E1101: Module 'torch' has no 'LongTensor' member (no-member)
+tests/test_Training.py:201:4: R0914: Too many local variables (20/15) (too-many-locals)
+tests/test_Training.py:216:8: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:217:8: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:218:8: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Training.py:219:8: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+************* Module test_Predict
+tests/test_Predict.py:1:0: C0103: Module name "test_Predict" doesn't conform to snake_case naming style (invalid-name)
+tests/test_Predict.py:26:4: R0914: Too many local variables (37/15) (too-many-locals)
+tests/test_Predict.py:90:35: W0612: Unused variable 'action' (unused-variable)
+************* Module test_DataPreparation
+tests/test_DataPreparation.py:1:0: C0103: Module name "test_DataPreparation" doesn't conform to snake_case naming style (invalid-name)
+tests/test_DataPreparation.py:44:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+tests/test_DataPreparation.py:52:8: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
+tests/test_DataPreparation.py:67:4: R0914: Too many local variables (18/15) (too-many-locals)
+tests/test_DataPreparation.py:114:20: C0103: Variable name "st" doesn't conform to snake_case naming style (invalid-name)
+tests/test_DataPreparation.py:115:12: C0103: Variable name "st" doesn't conform to snake_case naming style (invalid-name)
+tests/test_DataPreparation.py:119:4: R0914: Too many local variables (19/15) (too-many-locals)
+tests/test_DataPreparation.py:142:12: C0103: Variable name "st" doesn't conform to snake_case naming style (invalid-name)
+tests/test_DataPreparation.py:147:19: W0703: Catching too general exception Exception (broad-except)
+tests/test_DataPreparation.py:147:12: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+tests/test_DataPreparation.py:181:4: R0914: Too many local variables (19/15) (too-many-locals)
+tests/test_DataPreparation.py:211:8: C0103: Variable name "X_act" doesn't conform to snake_case naming style (invalid-name)
+tests/test_DataPreparation.py:214:8: C0103: Variable name "X_act_ref" doesn't conform to snake_case naming style (invalid-name)
+tests/test_DataPreparation.py:221:8: C0103: Variable name "X_rt1" doesn't conform to snake_case naming style (invalid-name)
+tests/test_DataPreparation.py:224:8: C0103: Variable name "X_rt1_ref" doesn't conform to snake_case naming style (invalid-name)
+tests/test_DataPreparation.py:231:8: C0103: Variable name "X_rxn" doesn't conform to snake_case naming style (invalid-name)
+tests/test_DataPreparation.py:234:8: C0103: Variable name "X_rxn_ref" doesn't conform to snake_case naming style (invalid-name)
+tests/test_DataPreparation.py:241:8: C0103: Variable name "X_rt2" doesn't conform to snake_case naming style (invalid-name)
+tests/test_DataPreparation.py:244:8: C0103: Variable name "X_rt2_ref" doesn't conform to snake_case naming style (invalid-name)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict-beam-fullTree:[117:162]
+==scripts.predict-beam-reactantOnly:[135:179]
+        return tree, action
+
+    path_to_data = f'/pool001/whgao/data/synth_net/st_{args.rxn_template}/st_{args.data}.json.gz'
+    print('Reading data from ', path_to_data)
+    sts = SyntheticTreeSet()
+    sts.load(path_to_data)
+    query_smis = [st.root.smiles for st in sts.sts]
+    if args.num == -1:
+        pass
+    else:
+        query_smis = query_smis[:args.num]
+
+    output_smis = []
+    similaritys = []
+    trees = []
+    NUM_FINISH = 0
+    NUM_UNFINISH = 0
+
+    print('Start to decode!')
+    for smi in tqdm(query_smis):
+
+        try:
+            tree, action = decode_one_molecule(smi)
+        except Exception as e:
+            print(e)
+            action = 1
+            tree = None
+
+        if action != 3:
+            NUM_UNFINISH += 1
+            output_smis.append(None)
+            similaritys.append(None)
+            trees.append(None)
+        else:
+            NUM_FINISH += 1
+            output_smis.append(tree.root.smiles)
+            ms = [Chem.MolFromSmiles(sm) for sm in [smi, tree.root.smiles]]
+            fps = [Chem.RDKFingerprint(x) for x in ms]
+            similaritys.append(
+                DataStructs.FingerprintSimilarity(
+                    fps[0], fps[1]))
+            trees.append(tree)
+
+    print('Saving ......') (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[12:49]
+==rt2:[12:49]
+if __name__ == '__main__':
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--featurize", type=str, default='fp',
+                        help="Choose from ['fp', 'gin']")
+    parser.add_argument("-r", "--rxn_template", type=str, default='hb',
+                        help="Choose from ['hb', 'pis']")
+    parser.add_argument("--radius", type=int, default=2,
+                        help="Radius for Morgan fingerprint.")
+    parser.add_argument("--nbits", type=int, default=4096,
+                        help="Number of Bits for Morgan fingerprint.")
+    parser.add_argument("--out_dim", type=int, default=256,
+                        help="Output dimension.")
+    parser.add_argument("--ncpu", type=int, default=8,
+                        help="Number of cpus")
+    parser.add_argument("--batch_size", type=int, default=64,
+                        help="Batch size")
+    parser.add_argument("--epoch", type=int, default=2000,
+                        help="Maximum number of epoches.")
+    args = parser.parse_args()
+
+    if args.out_dim == 300:
+        validation_option = 'nn_accuracy_gin'
+    elif args.out_dim == 4096:
+        validation_option = 'nn_accuracy_fp_4096'
+    elif args.out_dim == 256:
+        validation_option = 'nn_accuracy_fp_256'
+    elif args.out_dim == 200:
+        validation_option = 'nn_accuracy_rdkit2d'
+    else:
+        raise ValueError
+
+    main_dir = f'/pool001/whgao/data/synth_net/{args.rxn_template}_{args.featurize}_{args.radius}_{args.nbits}_{validation_option[12:]}/'
+    batch_size = args.batch_size
+    ncpu = args.ncpu
+ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict-beam-fullTree:[19:56]
+==scripts.predict-beam-reactantOnly:[18:55]
+if __name__ == '__main__':
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--featurize", type=str, default='fp',
+                        help="Choose from ['fp', 'gin']")
+    parser.add_argument("-r", "--rxn_template", type=str, default='hb',
+                        help="Choose from ['hb', 'pis']")
+    parser.add_argument("-v", "--version", type=int, default=1,
+                        help="Version")
+    parser.add_argument("--radius", type=int, default=2,
+                        help="Radius for Morgan fingerprint.")
+    parser.add_argument("--nbits", type=int, default=1024,
+                        help="Number of Bits for Morgan fingerprint.")
+    parser.add_argument("--out_dim", type=int, default=300,
+                        help="Output dimension.")
+    parser.add_argument("--ncpu", type=int, default=16,
+                        help="Number of cpus")
+    parser.add_argument("--batch_size", type=int, default=64,
+                        help="Batch size")
+    parser.add_argument("--beam_width", type=int, default=5,
+                        help="Beam width to use for Reactant1 search")
+    parser.add_argument("-n", "--num", type=int, default=-1,
+                        help="Number of molecules to decode.")
+    parser.add_argument("-d", "--data", type=str, default='test',
+                        help="Choose from ['train', 'valid', 'test']")
+    args = parser.parse_args()
+
+    # define model to use for molecular embedding
+    readout = AvgPooling()
+    model_type = 'gin_supervised_contextpred'
+    device = 'cuda:0'
+    mol_embedder = load_pretrained(model_type).to(device)
+    mol_embedder.eval()
+
+    # load the purchasable building block embeddings
+    bb_emb = np.load( (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict-beam-reactantOnly:[75:121]
+==scripts.predict:[71:117]
+    path_to_act = param_path + 'act.ckpt'
+    path_to_rt1 = param_path + 'rt1.ckpt'
+    path_to_rxn = param_path + 'rxn.ckpt'
+    path_to_rt2 = param_path + 'rt2.ckpt'
+
+    np.random.seed(6)
+
+    # load the purchasable building block SMILES to a dictionary
+    building_blocks = pd.read_csv(
+        PATH_TO_BUILDING_BLOCKS,
+        compression='gzip')['SMILES'].tolist()
+    bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
+
+    # load the reaction templates as a ReactionSet object
+    rxn_set = ReactionSet()
+    rxn_set.load(path_to_reaction_file)
+    rxns = rxn_set.rxns
+
+    # load the pre-trained modules
+    act_net, rt1_net, rxn_net, rt2_net = load_modules_from_checkpoint(
+        path_to_act=path_to_act,
+        path_to_rt1=path_to_rt1,
+        path_to_rxn=path_to_rxn,
+        path_to_rt2=path_to_rt2,
+        featurize=args.featurize,
+        rxn_template=args.rxn_template,
+        out_dim=args.out_dim,
+        nbits=args.nbits,
+        ncpu=args.ncpu,
+    )
+
+    def decode_one_molecule(query_smi):
+        """
+        Generate a synthetic tree from a given query SMILES.
+
+        Args:
+            query_smi (str): SMILES for molecule to decode.
+
+        Returns:
+            tree (SyntheticTree): The final synthetic tree
+            act (int): The final action (to know if the tree was "properly" terminated)
+        """
+        if args.featurize == 'fp':
+            z_target = mol_fp(query_smi, args.radius, args.nbits)
+        elif args.featurize == 'gin':
+            z_target = get_mol_embedding(query_smi) (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_decode:[25:75]
+==scripts._mp_predict_multireactant:[18:70]
+bb_emb = np.load(
+    '/pool001/whgao/data/synth_net/st_hb/enamine_us_emb_fp_256.npy')
+
+# define path to the reaction templates and purchasable building blocks
+path_to_reaction_file = f'/pool001/whgao/data/synth_net/st_{rxn_template}/reactions_{rxn_template}.json.gz'
+PATH_TO_BUILDING_BLOCKS = f'/pool001/whgao/data/synth_net/st_{rxn_template}/enamine_us_matched.csv.gz'
+
+# define paths to pretrained modules
+param_path = f'/home/whgao/synth_net/synth_net/params/{param_dir}/'
+path_to_act = f'{param_path}act.ckpt'
+path_to_rt1 = f'{param_path}rt1.ckpt'
+path_to_rxn = f'{param_path}rxn.ckpt'
+path_to_rt2 = f'{param_path}rt2.ckpt'
+
+# load the purchasable building block SMILES to a dictionary
+building_blocks = pd.read_csv(
+    PATH_TO_BUILDING_BLOCKS,
+    compression='gzip')['SMILES'].tolist()
+bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
+
+# load the reaction templates as a ReactionSet object
+rxn_set = ReactionSet()
+rxn_set.load(path_to_reaction_file)
+rxns = rxn_set.rxns
+
+# load the pre-trained modules
+act_net, rt1_net, rxn_net, rt2_net = load_modules_from_checkpoint(
+    path_to_act=path_to_act,
+    path_to_rt1=path_to_rt1,
+    path_to_rxn=path_to_rxn,
+    path_to_rt2=path_to_rt2,
+    featurize=featurize,
+    rxn_template=rxn_template,
+    out_dim=out_dim,
+    nbits=nbits,
+    ncpu=ncpu,
+)
+
+
+def func(emb):
+    """
+    Generates the synthetic tree for the input molecular embedding.
+
+    Args:
+        emb (np.ndarray): Molecular embedding to decode.
+
+    Returns:
+        str: SMILES for the final chemical node in the tree.
+        SyntheticTree: The generated synthetic tree.
+    """ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict-beam-fullTree:[144:171]
+==scripts.predict:[157:184]
+            tree = None
+
+        if action != 3:
+            NUM_UNFINISH += 1
+            output_smis.append(None)
+            similaritys.append(None)
+            trees.append(None)
+        else:
+            NUM_FINISH += 1
+            output_smis.append(tree.root.smiles)
+            ms = [Chem.MolFromSmiles(sm) for sm in [smi, tree.root.smiles]]
+            fps = [Chem.RDKFingerprint(x) for x in ms]
+            similaritys.append(
+                DataStructs.FingerprintSimilarity(
+                    fps[0], fps[1]))
+            trees.append(tree)
+
+    print('Saving ......')
+    save_path = '../results/' + args.rxn_template + '_' + args.featurize + '/'
+    if not os.path.exists(save_path):
+        os.makedirs(save_path)
+    df = pd.DataFrame({'query SMILES': query_smis,
+                       'decode SMILES': output_smis,
+                       'similarity': similaritys})
+    print("mean similarities", df['similarity'].mean(), df['similarity'].std())
+    print("NAs", df.isna().sum())
+    df.to_csv( (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict-beam-reactantOnly:[40:72]
+==scripts.predict:[38:70]
+    parser.add_argument("-n", "--num", type=int, default=-1,
+                        help="Number of molecules to decode.")
+    parser.add_argument("-d", "--data", type=str, default='test',
+                        help="Choose from ['train', 'valid', 'test']")
+    args = parser.parse_args()
+
+    # define model to use for molecular embedding
+    readout = AvgPooling()
+    model_type = 'gin_supervised_contextpred'
+    device = 'cuda:0'
+    mol_embedder = load_pretrained(model_type).to(device)
+    mol_embedder.eval()
+
+    # load the purchasable building block embeddings
+    bb_emb = np.load(
+        '/pool001/whgao/data/synth_net/st_' +
+        args.rxn_template +
+        '/enamine_us_emb.npy')
+
+    # define path to the reaction templates and purchasable building blocks
+    path_to_reaction_file = (
+        '/pool001/whgao/data/synth_net/st_' +
+        args.rxn_template +
+        '/reactions_' +
+        args.rxn_template +
+        '.json.gz')
+    PATH_TO_BUILDING_BLOCKS = (
+        '/pool001/whgao/data/synth_net/st_' +
+        args.rxn_template +
+        '/enamine_us_matched.csv.gz')
+
+    # define paths to pretrained modules (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_predict_beam:[35:79]
+==scripts._mp_predict_multireactant:[27:72]
+path_to_act = f'{param_path}act.ckpt'
+path_to_rt1 = f'{param_path}rt1.ckpt'
+path_to_rxn = f'{param_path}rxn.ckpt'
+path_to_rt2 = f'{param_path}rt2.ckpt'
+
+# load the purchasable building block SMILES to a dictionary
+building_blocks = pd.read_csv(
+    PATH_TO_BUILDING_BLOCKS,
+    compression='gzip')['SMILES'].tolist()
+bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
+
+# load the reaction templates as a ReactionSet object
+rxn_set = ReactionSet()
+rxn_set.load(path_to_reaction_file)
+rxns = rxn_set.rxns
+
+# load the pre-trained modules
+act_net, rt1_net, rxn_net, rt2_net = load_modules_from_checkpoint(
+    path_to_act=path_to_act,
+    path_to_rt1=path_to_rt1,
+    path_to_rxn=path_to_rxn,
+    path_to_rt2=path_to_rt2,
+    featurize=featurize,
+    rxn_template=rxn_template,
+    out_dim=out_dim,
+    nbits=nbits,
+    ncpu=ncpu,
+)
+
+
+def func(smi):
+    """
+    Generates the synthetic tree for the input moleular string.
+
+    Args:
+        smi (str): Molecule (SMILES) to decode.
+
+    Returns:
+        np.ndarray or None: State of the generated synthetic tree.
+        float: The best score.
+        SyntheticTree: The generated synthetic tree.
+    """
+    emb = mol_fp(smi)
+    try: (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_decode:[34:75]
+==scripts._mp_predict_beam:[35:77]
+path_to_act = f'{param_path}act.ckpt'
+path_to_rt1 = f'{param_path}rt1.ckpt'
+path_to_rxn = f'{param_path}rxn.ckpt'
+path_to_rt2 = f'{param_path}rt2.ckpt'
+
+# load the purchasable building block SMILES to a dictionary
+building_blocks = pd.read_csv(
+    PATH_TO_BUILDING_BLOCKS,
+    compression='gzip')['SMILES'].tolist()
+bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
+
+# load the reaction templates as a ReactionSet object
+rxn_set = ReactionSet()
+rxn_set.load(path_to_reaction_file)
+rxns = rxn_set.rxns
+
+# load the pre-trained modules
+act_net, rt1_net, rxn_net, rt2_net = load_modules_from_checkpoint(
+    path_to_act=path_to_act,
+    path_to_rt1=path_to_rt1,
+    path_to_rxn=path_to_rxn,
+    path_to_rt2=path_to_rt2,
+    featurize=featurize,
+    rxn_template=rxn_template,
+    out_dim=out_dim,
+    nbits=nbits,
+    ncpu=ncpu,
+)
+
+
+def func(emb):
+    """
+    Generates the synthetic tree for the input molecular embedding.
+
+    Args:
+        emb (np.ndarray): Molecular embedding to decode.
+
+    Returns:
+        str: SMILES for the final chemical node in the tree.
+        SyntheticTree: The generated synthetic tree.
+    """ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict-beam-fullTree:[69:107]
+==scripts.predict:[76:114]
+    np.random.seed(6)
+
+    # load the purchasable building block SMILES to a dictionary
+    building_blocks = pd.read_csv(
+        PATH_TO_BUILDING_BLOCKS,
+        compression='gzip')['SMILES'].tolist()
+    bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
+
+    # load the reaction templates as a ReactionSet object
+    rxn_set = ReactionSet()
+    rxn_set.load(path_to_reaction_file)
+    rxns = rxn_set.rxns
+
+    # load the pre-trained modules
+    act_net, rt1_net, rxn_net, rt2_net = load_modules_from_checkpoint(
+        path_to_act=path_to_act,
+        path_to_rt1=path_to_rt1,
+        path_to_rxn=path_to_rxn,
+        path_to_rt2=path_to_rt2,
+        featurize=args.featurize,
+        rxn_template=args.rxn_template,
+        out_dim=args.out_dim,
+        nbits=args.nbits,
+        ncpu=args.ncpu,
+    )
+
+    def decode_one_molecule(query_smi):
+        """
+        Generate a synthetic tree from a given query SMILES.
+
+        Args:
+            query_smi (str): SMILES for molecule to decode.
+
+        Returns:
+            tree (SyntheticTree): The final synthetic tree
+            act (int): The final action (to know if the tree was "properly" terminated)
+        """
+        if args.featurize == 'fp': (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==act:[24:48]
+==rt1:[25:49]
+                        help="Output dimension.")
+    parser.add_argument("--ncpu", type=int, default=8,
+                        help="Number of cpus")
+    parser.add_argument("--batch_size", type=int, default=64,
+                        help="Batch size")
+    parser.add_argument("--epoch", type=int, default=2000,
+                        help="Maximum number of epoches.")
+    args = parser.parse_args()
+
+    if args.out_dim == 300:
+        validation_option = 'nn_accuracy_gin'
+    elif args.out_dim == 4096:
+        validation_option = 'nn_accuracy_fp_4096'
+    elif args.out_dim == 256:
+        validation_option = 'nn_accuracy_fp_256'
+    elif args.out_dim == 200:
+        validation_option = 'nn_accuracy_rdkit2d'
+    else:
+        raise ValueError
+
+    main_dir = f'/pool001/whgao/data/synth_net/{args.rxn_template}_{args.featurize}_{args.radius}_{args.nbits}_{validation_option[12:]}/'
+    batch_size = args.batch_size
+    ncpu = args.ncpu
+ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_predict:[41:79]
+==scripts._mp_predict_beam:[41:79]
+building_blocks = pd.read_csv(
+    PATH_TO_BUILDING_BLOCKS,
+    compression='gzip')['SMILES'].tolist()
+bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
+
+# load the reaction templates as a ReactionSet object
+rxn_set = ReactionSet()
+rxn_set.load(path_to_reaction_file)
+rxns = rxn_set.rxns
+
+# load the pre-trained modules
+act_net, rt1_net, rxn_net, rt2_net = load_modules_from_checkpoint(
+    path_to_act=path_to_act,
+    path_to_rt1=path_to_rt1,
+    path_to_rxn=path_to_rxn,
+    path_to_rt2=path_to_rt2,
+    featurize=featurize,
+    rxn_template=rxn_template,
+    out_dim=out_dim,
+    nbits=nbits,
+    ncpu=ncpu,
+)
+
+
+def func(smi):
+    """
+    Generates the synthetic tree for the input moleular string.
+
+    Args:
+        smi (str): Molecule (SMILES) to decode.
+
+    Returns:
+        np.ndarray or None: State of the generated synthetic tree.
+        float: The best score.
+        SyntheticTree: The generated synthetic tree.
+    """
+    emb = mol_fp(smi)
+    try: (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict-beam-fullTree:[121:143]
+==scripts.predict:[134:156]
+    print('Reading data from ', path_to_data)
+    sts = SyntheticTreeSet()
+    sts.load(path_to_data)
+    query_smis = [st.root.smiles for st in sts.sts]
+    if args.num == -1:
+        pass
+    else:
+        query_smis = query_smis[:args.num]
+
+    output_smis = []
+    similaritys = []
+    trees = []
+    NUM_FINISH = 0
+    NUM_UNFINISH = 0
+
+    print('Start to decode!')
+    for smi in tqdm(query_smis):
+
+        try:
+            tree, action = decode_one_molecule(smi)
+        except Exception as e:
+            print(e) (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_decode:[40:75]
+==scripts._mp_predict:[41:77]
+building_blocks = pd.read_csv(
+    PATH_TO_BUILDING_BLOCKS,
+    compression='gzip')['SMILES'].tolist()
+bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
+
+# load the reaction templates as a ReactionSet object
+rxn_set = ReactionSet()
+rxn_set.load(path_to_reaction_file)
+rxns = rxn_set.rxns
+
+# load the pre-trained modules
+act_net, rt1_net, rxn_net, rt2_net = load_modules_from_checkpoint(
+    path_to_act=path_to_act,
+    path_to_rt1=path_to_rt1,
+    path_to_rxn=path_to_rxn,
+    path_to_rt2=path_to_rt2,
+    featurize=featurize,
+    rxn_template=rxn_template,
+    out_dim=out_dim,
+    nbits=nbits,
+    ncpu=ncpu,
+)
+
+
+def func(smi):
+    """
+    Generates the synthetic tree for the input SMILES.
+
+    Args:
+        smi (str): Molecular to reconstruct.
+
+    Returns:
+        str: Final product SMILES.
+        float: Score of the best final product.
+        SyntheticTree: The generated synthetic tree.
+    """ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==act:[11:30]
+==rxn:[11:30]
+if __name__ == '__main__':
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--featurize", type=str, default='fp',
+                        help="Choose from ['fp', 'gin']")
+    parser.add_argument("-r", "--rxn_template", type=str, default='hb',
+                        help="Choose from ['hb', 'pis']")
+    parser.add_argument("--radius", type=int, default=2,
+                        help="Radius for Morgan fingerprint.")
+    parser.add_argument("--nbits", type=int, default=4096,
+                        help="Number of Bits for Morgan fingerprint.")
+    parser.add_argument("--out_dim", type=int, default=300,
+                        help="Output dimension.")
+    parser.add_argument("--ncpu", type=int, default=8,
+                        help="Number of cpus")
+    parser.add_argument("--batch_size", type=int, default=64,
+                        help="Batch size")
+    parser.add_argument("--epoch", type=int, default=2000, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict-beam-reactantOnly:[161:179]
+==scripts.predict:[157:175]
+            tree = None
+
+        if action != 3:
+            NUM_UNFINISH += 1
+            output_smis.append(None)
+            similaritys.append(None)
+            trees.append(None)
+        else:
+            NUM_FINISH += 1
+            output_smis.append(tree.root.smiles)
+            ms = [Chem.MolFromSmiles(sm) for sm in [smi, tree.root.smiles]]
+            fps = [Chem.RDKFingerprint(x) for x in ms]
+            similaritys.append(
+                DataStructs.FingerprintSimilarity(
+                    fps[0], fps[1]))
+            trees.append(tree)
+
+    print('Saving ......') (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_predict:[44:77]
+==test_Predict:[56:77]
+bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
+
+# load the reaction templates as a ReactionSet object
+rxn_set = ReactionSet()
+rxn_set.load(path_to_reaction_file)
+rxns = rxn_set.rxns
+
+# load the pre-trained modules
+act_net, rt1_net, rxn_net, rt2_net = load_modules_from_checkpoint(
+    path_to_act=path_to_act,
+    path_to_rt1=path_to_rt1,
+    path_to_rxn=path_to_rxn,
+    path_to_rt2=path_to_rt2,
+    featurize=featurize,
+    rxn_template=rxn_template,
+    out_dim=out_dim,
+    nbits=nbits,
+    ncpu=ncpu,
+)
+
+
+def func(smi):
+    """
+    Generates the synthetic tree for the input SMILES.
+
+    Args:
+        smi (str): Molecular to reconstruct.
+
+    Returns:
+        str: Final product SMILES.
+        float: Score of the best final product.
+        SyntheticTree: The generated synthetic tree.
+    """ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[32:49]
+==rxn:[35:52]
+    args = parser.parse_args()
+
+    if args.out_dim == 300:
+        validation_option = 'nn_accuracy_gin'
+    elif args.out_dim == 4096:
+        validation_option = 'nn_accuracy_fp_4096'
+    elif args.out_dim == 256:
+        validation_option = 'nn_accuracy_fp_256'
+    elif args.out_dim == 200:
+        validation_option = 'nn_accuracy_rdkit2d'
+    else:
+        raise ValueError
+
+    main_dir = f'/pool001/whgao/data/synth_net/{args.rxn_template}_{args.featurize}_{args.radius}_{args.nbits}_{validation_option[12:]}/'
+    batch_size = args.batch_size
+    ncpu = args.ncpu
+ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_predict_multireactant:[72:85]
+==test_Predict:[89:102]
+        smi, similarity, tree, action = synthetic_tree_decoder_multireactant(
+            z_target=emb,
+            building_blocks=building_blocks,
+            bb_dict=bb_dict,
+            reaction_templates=rxns,
+            mol_embedder=mol_fp,
+            action_net=act_net,
+            reactant1_net=rt1_net,
+            rxn_net=rxn_net,
+            reactant2_net=rt2_net,
+            bb_emb=bb_emb,
+            rxn_template=rxn_template,
+            n_bits=nbits, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.compute_embedding:[37:56]
+==scripts.compute_embedding_mp:[10:32]
+if __name__ == '__main__':
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--feature", type=str, default="gin",
+                        help="Objective function to optimize")
+    parser.add_argument("--ncpu", type=int, default=16,
+                        help="Number of cpus")
+    args = parser.parse_args()
+
+    # define the path to which data will be saved
+    path = '/pool001/whgao/data/synth_net/st_hb/'
+    # path = './tests/data/'  ## for debugging
+
+    # load the building blocks
+    data = pd.read_csv(
+        path + 'enamine_us_matched.csv.gz',
+        compression='gzip')['SMILES'].tolist()
+    # data = pd.read_csv(path + 'building_blocks_matched.csv.gz',
+    # compression='gzip')['SMILES'].tolist()  ## for debugging
+    print('Total data: ', len(data))
+ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_beam_utils:[247:283]
+==syn_net.utils.predict_utils:[516:546]
+        if mol_product is None or Chem.MolFromSmiles(mol_product) is None:
+            if len(tree.get_state()) == 1:
+                act = 3
+                break
+            else:
+                break
+
+        # Update
+        tree.update(act, int(rxn_id), mol1, mol2, mol_product)
+        mol_recent = mol_product
+
+    if act != 3:
+        tree = tree
+    else:
+        tree.update(act, None, None, None, None)
+
+    return tree, act
+
+
+def set_embedding_fullbeam(z_target, state, _mol_embedding, nbits):
+    """
+    Computes embeddings for all molecules in input state.
+
+    Args:
+        z_target (np.ndarray): Embedding for the target molecule.
+        state (list): Contains molecules in the current state, if not the
+            initial state.
+        _mol_embedding (Callable): Function to use for computing the embeddings
+            of the first and second molecules in the state (e.g. Morgan fingerprint).
+        nbits (int): Number of bits to use for the embedding.
+
+    Returns:
+        np.ndarray: Embedding consisting of the concatenation of the target
+            molecule with the current molecules (if available) in the input
+            state.
+    """ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_decode:[40:56]
+==scripts.predict-beam-reactantOnly:[83:99]
+    building_blocks = pd.read_csv(
+        PATH_TO_BUILDING_BLOCKS,
+        compression='gzip')['SMILES'].tolist()
+    bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
+
+    # load the reaction templates as a ReactionSet object
+    rxn_set = ReactionSet()
+    rxn_set.load(path_to_reaction_file)
+    rxns = rxn_set.rxns
+
+    # load the pre-trained modules
+    act_net, rt1_net, rxn_net, rt2_net = load_modules_from_checkpoint(
+        path_to_act=path_to_act,
+        path_to_rt1=path_to_rt1,
+        path_to_rxn=path_to_rxn,
+        path_to_rt2=path_to_rt2, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_predict_beam:[41:57]
+==scripts.predict:[79:95]
+    building_blocks = pd.read_csv(
+        PATH_TO_BUILDING_BLOCKS,
+        compression='gzip')['SMILES'].tolist()
+    bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
+
+    # load the reaction templates as a ReactionSet object
+    rxn_set = ReactionSet()
+    rxn_set.load(path_to_reaction_file)
+    rxns = rxn_set.rxns
+
+    # load the pre-trained modules
+    act_net, rt1_net, rxn_net, rt2_net = load_modules_from_checkpoint(
+        path_to_act=path_to_act,
+        path_to_rt1=path_to_rt1,
+        path_to_rxn=path_to_rxn,
+        path_to_rt2=path_to_rt2, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_predict:[41:57]
+==scripts.predict-beam-fullTree:[72:88]
+building_blocks = pd.read_csv(
+    PATH_TO_BUILDING_BLOCKS,
+    compression='gzip')['SMILES'].tolist()
+bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
+
+# load the reaction templates as a ReactionSet object
+rxn_set = ReactionSet()
+rxn_set.load(path_to_reaction_file)
+rxns = rxn_set.rxns
+
+# load the pre-trained modules
+act_net, rt1_net, rxn_net, rt2_net = load_modules_from_checkpoint(
+    path_to_act=path_to_act,
+    path_to_rt1=path_to_rt1,
+    path_to_rxn=path_to_rxn,
+    path_to_rt2=path_to_rt2, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_decode:[76:87]
+==scripts._mp_predict_beam:[78:89]
+    try:
+        tree, action = synthetic_tree_decoder(z_target=emb,
+                                              building_blocks=building_blocks,
+                                              bb_dict=bb_dict,
+                                              reaction_templates=rxns,
+                                              mol_embedder=mol_embedder,
+                                              action_net=act_net,
+                                              reactant1_net=rt1_net,
+                                              rxn_net=rxn_net,
+                                              reactant2_net=rt2_net,
+                                              bb_emb=bb_emb, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict-beam-fullTree:[41:56]
+==scripts.predict:[38:53]
+    parser.add_argument("-n", "--num", type=int, default=-1,
+                        help="Number of molecules to decode.")
+    parser.add_argument("-d", "--data", type=str, default='test',
+                        help="Choose from ['train', 'valid', 'test']")
+    args = parser.parse_args()
+
+    # define model to use for molecular embedding
+    readout = AvgPooling()
+    model_type = 'gin_supervised_contextpred'
+    device = 'cuda:0'
+    mol_embedder = load_pretrained(model_type).to(device)
+    mol_embedder.eval()
+
+    # load the purchasable building block embeddings
+    bb_emb = np.load( (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict_mp:[10:22]
+==scripts.predict_multireactant_mp:[10:22]
+if __name__ == '__main__':
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--featurize", type=str, default='fp',
+                        help="Choose from ['fp', 'gin']")
+    parser.add_argument("-r", "--rxn_template", type=str, default='hb',
+                        help="Choose from ['hb', 'pis']")
+    parser.add_argument("--ncpu", type=int, default=16,
+                        help="Number of cpus")
+    parser.add_argument("-n", "--num", type=int, default=-1,
+                        help="Number of molecules to predict.") (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==prepare_data:[8:20]
+==rt2:[12:24]
+if __name__ == '__main__':
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--featurize", type=str, default='fp',
+                        help="Choose from ['fp', 'gin']")
+    parser.add_argument("-r", "--rxn_template", type=str, default='hb',
+                        help="Choose from ['hb', 'pis']")
+    parser.add_argument("--radius", type=int, default=2,
+                        help="Radius for Morgan fingerprint.")
+    parser.add_argument("--nbits", type=int, default=4096,
+                        help="Number of Bits for Morgan fingerprint.") (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==act:[65:76]
+==rxn:[88:99]
+                          num_layers=5,
+                          dropout=0.5,
+                          num_dropout_layers=1,
+                          task='classification',
+                          loss='cross_entropy',
+                          valid_loss='accuracy',
+                          optimizer='adam',
+                          learning_rate=1e-4,
+                          val_freq=10,
+                          ncpu=ncpu)
+        elif args.featurize == 'gin': (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[32:45]
+==scripts.mrr:[37:50]
+    args = parser.parse_args()
+
+    if args.out_dim == 300:
+        validation_option = 'nn_accuracy_gin'
+    elif args.out_dim == 4096:
+        validation_option = 'nn_accuracy_fp_4096'
+    elif args.out_dim == 256:
+        validation_option = 'nn_accuracy_fp_256'
+    elif args.out_dim == 200:
+        validation_option = 'nn_accuracy_rdkit2d'
+    else:
+        raise ValueError
+ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[86:97]
+==rt2:[116:128]
+                  num_layers=5,
+                  dropout=0.5,
+                  num_dropout_layers=1,
+                  task='regression',
+                  loss='mse',
+                  valid_loss=validation_option,
+                  optimizer='adam',
+                  learning_rate=1e-4,
+                  val_freq=10,
+                  ncpu=ncpu)
+    tb_logger = pl_loggers.TensorBoardLogger( (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[72:83]
+==rt2:[87:98]
+                  num_layers=5,
+                  dropout=0.5,
+                  num_dropout_layers=1,
+                  task='regression',
+                  loss='mse',
+                  valid_loss=validation_option,
+                  optimizer='adam',
+                  learning_rate=1e-4,
+                  val_freq=10,
+                  ncpu=ncpu)
+    elif args.featurize == 'gin': (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[57:69]
+==rt2:[57:69]
+    X = torch.Tensor(X.A)
+    y = torch.Tensor(y.A)
+    _idx = np.random.choice(
+        list(
+            range(
+                X.shape[0])), size=int(
+            X.shape[0] / 10), replace=False)
+    valid_data_iter = load_array(
+        (X[_idx], y[_idx]), batch_size, ncpu=ncpu, is_train=False)
+
+    pl.seed_everything(0)
+    if args.featurize == 'fp': (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[12:24]
+==rxn:[11:23]
+if __name__ == '__main__':
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--featurize", type=str, default='fp',
+                        help="Choose from ['fp', 'gin']")
+    parser.add_argument("-r", "--rxn_template", type=str, default='hb',
+                        help="Choose from ['hb', 'pis']")
+    parser.add_argument("--radius", type=int, default=2,
+                        help="Radius for Morgan fingerprint.")
+    parser.add_argument("--nbits", type=int, default=4096,
+                        help="Number of Bits for Morgan fingerprint.") (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==filter_unmatch_tests:[11:25]
+==syn_net.data_generation.filter_unmatch:[10:24]
+    BB_PATH = '/home/whgao/scGen/synth_net/data/enamine_us.csv.gz'
+    R_SET = ReactionSet()
+    R_SET.load(R_PATH)
+    MATCHED_MOLS = set()
+    for r in tqdm(R_SET.rxns):
+        for a_list in r.available_reactants:
+            MATCHED_MOLS = MATCHED_MOLS | set(a_list)
+
+    ORIGINAL_MOLS = pd.read_csv(BB_PATH, compression='gzip')['SMILES'].tolist()
+
+    print('Total building blocks number:', len(ORIGINAL_MOLS))
+    print('Matched building blocks number:', len(MATCHED_MOLS))
+
+    df = pd.DataFrame({'SMILES': list(MATCHED_MOLS)}) (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict:[183:195]
+==scripts.predict_mp:[56:68]
+    df.to_csv(
+        save_path +
+        'decode_result_' +
+        args.data +
+        '.csv.gz',
+        compression='gzip',
+        index=False)
+
+    synthetic_tree_set = SyntheticTreeSet(sts=trees)
+    synthetic_tree_set.save(save_path + 'decoded_st_' + args.data + '.json.gz')
+
+    print('Finish!') (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==act:[79:90]
+==rxn:[88:98]
+                          num_layers=5,
+                          dropout=0.5,
+                          num_dropout_layers=1,
+                          task='classification',
+                          loss='cross_entropy',
+                          valid_loss='accuracy',
+                          optimizer='adam',
+                          learning_rate=1e-4,
+                          val_freq=10,
+                          ncpu=ncpu) (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==act:[65:75]
+==rxn:[74:84]
+                          num_layers=5,
+                          dropout=0.5,
+                          num_dropout_layers=1,
+                          task='classification',
+                          loss='cross_entropy',
+                          valid_loss='accuracy',
+                          optimizer='adam',
+                          learning_rate=1e-4,
+                          val_freq=10,
+                          ncpu=ncpu) (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[20:30]
+==scripts.mrr:[22:32]
+    parser.add_argument("--radius", type=int, default=2,
+                        help="Radius for Morgan fingerprint.")
+    parser.add_argument("--nbits", type=int, default=4096,
+                        help="Number of Bits for Morgan fingerprint.")
+    parser.add_argument("--out_dim", type=int, default=256,
+                        help="Output dimension.")
+    parser.add_argument("--ncpu", type=int, default=8,
+                        help="Number of cpus")
+    parser.add_argument("--batch_size", type=int, default=64,
+                        help="Batch size") (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[98:109]
+==rt2:[129:141]
+    )
+
+    trainer = pl.Trainer(
+        gpus=[0],
+        max_epochs=args.epoch,
+        progress_bar_refresh_rate=20,
+        logger=tb_logger)
+    t = time.time()
+    trainer.fit(mlp, train_data_iter, valid_data_iter)
+    print(time.time() - t, 's')
+    print('Finish!') (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[86:96]
+==rt2:[87:97]
+                      num_layers=5,
+                      dropout=0.5,
+                      num_dropout_layers=1,
+                      task='regression',
+                      loss='mse',
+                      valid_loss=validation_option,
+                      optimizer='adam',
+                      learning_rate=1e-4,
+                      val_freq=10,
+                      ncpu=ncpu) (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[72:82]
+==rt2:[73:83]
+                  num_layers=5,
+                  dropout=0.5,
+                  num_dropout_layers=1,
+                  task='regression',
+                  loss='mse',
+                  valid_loss=validation_option,
+                  optimizer='adam',
+                  learning_rate=1e-4,
+                  val_freq=10,
+                  ncpu=ncpu) (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.mrr:[87:97]
+==syn_net.utils.predict_utils:[622:633]
+                                           hidden_dim=1200,
+                                           num_layers=5,
+                                           dropout=0.5,
+                                           num_dropout_layers=1,
+                                           task='regression',
+                                           loss='mse',
+                                           valid_loss='mse',
+                                           optimizer='adam',
+                                           learning_rate=1e-4,
+                                           ncpu=ncpu)
+ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==act:[77:87]
+==syn_net.utils.predict_utils:[697:707]
+                  output_dim=4,
+                  hidden_dim=1000,
+                  num_layers=5,
+                  dropout=0.5,
+                  num_dropout_layers=1,
+                  task='classification',
+                  loss='cross_entropy',
+                  valid_loss='accuracy',
+                  optimizer='adam',
+                  learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==act:[63:73]
+==syn_net.utils.predict_utils:[607:617]
+                                           output_dim=4,
+                                           hidden_dim=1000,
+                                           num_layers=5,
+                                           dropout=0.5,
+                                           num_dropout_layers=1,
+                                           task='classification',
+                                           loss='cross_entropy',
+                                           valid_loss='accuracy',
+                                           optimizer='adam',
+                                           learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[101:111]
+==syn_net.utils.predict_utils:[729:739]
+                          output_dim=91,
+                          hidden_dim=3000,
+                          num_layers=5,
+                          dropout=0.5,
+                          num_dropout_layers=1,
+                          task='classification',
+                          loss='cross_entropy',
+                          valid_loss='accuracy',
+                          optimizer='adam',
+                          learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[72:82]
+==syn_net.utils.predict_utils:[637:647]
+                                               output_dim=91,
+                                               hidden_dim=3000,
+                                               num_layers=5,
+                                               dropout=0.5,
+                                               num_dropout_layers=1,
+                                               task='classification',
+                                               loss='cross_entropy',
+                                               valid_loss='accuracy',
+                                               optimizer='adam',
+                                               learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_predict_beam:[80:89]
+==scripts.predict-beam-reactantOnly:[122:131]
+                                              building_blocks=building_blocks,
+                                              bb_dict=bb_dict,
+                                              reaction_templates=rxns,
+                                              mol_embedder=mol_embedder,
+                                              action_net=act_net,
+                                              reactant1_net=rt1_net,
+                                              rxn_net=rxn_net,
+                                              reactant2_net=rt2_net,
+                                              bb_emb=bb_emb, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_decode:[16:33]
+==scripts._mp_predict_beam:[17:34]
+ncpu = 16
+
+# define model to use for molecular embedding
+model_type = 'gin_supervised_contextpred'
+device = 'cpu'
+mol_embedder = load_pretrained(model_type).to(device)
+mol_embedder.eval()
+
+# load the purchasable building block embeddings
+bb_emb = np.load(
+    '/pool001/whgao/data/synth_net/st_hb/enamine_us_emb_fp_256.npy')
+
+# define path to the reaction templates and purchasable building blocks
+path_to_reaction_file = f'/pool001/whgao/data/synth_net/st_{rxn_template}/reactions_{rxn_template}.json.gz'
+PATH_TO_BUILDING_BLOCKS = f'/pool001/whgao/data/synth_net/st_{rxn_template}/enamine_us_matched.csv.gz'
+
+# define paths to pretrained modules (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict-beam-fullTree:[75:88]
+==test_Predict:[56:69]
+    bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
+
+    # load the reaction templates as a ReactionSet object
+    rxn_set = ReactionSet()
+    rxn_set.load(path_to_reaction_file)
+    rxns = rxn_set.rxns
+
+    # load the pre-trained modules
+    act_net, rt1_net, rxn_net, rt2_net = load_modules_from_checkpoint(
+        path_to_act=path_to_act,
+        path_to_rt1=path_to_rt1,
+        path_to_rxn=path_to_rxn,
+        path_to_rt2=path_to_rt2, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_predict:[83:101]
+==scripts._mp_predict_beam:[93:103]
+    except Exception as e:
+        print(e)
+        action = -1
+
+    # tree, action = synthetic_tree_decoder(emb, building_blocks, bb_dict, rxns, mol_embedder, act_net, rt1_net, rxn_net, rt2_net, max_step=15)
+
+    # import ipdb; ipdb.set_trace(context=9)
+    # tree._print()
+    # print(action)
+    # print(np.max(oracle(tree.get_state())))
+    # print()
+
+    if action != 3:
+        return None, 0, None
+    else:
+        scores = tanimoto_similarity(emb, tree.get_state())
+        max_score_idx = np.where(scores == np.max(scores))[0][0]
+        return tree.get_state()[max_score_idx], np.max(scores), tree (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==act:[92:102]
+==rt2:[131:141]
+    trainer = pl.Trainer(
+        gpus=[0],
+        max_epochs=args.epoch,
+        progress_bar_refresh_rate=20,
+        logger=tb_logger)
+    t = time.time()
+    trainer.fit(mlp, train_data_iter, valid_data_iter)
+    print(time.time() - t, 's')
+
+    print('Finish!') (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[100:109]
+==rxn:[163:175]
+    trainer = pl.Trainer(
+        gpus=[0],
+        max_epochs=args.epoch,
+        progress_bar_refresh_rate=20,
+        logger=tb_logger)
+    t = time.time()
+
+    trainer.fit(mlp, train_data_iter, valid_data_iter)
+
+    print(time.time() - t, 's')
+
+    print('Finish!') (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.mrr:[88:97]
+==syn_net.utils.predict_utils:[653:663]
+                                               num_layers=5,
+                                               dropout=0.5,
+                                               num_dropout_layers=1,
+                                               task='regression',
+                                               loss='mse',
+                                               valid_loss='mse',
+                                               optimizer='adam',
+                                               learning_rate=1e-4,
+                                               ncpu=ncpu)
+ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[73:82]
+==syn_net.utils.predict_utils:[764:773]
+                          hidden_dim=3000,
+                          num_layers=5,
+                          dropout=0.5,
+                          num_dropout_layers=1,
+                          task='classification',
+                          loss='cross_entropy',
+                          valid_loss='accuracy',
+                          optimizer='adam',
+                          learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[116:125]
+==syn_net.utils.predict_utils:[638:647]
+                          hidden_dim=3000,
+                          num_layers=5,
+                          dropout=0.5,
+                          num_dropout_layers=1,
+                          task='classification',
+                          loss='cross_entropy',
+                          valid_loss='accuracy',
+                          optimizer='adam',
+                          learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.sketch-synthetic-trees:[60:72]
+==syn_net.utils.prep_utils:[128:140]
+        if action == 2:
+            most_recent_mol = r.parent
+            other_root_mol = None
+
+        elif action == 1:
+            most_recent_mol = r.parent
+
+        elif action == 0:
+            other_root_mol = most_recent_mol
+            most_recent_mol = r.parent
+
+        states.append(state) (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict_mp:[29:38]
+==scripts.predict_multireactant_mp:[33:41]
+        print('Reading data from ', path_to_data)
+        sts = SyntheticTreeSet()
+        sts.load(path_to_data)
+        smis_query = [st.root.smiles for st in sts.sts]
+        if args.num == -1:
+            pass
+        else:
+            smis_query = smis_query[:args.num] (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.mrr:[89:97]
+==syn_net.utils.predict_utils:[567:576]
+                                       dropout=0.5,
+                                       num_dropout_layers=1,
+                                       task='regression',
+                                       loss='mse',
+                                       valid_loss='mse',
+                                       optimizer='adam',
+                                       learning_rate=1e-4,
+                                       ncpu=ncpu) (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==act:[79:87]
+==syn_net.utils.predict_utils:[765:773]
+                  num_layers=5,
+                  dropout=0.5,
+                  num_dropout_layers=1,
+                  task='classification',
+                  loss='cross_entropy',
+                  valid_loss='accuracy',
+                  optimizer='adam',
+                  learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==act:[65:73]
+==syn_net.utils.predict_utils:[731:739]
+                  num_layers=5,
+                  dropout=0.5,
+                  num_dropout_layers=1,
+                  task='classification',
+                  loss='cross_entropy',
+                  valid_loss='accuracy',
+                  optimizer='adam',
+                  learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[117:125]
+==syn_net.utils.predict_utils:[699:707]
+                          num_layers=5,
+                          dropout=0.5,
+                          num_dropout_layers=1,
+                          task='classification',
+                          loss='cross_entropy',
+                          valid_loss='accuracy',
+                          optimizer='adam',
+                          learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[103:111]
+==syn_net.utils.predict_utils:[669:677]
+                                               num_layers=5,
+                                               dropout=0.5,
+                                               num_dropout_layers=1,
+                                               task='classification',
+                                               loss='cross_entropy',
+                                               valid_loss='accuracy',
+                                               optimizer='adam',
+                                               learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[150:158]
+==syn_net.utils.predict_utils:[639:647]
+                num_layers=5,
+                dropout=0.5,
+                num_dropout_layers=1,
+                task='classification',
+                loss='cross_entropy',
+                valid_loss='accuracy',
+                optimizer='adam',
+                learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[88:96]
+==syn_net.utils.predict_utils:[609:617]
+                                           num_layers=5,
+                                           dropout=0.5,
+                                           num_dropout_layers=1,
+                                           task='classification',
+                                           loss='cross_entropy',
+                                           valid_loss='accuracy',
+                                           optimizer='adam',
+                                           learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[74:82]
+==syn_net.utils.predict_utils:[580:588]
+                                           num_layers=5,
+                                           dropout=0.5,
+                                           num_dropout_layers=1,
+                                           task='classification',
+                                           loss='cross_entropy',
+                                           valid_loss='accuracy',
+                                           optimizer='adam',
+                                           learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_beam_utils:[252:283]
+==syn_net.utils.predict_utils:[997:1049]
+            break
+
+        # Update
+        tree.update(act, int(rxn_id), mol1, mol2, mol_product)
+        mol_recent = mol_product
+
+    if act != 3:
+        tree = tree
+    else:
+        tree.update(act, None, None, None, None)
+
+    return tree, act
+
+
+def synthetic_tree_decoder_multireactant(z_target,
+                                         building_blocks,
+                                         bb_dict,
+                                         reaction_templates,
+                                         mol_embedder,
+                                         action_net,
+                                         reactant1_net,
+                                         rxn_net,
+                                         reactant2_net,
+                                         bb_emb,
+                                         rxn_template,
+                                         n_bits,
+                                         beam_width: int = 3,
+                                         max_step: int = 15):
+    """
+    Computes the synthetic tree given an input molecule embedding, using the
+    Action, Reaction, Reactant1, and Reactant2 networks and a greedy search.
+
+    Args:
+        z_target (np.ndarray): Embedding for the target molecule
+        building_blocks (list of str): Contains available building blocks
+        bb_dict (dict): Building block dictionary
+        reaction_templates (list of Reactions): Contains reaction templates
+        mol_embedder (dgllife.model.gnn.gin.GIN): GNN to use for obtaining molecular embeddings
+        action_net (synth_net.models.mlp.MLP): The action network
+        reactant1_net (synth_net.models.mlp.MLP): The reactant1 network
+        rxn_net (synth_net.models.mlp.MLP): The reaction network
+        reactant2_net (synth_net.models.mlp.MLP): The reactant2 network
+        bb_emb (list): Contains purchasable building block embeddings.
+        rxn_template (str): Specifies the set of reaction templates to use.
+        n_bits (int): Length of fingerprint.
+        beam_width (int): The beam width to use for Reactant 1 search. Defaults to 3.
+        max_step (int, optional): Maximum number of steps to include in the synthetic tree
+
+    Returns:
+        tree (SyntheticTree): The final synthetic tree
+        act (int): The final action (to know if the tree was "properly" terminated)
+    """ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_beam_utils:[189:199]
+==syn_net.utils.predict_utils:[955:965]
+            if act == 2:
+                # Merge
+                temp = set(state) - set([mol1])
+                mol2 = temp.pop()
+            else:
+                # Add or Expand
+                if rxn_template == 'hb':
+                    z_mol2 = reactant2_net(
+                        torch.Tensor(
+                            np.concatenate( (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_decode:[82:89]
+==scripts._mp_predict_multireactant:[78:85]
+                                              action_net=act_net,
+                                              reactant1_net=rt1_net,
+                                              rxn_net=rxn_net,
+                                              reactant2_net=rt2_net,
+                                              bb_emb=bb_emb,
+                                              rxn_template=rxn_template,
+                                              n_bits=nbits, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_predict_beam:[92:100]
+==scripts._mp_predict_multireactant:[86:94]
+            max_step=15)
+    except Exception as e:
+        print(e)
+        action = -1
+
+    if action != 3:
+        return None, 0, None
+    else: (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_decode:[87:94]
+==scripts._mp_predict_beam:[90:98]
+                                              rxn_template=rxn_template,
+                                              n_bits=nbits,
+                                              max_step=15)
+    except Exception as e:
+        print(e)
+        action = -1
+
+    if action != 3: (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict-beam-fullTree:[32:39]
+==scripts.predict:[31:38]
+                        help="Number of Bits for Morgan fingerprint.")
+    parser.add_argument("--out_dim", type=int, default=300,
+                        help="Output dimension.")
+    parser.add_argument("--ncpu", type=int, default=16,
+                        help="Number of cpus")
+    parser.add_argument("--batch_size", type=int, default=64,
+                        help="Batch size") (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==act:[11:19]
+==scripts.mrr:[12:20]
+if __name__ == '__main__':
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--featurize", type=str, default='fp',
+                        help="Choose from ['fp', 'gin']")
+    parser.add_argument("-r", "--rxn_template", type=str, default='hb',
+                        help="Choose from ['hb', 'pis']") (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt2:[12:20]
+==scripts.predict:[16:24]
+if __name__ == '__main__':
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--featurize", type=str, default='fp',
+                        help="Choose from ['fp', 'gin']")
+    parser.add_argument("-r", "--rxn_template", type=str, default='hb',
+                        help="Choose from ['hb', 'pis']") (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==prepare_data:[8:16]
+==scripts.predict_multireactant_mp:[10:18]
+if __name__ == '__main__':
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--featurize", type=str, default='fp',
+                        help="Choose from ['fp', 'gin']")
+    parser.add_argument("-r", "--rxn_template", type=str, default='hb',
+                        help="Choose from ['hb', 'pis']") (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[11:19]
+==scripts.predict-beam-fullTree:[19:27]
+if __name__ == '__main__':
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--featurize", type=str, default='fp',
+                        help="Choose from ['fp', 'gin']")
+    parser.add_argument("-r", "--rxn_template", type=str, default='hb',
+                        help="Choose from ['hb', 'pis']") (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[70:77]
+==scripts.mrr:[86:93]
+                  output_dim=args.out_dim,
+                  hidden_dim=1200,
+                  num_layers=5,
+                  dropout=0.5,
+                  num_dropout_layers=1,
+                  task='regression',
+                  loss='mse', (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[57:64]
+==scripts.mrr:[73:80]
+    X = torch.Tensor(X.A)
+    y = torch.Tensor(y.A)
+    _idx = np.random.choice(
+        list(
+            range(
+                X.shape[0])), size=int(
+            X.shape[0] / 10), replace=False) (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[12:20]
+==scripts.predict_mp:[10:18]
+if __name__ == '__main__':
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--featurize", type=str, default='fp',
+                        help="Choose from ['fp', 'gin']")
+    parser.add_argument("-r", "--rxn_template", type=str, default='hb',
+                        help="Choose from ['hb', 'pis']") (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[75:82]
+==syn_net.utils.predict_utils:[553:560]
+                          dropout=0.5,
+                          num_dropout_layers=1,
+                          task='classification',
+                          loss='cross_entropy',
+                          valid_loss='accuracy',
+                          optimizer='adam',
+                          learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_beam_utils:[208:215]
+==syn_net.utils.predict_utils:[981:988]
+                                    axis=1)))
+                    z_mol2 = z_mol2.detach().numpy()
+                    available = available_list[rxn_id]
+                    available = [bb_dict[available[i]]
+                                 for i in range(len(available))]
+                    temp_emb = bb_emb[available]
+                    available_tree = BallTree(temp_emb, metric=cosine_distance) (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.data_generation.make_dataset:[35:43]
+==test_DataPreparation:[93:101]
+        if action == 3:
+            trees.append(tree)
+            NUM_FINISH += 1
+        elif action == -1:
+            NUM_ERROR += 1
+        else:
+            NUM_UNFINISH += 1
+ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.evaluate_batch:[8:17]
+==scripts.evaluate_batch_recovery:[10:19]
+kl_divergence = Evaluator(name='KL_Divergence')
+fcd_distance = Evaluator(name='FCD_Distance')
+novelty = Evaluator(name='Novelty')
+validity = Evaluator(name='Validity')
+uniqueness = Evaluator(name='Uniqueness')
+
+if __name__ == '__main__':
+    # load the final root molecules generated by a prediction run using a
+    # pre-trained model (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_predict:[83:98]
+==scripts._mp_predict_multireactant:[87:94]
+    except Exception as e:
+        print(e)
+        action = -1
+
+    if action != 3:
+        return None, 0, None
+    else: (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_predict:[18:28]
+==scripts._mp_predict_beam:[20:30]
+model_type = 'gin_supervised_contextpred'
+device = 'cpu'
+mol_embedder = load_pretrained(model_type).to(device)
+mol_embedder.eval()
+
+# load the purchasable building block embeddings
+bb_emb = np.load(
+    '/pool001/whgao/data/synth_net/st_hb/enamine_us_emb_fp_256.npy')
+
+# define path to the reaction templates and purchasable building blocks (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[19:25]
+==scripts.predict:[28:34]
+    parser.add_argument("--radius", type=int, default=2,
+                        help="Radius for Morgan fingerprint.")
+    parser.add_argument("--nbits", type=int, default=4096,
+                        help="Number of Bits for Morgan fingerprint.")
+    parser.add_argument("--out_dim", type=int, default=300,
+                        help="Output dimension.") (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt2:[93:99]
+==rxn:[94:100]
+                          optimizer='adam',
+                          learning_rate=1e-4,
+                          val_freq=10,
+                          ncpu=ncpu)
+        elif args.featurize == 'gin':
+            if args.rxn_template == 'hb': (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==act:[71:77]
+==rt1:[78:84]
+                  optimizer='adam',
+                  learning_rate=1e-4,
+                  val_freq=10,
+                  ncpu=ncpu)
+    elif args.featurize == 'gin':
+        mlp = MLP(input_dim=int(2 * args.nbits + args.out_dim), (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[25:31]
+==rxn:[24:30]
+                        help="Output dimension.")
+    parser.add_argument("--ncpu", type=int, default=8,
+                        help="Number of cpus")
+    parser.add_argument("--batch_size", type=int, default=64,
+                        help="Batch size")
+    parser.add_argument("--epoch", type=int, default=2000, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_utils:[563:569]
+==test_Training:[111:117]
+                                           input_dim=int(3 * nbits),
+                                           output_dim=out_dim,
+                                           hidden_dim=100,
+                                           num_layers=3,
+                                           dropout=0.5,
+                                           num_dropout_layers=1, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_utils:[549:555]
+==test_Training:[54:60]
+            input_dim=int(3 * nbits),
+            output_dim=4,
+            hidden_dim=100,
+            num_layers=3,
+            dropout=0.5,
+            num_dropout_layers=1, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt2:[115:121]
+==syn_net.utils.predict_utils:[780:786]
+                      hidden_dim=3000,
+                      num_layers=5,
+                      dropout=0.5,
+                      num_dropout_layers=1,
+                      task='regression',
+                      loss='mse', (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt2:[101:107]
+==syn_net.utils.predict_utils:[746:752]
+                hidden_dim=3000,
+                num_layers=5,
+                dropout=0.5,
+                num_dropout_layers=1,
+                task='regression',
+                loss='mse', (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt2:[86:92]
+==syn_net.utils.predict_utils:[682:688]
+                      hidden_dim=3000,
+                      num_layers=5,
+                      dropout=0.5,
+                      num_dropout_layers=1,
+                      task='regression',
+                      loss='mse', (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt2:[72:78]
+==syn_net.utils.predict_utils:[652:658]
+                      hidden_dim=3000,
+                      num_layers=5,
+                      dropout=0.5,
+                      num_dropout_layers=1,
+                      task='regression',
+                      loss='mse', (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[86:96]
+==syn_net.utils.predict_utils:[667:677]
+                          output_dim=4700,
+                          hidden_dim=4500,
+                          num_layers=5,
+                          dropout=0.5,
+                          num_dropout_layers=1,
+                          task='classification',
+                          loss='cross_entropy',
+                          valid_loss='accuracy',
+                          optimizer='adam',
+                          learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[85:91]
+==syn_net.utils.predict_utils:[712:718]
+                                           hidden_dim=1200,
+                                           num_layers=5,
+                                           dropout=0.5,
+                                           num_dropout_layers=1,
+                                           task='regression',
+                                           loss='mse', (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[71:77]
+==syn_net.utils.predict_utils:[622:628]
+                                           hidden_dim=1200,
+                                           num_layers=5,
+                                           dropout=0.5,
+                                           num_dropout_layers=1,
+                                           task='regression',
+                                           loss='mse', (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_beam_utils:[209:215]
+==syn_net.utils.predict_utils:[503:509]
+                z_mol2 = z_mol2.detach().numpy()
+                available = available_list[rxn_id]
+                available = [bb_dict[available[i]]
+                             for i in range(len(available))]
+                temp_emb = bb_emb[available]
+                available_tree = BallTree(temp_emb, metric=cosine_distance) (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_beam_utils:[458:465]
+==syn_net.utils.predict_utils:[981:987]
+                                        axis=1)))
+
+                        z_mol2 = z_mol2.detach().numpy()
+                        available = available_list[rxn_id]
+                        available = [bb_dict[available[i]]
+                                     for i in range(len(available))]
+                        temp_emb = bb_emb[available] (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_beam_utils:[201:209]
+==syn_net.utils.predict_utils:[967:975]
+                                axis=1)))
+                elif rxn_template == 'pis':
+                    z_mol2 = reactant2_net(
+                        torch.Tensor(
+                            np.concatenate(
+                                [z_state, z_mol1,
+                                 one_hot_encoder(rxn_id, 4700)],
+                                axis=1))) (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict-beam-reactantOnly:[126:131]
+==test_Predict:[95:100]
+                action_net=act_net,
+                reactant1_net=rt1_net,
+                rxn_net=rxn_net,
+                reactant2_net=rt2_net,
+                bb_emb=bb_emb, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.st2steps:[60:65]
+==test_DataPreparation:[146:152]
+            except Exception as e:
+                print(e)
+                continue
+            states.append(state)
+            steps.append(step)
+ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_decode:[89:94]
+==scripts._mp_predict_multireactant:[86:92]
+                                              max_step=15)
+    except Exception as e:
+        print(e)
+        action = -1
+    if action != 3: (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_predict_beam:[84:89]
+==scripts._mp_predict_multireactant:[78:83]
+            action_net=act_net,
+            reactant1_net=rt1_net,
+            rxn_net=rxn_net,
+            reactant2_net=rt2_net,
+            bb_emb=bb_emb, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict:[132:137]
+==scripts.predict_mp:[27:32]
+    path_to_data = '/pool001/whgao/data/synth_net/st_' + \
+        args.rxn_template + '/st_' + args.data + '.json.gz'
+    print('Reading data from ', path_to_data)
+    sts = SyntheticTreeSet()
+    sts.load(path_to_data) (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_decode:[11:16]
+==scripts._mp_predict:[10:15]
+nbits = 4096
+out_dim = 256
+rxn_template = 'hb'
+featurize = 'fp'
+param_dir = 'hb_fp_2_4096_256' (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts._mp_search_similar:[12:17]
+==scripts.search_similar:[17:23]
+    data_path = '/pool001/whgao/data/synth_net/st_hb/st_train.json.gz'
+    st_set = SyntheticTreeSet()
+    st_set.load(data_path)
+    data = st_set.sts
+    data_train = [t.root.smiles for t in data]
+ (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt2:[102:107]
+==scripts.mrr:[88:93]
+                                       num_layers=5,
+                                       dropout=0.5,
+                                       num_dropout_layers=1,
+                                       task='regression',
+                                       loss='mse', (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==act:[71:76]
+==rt2:[93:98]
+                  optimizer='adam',
+                  learning_rate=1e-4,
+                  val_freq=10,
+                  ncpu=ncpu)
+    elif args.featurize == 'gin': (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[24:29]
+==scripts.mrr:[27:32]
+                        help="Output dimension.")
+    parser.add_argument("--ncpu", type=int, default=8,
+                        help="Number of cpus")
+    parser.add_argument("--batch_size", type=int, default=64,
+                        help="Batch size") (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt2:[108:113]
+==rxn:[109:114]
+                          optimizer='adam',
+                          learning_rate=1e-4,
+                          val_freq=10,
+                          ncpu=ncpu)
+            elif args.rxn_template == 'pis': (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt2:[79:84]
+==rxn:[80:85]
+                      optimizer='adam',
+                      learning_rate=1e-4,
+                      val_freq=10,
+                      ncpu=ncpu)
+        elif args.rxn_template == 'pis': (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==act:[85:91]
+==rt1:[92:97]
+                  optimizer='adam',
+                  learning_rate=1e-4,
+                  val_freq=10,
+                  ncpu=ncpu)
+    tb_logger = pl_loggers.TensorBoardLogger( (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[78:83]
+==rxn:[94:99]
+                          optimizer='adam',
+                          learning_rate=1e-4,
+                          val_freq=10,
+                          ncpu=ncpu)
+        elif args.featurize == 'gin': (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_utils:[592:597]
+==test_Training:[112:117]
+            output_dim=out_dim,
+            hidden_dim=100,
+            num_layers=3,
+            dropout=0.5,
+            num_dropout_layers=1, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_utils:[564:569]
+==test_Training:[229:234]
+            output_dim=out_dim,
+            hidden_dim=100,
+            num_layers=3,
+            dropout=0.5,
+            num_dropout_layers=1, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt2:[87:92]
+==syn_net.utils.predict_utils:[713:718]
+                      num_layers=5,
+                      dropout=0.5,
+                      num_dropout_layers=1,
+                      task='regression',
+                      loss='mse', (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt2:[73:78]
+==syn_net.utils.predict_utils:[623:628]
+                      num_layers=5,
+                      dropout=0.5,
+                      num_dropout_layers=1,
+                      task='regression',
+                      loss='mse', (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rxn:[115:125]
+==syn_net.utils.predict_utils:[763:773]
+                output_dim=4700,
+                hidden_dim=3000,
+                num_layers=5,
+                dropout=0.5,
+                num_dropout_layers=1,
+                task='classification',
+                loss='cross_entropy',
+                valid_loss='accuracy',
+                optimizer='adam',
+                learning_rate=1e-4, (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[86:91]
+==syn_net.utils.predict_utils:[683:688]
+                                               num_layers=5,
+                                               dropout=0.5,
+                                               num_dropout_layers=1,
+                                               task='regression',
+                                               loss='mse', (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==rt1:[72:77]
+==syn_net.utils.predict_utils:[653:658]
+                  num_layers=5,
+                  dropout=0.5,
+                  num_dropout_layers=1,
+                  task='regression',
+                  loss='mse', (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_beam_utils:[460:465]
+==syn_net.utils.predict_utils:[503:508]
+                z_mol2 = z_mol2.detach().numpy()
+                available = available_list[rxn_id]
+                available = [bb_dict[available[i]]
+                             for i in range(len(available))]
+                temp_emb = bb_emb[available] (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_beam_utils:[443:449]
+==syn_net.utils.predict_utils:[959:965]
+            else:
+                # Add or Expand
+                if rxn_template == 'hb':
+                    z_mol2 = reactant2_net(
+                        torch.Tensor(
+                            np.concatenate( (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_beam_utils:[189:196]
+==syn_net.utils.predict_utils:[488:495]
+            if act == 2:
+                # Merge
+                temp = set(state) - set([mol1])
+                mol2 = temp.pop()
+            else:
+                # Add or Expand
+                if rxn_template == 'hb': (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==syn_net.utils.predict_beam_utils:[87:96]
+==syn_net.utils.predict_utils:[420:429]
+    tree = SyntheticTree()
+    kdtree = BallTree(bb_emb, metric=cosine_distance)
+    mol_recent = None
+
+    # Start iteration
+    # try:
+    for i in range(max_step):
+        # Encode current state
+        state = tree.get_state()  # a set (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.predict:[154:160]
+==syn_net.utils.prep_utils:[229:235]
+        except Exception as e:
+            print(e)
+            action = -1
+            tree = None
+
+        if action != 3: (duplicate-code)
+tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
+==scripts.sketch-synthetic-trees:[51:56]
+==syn_net.utils.prep_utils:[97:103]
+            mol1 = r.child[0]
+            if len(r.child) == 2:
+                mol2 = r.child[1]
+            else:
+                mol2 = None (duplicate-code)
+
+------------------------------------------------------------------
+Your code has been rated at 6.90/10 (previous run: 6.90/10, +0.00)
+

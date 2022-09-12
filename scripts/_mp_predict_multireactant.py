@@ -21,7 +21,7 @@ bb_emb = np.load(
 
 # define path to the reaction templates and purchasable building blocks
 path_to_reaction_file = f'/pool001/whgao/data/synth_net/st_{rxn_template}/reactions_{rxn_template}.json.gz'
-path_to_building_blocks = f'/pool001/whgao/data/synth_net/st_{rxn_template}/enamine_us_matched.csv.gz'
+PATH_TO_BUILDING_BLOCKS = f'/pool001/whgao/data/synth_net/st_{rxn_template}/enamine_us_matched.csv.gz'
 
 # define paths to pretrained modules
 param_path = f'/home/whgao/synth_net/synth_net/params/{param_dir}/'
@@ -32,7 +32,7 @@ path_to_rt2 = f'{param_path}rt2.ckpt'
 
 # load the purchasable building block SMILES to a dictionary
 building_blocks = pd.read_csv(
-    path_to_building_blocks,
+    PATH_TO_BUILDING_BLOCKS,
     compression='gzip')['SMILES'].tolist()
 bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
 

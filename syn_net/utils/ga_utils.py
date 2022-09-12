@@ -5,14 +5,14 @@ import numpy as np
 import scipy
 
 
-def crossover(parents, offspring_size, distribution='even'):
+def crossover(parents, OFFSPRING_SIZE, distribution='even'):
     """
     A function that samples an offspring set through a crossover from a mating
     pool.
 
     Args:
         parents (numpy.ndarray): An array which represents the mating pool.
-        offspring_size (int): The size of offspring pool.
+        OFFSPRING_SIZE (int): The size of offspring pool.
         distribution (str): Key word to indicate how to sample the parent vectors.
             Choose from ['even', 'linear', 'softmax_linear']; 'even' means sample
             parents with a even probability; 'linear' means sample probability is
@@ -25,26 +25,26 @@ def crossover(parents, offspring_size, distribution='even'):
         offspring (numpy.ndarray): An array which represents the offspring pool.
     """
     fp_length = parents.shape[1]
-    offspring = np.zeros((offspring_size, fp_length))
+    offspring = np.zeros((OFFSPRING_SIZE, fp_length))
     inherit_num = np.ceil(
         np.random.normal(
             loc=fp_length / 2,
             scale=fp_length / 10,
             size=(
-                offspring_size,
+                OFFSPRING_SIZE,
             )))
 
     inherit_num = np.where(
-        inherit_num >= int(fp_length / 5) * np.ones((offspring_size, )),
-        inherit_num, int(fp_length / 5) * np.ones((offspring_size, ))
+        inherit_num >= int(fp_length / 5) * np.ones((OFFSPRING_SIZE, )),
+        inherit_num, int(fp_length / 5) * np.ones((OFFSPRING_SIZE, ))
     )
     inherit_num = np.where(
-        int(fp_length * 4 / 5) * np.ones((offspring_size, )) <= inherit_num,
-        int(fp_length * 4 / 5) * np.ones((offspring_size, )),
+        int(fp_length * 4 / 5) * np.ones((OFFSPRING_SIZE, )) <= inherit_num,
+        int(fp_length * 4 / 5) * np.ones((OFFSPRING_SIZE, )),
         inherit_num
     )
 
-    for k in range(offspring_size):
+    for k in range(OFFSPRING_SIZE):
         parent1_idx = list(set(np.random.choice(
             fp_length, size=int(inherit_num[k]), replace=False)))
         parent2_idx = list(set(range(fp_length)).difference(set(parent1_idx)))
@@ -115,33 +115,33 @@ def mutation(offspring_crossover, num_mut_per_ele=1, mut_probability=0.5):
 
 if __name__ == '__main__':
 
-    num_parents = 10
-    fp_size = 128
-    offspring_size = 30
-    ngen = 100
-    population = np.ceil(np.random.random(size=(num_parents, fp_size)) * 2 - 1)
+    NUM_PARENTS = 10
+    FP_SIZE = 128
+    OFFSPRING_SIZE = 30
+    NGEN = 100
+    population = np.ceil(np.random.random(size=(NUM_PARENTS, FP_SIZE)) * 2 - 1)
 
-    print(f'Starting with {num_parents} fps with {fp_size} bits')
+    print(f'Starting with {NUM_PARENTS} fps with {FP_SIZE} bits')
 
     scores = np.array([fitness_sum(_) for _ in population])
     print(f'Initial: {scores.mean():.3f} +/- {scores.std():.3f}')
     print(f'Scores: {scores}')
 
-    for n in range(ngen):
+    for n in range(NGEN):
 
-        offspring = crossover(population, offspring_size)
+        offspring = crossover(population, OFFSPRING_SIZE)
         offspring = mutation(offspring, num_mut_per_ele=4, mut_probability=0.5)
         new_population = np.concatenate([population, offspring], axis=0)
         new_scores = np.array(scores.tolist() +
                               [fitness_sum(_) for _ in offspring])
         scores = []
 
-        for parent_idx in range(num_parents):
+        for parent_idx in range(NUM_PARENTS):
             max_score_idx = np.where(new_scores == np.max(new_scores))[0][0]
             scores.append(new_scores[max_score_idx])
             population[parent_idx, :] = new_population[max_score_idx, :]
             new_scores[max_score_idx] = -999999
 
         scores = np.array(scores)
-        print(f'Generation {ngen}: {scores.mean()} +/- {scores.std()}')
+        print(f'Generation {NGEN}: {scores.mean()} +/- {scores.std()}')
         print(f'Scores: {scores}')

@@ -34,9 +34,9 @@ class TestDataPrep(unittest.TestCase):
         path_to_rxn_templates = f"{TEST_DIR}/data/rxn_set_hb_test.txt"
 
         # load the reference building blocks (100 here)
-        path_to_building_blocks = f"{TEST_DIR}/data/building_blocks_matched.csv.gz"
+        PATH_TO_BUILDING_BLOCKS = f"{TEST_DIR}/data/building_blocks_matched.csv.gz"
         building_blocks = pd.read_csv(
-            path_to_building_blocks,
+            PATH_TO_BUILDING_BLOCKS,
             compression="gzip")["SMILES"].tolist()
 
         # load the reaction templates
@@ -77,15 +77,15 @@ class TestDataPrep(unittest.TestCase):
         rxns = r_ref.rxns
 
         # load the reference building blocks (100 here)
-        path_to_building_blocks = f"{TEST_DIR}/data/building_blocks_matched.csv.gz"
+        PATH_TO_BUILDING_BLOCKS = f"{TEST_DIR}/data/building_blocks_matched.csv.gz"
         building_blocks = pd.read_csv(
-            path_to_building_blocks,
+            PATH_TO_BUILDING_BLOCKS,
             compression="gzip")["SMILES"].tolist()
 
         num_trials = 25
-        num_finish = 0
-        num_error = 0
-        num_unfinish = 0
+        NUM_FINISH = 0
+        NUM_ERROR = 0
+        NUM_UNFINISH = 0
 
         trees = []
         for _ in tqdm(range(num_trials)):
@@ -93,19 +93,19 @@ class TestDataPrep(unittest.TestCase):
                 building_blocks, rxns, max_step=5)
             if action == 3:
                 trees.append(tree)
-                num_finish += 1
+                NUM_FINISH += 1
             elif action == -1:
-                num_error += 1
+                NUM_ERROR += 1
             else:
-                num_unfinish += 1
+                NUM_UNFINISH += 1
 
         synthetic_tree_set = SyntheticTreeSet(sts=trees)
         synthetic_tree_set.save(f"{TEST_DIR}/data/st_data.json.gz")
 
         # check that the number of finished trees generated is == 3, and that
         # the number of unfinished trees generated is == 0
-        self.assertEqual(num_finish, 3)
-        self.assertEqual(num_unfinish, 0)
+        self.assertEqual(NUM_FINISH, 3)
+        self.assertEqual(NUM_UNFINISH, 0)
 
         # check here that the synthetic trees were correctly saved by
         # comparing to a provided reference file in 'SynNet/tests/data/ref/'
@@ -142,7 +142,7 @@ class TestDataPrep(unittest.TestCase):
         for st in tqdm(data):
             try:
                 state, step = organize(
-                    st, target_embedding=embedding, radius=radius, nBits=nbits
+                    st, target_embedding=embedding, radius=radius, n_bits=nbits
                 )
             except Exception as e:
                 print(e)
@@ -263,9 +263,9 @@ class TestDataPrep(unittest.TestCase):
         model.eval()
 
         # load the building blocks
-        path_to_building_blocks = f"{TEST_DIR}/data/building_blocks_matched.csv.gz"
+        PATH_TO_BUILDING_BLOCKS = f"{TEST_DIR}/data/building_blocks_matched.csv.gz"
         building_blocks = pd.read_csv(
-            path_to_building_blocks,
+            PATH_TO_BUILDING_BLOCKS,
             compression="gzip")["SMILES"].tolist()
 
         # compute the building block embeddings

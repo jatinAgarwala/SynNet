@@ -64,7 +64,7 @@ if __name__ == '__main__':
         '/reactions_' +
         args.rxn_template +
         '.json.gz')
-    path_to_building_blocks = (
+    PATH_TO_BUILDING_BLOCKS = (
         '/pool001/whgao/data/synth_net/st_' +
         args.rxn_template +
         '/enamine_us_matched.csv.gz')
@@ -82,7 +82,7 @@ if __name__ == '__main__':
 
     # load the purchasable building block SMILES to a dictionary
     building_blocks = pd.read_csv(
-        path_to_building_blocks,
+        PATH_TO_BUILDING_BLOCKS,
         compression='gzip')['SMILES'].tolist()
     bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
 
@@ -148,8 +148,8 @@ if __name__ == '__main__':
     output_smis = []
     similaritys = []
     trees = []
-    num_finish = 0
-    num_unfinish = 0
+    NUM_FINISH = 0
+    NUM_UNFINISH = 0
 
     print('Start to decode!')
     for smi in tqdm(query_smis):
@@ -162,12 +162,12 @@ if __name__ == '__main__':
             tree = None
 
         if action != 3:
-            num_unfinish += 1
+            NUM_UNFINISH += 1
             output_smis.append(None)
             similaritys.append(None)
             trees.append(None)
         else:
-            num_finish += 1
+            NUM_FINISH += 1
             output_smis.append(tree.root.smiles)
             ms = [Chem.MolFromSmiles(sm) for sm in [smi, tree.root.smiles]]
             fps = [Chem.RDKFingerprint(x) for x in ms]

@@ -18,9 +18,9 @@ param_dir = 'hb_fp_2_4096'
 ncpu = 16
 
 # define model to use for molecular embedding
-model_type = 'gin_supervised_contextpred'
-device = 'cpu'
-mol_embedder = load_pretrained(model_type).to(device)
+MODEL_TYPE = 'gin_supervised_contextpred'
+DEVICE = 'cpu'
+mol_embedder = load_pretrained(MODEL_TYPE).to(DEVICE)
 mol_embedder.eval()
 
 # load the purchasable building block embeddings
@@ -29,7 +29,7 @@ bb_emb = np.load(
 
 # define path to the reaction templates and purchasable building blocks
 path_to_reaction_file = f'/pool001/whgao/data/synth_net/st_{rxn_template}/reactions_{rxn_template}.json.gz'
-path_to_building_blocks = f'/pool001/whgao/data/synth_net/st_{rxn_template}/enamine_us_matched.csv.gz'
+PATH_TO_BUILDING_BLOCKS = f'/pool001/whgao/data/synth_net/st_{rxn_template}/enamine_us_matched.csv.gz'
 
 # define paths to pretrained modules
 param_path = f'/home/whgao/scGen/synth_net/synth_net/params/{param_dir}/'
@@ -40,7 +40,7 @@ path_to_rt2 = f'{param_path}rt2.ckpt'
 
 # load the purchasable building block SMILES to a dictionary
 building_blocks = pd.read_csv(
-    path_to_building_blocks,
+    PATH_TO_BUILDING_BLOCKS,
     compression='gzip')['SMILES'].tolist()
 bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
 

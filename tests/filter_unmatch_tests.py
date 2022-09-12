@@ -8,19 +8,19 @@ from syn_net.utils.data_utils import *
 
 
 if __name__ == '__main__':
-    r_path = './data/ref/rxns_hb.json.gz'
-    bb_path = '/home/whgao/scGen/synth_net/data/enamine_us.csv.gz'
-    r_set = ReactionSet()
-    r_set.load(r_path)
-    matched_mols = set()
-    for r in tqdm(r_set.rxns):
+    R_PATH = './data/ref/rxns_hb.json.gz'
+    BB_PATH = '/home/whgao/scGen/synth_net/data/enamine_us.csv.gz'
+    R_SET = ReactionSet()
+    R_SET.load(R_PATH)
+    MATCHED_MOLS = set()
+    for r in tqdm(R_SET.rxns):
         for a_list in r.available_reactants:
-            matched_mols = matched_mols | set(a_list)
+            MATCHED_MOLS = MATCHED_MOLS | set(a_list)
 
-    original_mols = pd.read_csv(bb_path, compression='gzip')['SMILES'].tolist()
+    ORIGINAL_MOLS = pd.read_csv(BB_PATH, compression='gzip')['SMILES'].tolist()
 
-    print('Total building blocks number:', len(original_mols))
-    print('Matched building blocks number:', len(matched_mols))
+    print('Total building blocks number:', len(ORIGINAL_MOLS))
+    print('Matched building blocks number:', len(MATCHED_MOLS))
 
-    df = pd.DataFrame({'SMILES': list(matched_mols)})
+    df = pd.DataFrame({'SMILES': list(MATCHED_MOLS)})
     df.to_csv('./data/building_blocks_matched.csv.gz', compression='gzip')

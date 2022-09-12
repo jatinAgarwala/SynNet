@@ -23,10 +23,10 @@ from syn_net.utils.data_utils import SyntheticTree
 np.random.seed(6)
 
 # get a GIN pretrained model to use for creating molecular embeddings
-model_type = 'gin_supervised_contextpred'
-device = 'cpu'
+MODEL_TYPE = 'gin_supervised_contextpred'
+DEVICE = 'cpu'
 gin_pretrained_model = load_pretrained(
-    model_type).to(device)  # used to learn embedding
+    MODEL_TYPE).to(DEVICE)  # used to learn embedding
 gin_pretrained_model.eval()
 
 
@@ -180,13 +180,13 @@ def one_hot_encoder(dim, space):
     return vec
 
 
-def mol_embedding(smi, device='cpu', readout=AvgPooling()):
+def mol_embedding(smi, DEVICE='cpu', readout=AvgPooling()):
     """
     Constructs a graph embedding using the GIN network for an input SMILES.
 
     Args:
         smi (str): A SMILES string.
-        device (str): Indicates the device to run on ('cpu' or 'cuda:0'). Default 'cpu'.
+        DEVICE (str): Indicates the DEVICE to run on ('cpu' or 'cuda:0'). Default 'cpu'.
 
     Returns:
         np.ndarray: Either a zeros array or the graph embedding.
@@ -202,11 +202,11 @@ def mol_embedding(smi, device='cpu', readout=AvgPooling()):
                            node_featurizer=PretrainAtomFeaturizer(),
                            edge_featurizer=PretrainBondFeaturizer(),
                            canonical_atom_order=False)
-        bg = g.to(device)
-        nfeats = [bg.ndata.pop('atomic_number').to(device),
-                  bg.ndata.pop('chirality_type').to(device)]
-        efeats = [bg.edata.pop('bond_type').to(device),
-                  bg.edata.pop('bond_direction_type').to(device)]
+        bg = g.to(DEVICE)
+        nfeats = [bg.ndata.pop('atomic_number').to(DEVICE),
+                  bg.ndata.pop('chirality_type').to(DEVICE)]
+        efeats = [bg.edata.pop('bond_type').to(DEVICE),
+                  bg.edata.pop('bond_direction_type').to(DEVICE)]
         with torch.no_grad():
             node_repr = gin_pretrained_model(bg, nfeats, efeats)
         return readout(bg, node_repr).detach(
@@ -233,11 +233,11 @@ def get_mol_embedding(smi, model, device='cpu', readout=AvgPooling()):
                        node_featurizer=PretrainAtomFeaturizer(),
                        edge_featurizer=PretrainBondFeaturizer(),
                        canonical_atom_order=False)
-    bg = g.to(device)
-    nfeats = [bg.ndata.pop('atomic_number').to(device),
-              bg.ndata.pop('chirality_type').to(device)]
-    efeats = [bg.edata.pop('bond_type').to(device),
-              bg.edata.pop('bond_direction_type').to(device)]
+    bg = g.to(DEVICE)
+    nfeats = [bg.ndata.pop('atomic_number').to(DEVICE),
+              bg.ndata.pop('chirality_type').to(DEVICE)]
+    efeats = [bg.edata.pop('bond_type').to(DEVICE),
+              bg.edata.pop('bond_direction_type').to(DEVICE)]
     with torch.no_grad():
         node_repr = model(bg, nfeats, efeats)
     return readout(bg, node_repr).detach().cpu().numpy()[0]
@@ -543,6 +543,25 @@ def load_modules_from_checkpoint(
         out_dim,
         nbits,
         ncpu):
+    """
+    Load modules from checkpoint.
+    Args:
+        path_to_act (str): Path to action network checkpoint.
+        path_to_rt1 (str): Path to reactant1 network checkpoint.
+        path_to_rxn (str): Path to reaction network checkpoint.
+        path_to_rt2 (str): Path to reactant2 network checkpoint.
+        featurize (str): Featurization method.
+        rxn_template (str): Specifies the set of reaction templates to use.
+        out_dim (int): Output dimension of the network.
+        nbits (int): Length of fingerprint.
+        ncpu (int): Number of CPUs to use.
+    Returns:
+        action_net (nn.Module): Action network.
+        reactant1_net (nn.Module): Reactant1 network.
+        rxn_net (nn.Module): Reaction network.
+        reactant2_net (nn.Module): Reactant2 network.
+        mol_fp (nn.Module): Fingerprint network.
+    """
 
     if rxn_template == 'unittest':
 
@@ -829,6 +848,15 @@ def tanimoto_similarity(target_fp, smis):
 
 # functions used in the *_multireactant.py
 def nn_search_rt1(_e, _tree, _k=1):
+    """
+    Queries a k-d tree for the k nearest neighbors of a given molecule.
+    Args:
+        _e (np.ndarray): Contains the molecular fingerprint of the query molecule.
+        _tree (scipy.spatial.cKDTree): Contains the k-d tree.
+        _k (int): Number of nearest neighbors to return.
+    Returns:
+        list of np.ndarray: Contains the k nearest neighbors.
+    """
     dist, ind = _tree.query(_e, k=_k)
     return dist[0], ind[0]
 
@@ -1106,26 +1134,68 @@ def fp_embedding(smi, _radius=2, _nBits=4096):
 
 
 def fp_4096(smi):
+    """
+    Generates a 4096-bit Morgan fingerprint.
+    Args:
+        smi (str): The SMILES to encode.
+    Returns:
+        np.ndarray: A 4096-bit Morgan fingerprint.
+    """
     return fp_embedding(smi, _radius=2, _nBits=4096)
 
 
 def fp_2048(smi):
+    """
+    Generates a 2048-bit Morgan fingerprint.
+    Args:
+        smi (str): The SMILES to encode.
+    Returns:
+        np.ndarray: A 1024-bit Morgan fingerprint.
+    """
     return fp_embedding(smi, _radius=2, _nBits=2048)
 
 
 def fp_1024(smi):
+    """
+    Generates a 1024-bit Morgan fingerprint.
+    Args:
+        smi (str): The SMILES to encode.
+    Returns:
+        np.ndarray: A 1024-bit Morgan fingerprint.
+    """
     return fp_embedding(smi, _radius=2, _nBits=1024)
 
 
 def fp_512(smi):
+    """
+    Generates a 1024-bit Morgan fingerprint.
+    Args:
+        smi (str): The SMILES to encode.
+    Returns:
+        np.ndarray: A 4096-bit Morgan fingerprint.
+    """
     return fp_embedding(smi, _radius=2, _nBits=512)
 
 
 def fp_256(smi):
+    """
+    Generates a 256-bit Morgan fingerprint.
+    Args:
+        smi (str): The SMILES to encode.
+    Returns:
+        np.ndarray: A 256-bit Morgan fingerprint.
+    """
     return fp_embedding(smi, _radius=2, _nBits=256)
 
 
 def rdkit2d_embedding(smi):
+    """
+    Generates a 200-dimensional RDKit 2D fingerprint.
+    Args:
+        smi (str): The SMILES to encode.
+    Returns:
+        np.ndarray: A 200-dimensional RDKit 2D fingerprint.    
+    """
     # define the RDKit 2D descriptors conversion function
     rdkit2d = MolConvert(src='SMILES', dst='RDKit2D')
 

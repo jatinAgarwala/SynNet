@@ -13,23 +13,23 @@ from scripts._mp_search_similar import func
 
 if __name__ == '__main__':
 
-    ncpu = 64
+    NCPU = 64
 
-    data_path = '/pool001/whgao/data/synth_net/st_hb/st_train.json.gz'
+    DATA_PATH = '/pool001/whgao/data/synth_net/st_hb/st_train.json.gz'
     st_set = SyntheticTreeSet()
-    st_set.load(data_path)
+    st_set.load(DATA_PATH)
     data = st_set.sts
     data_train = [t.root.smiles for t in data]
 
-    data_path = '/pool001/whgao/data/synth_net/st_hb/st_test.json.gz'
+    DATA_PATH = '/pool001/whgao/data/synth_net/st_hb/st_test.json.gz'
     st_set = SyntheticTreeSet()
-    st_set.load(data_path)
+    st_set.load(DATA_PATH)
     data = st_set.sts
     data_test = [t.root.smiles for t in data]
 
-    data_path = '/pool001/whgao/data/synth_net/st_hb/st_valid.json.gz'
+    DATA_PATH = '/pool001/whgao/data/synth_net/st_hb/st_valid.json.gz'
     st_set = SyntheticTreeSet()
-    st_set.load(data_path)
+    st_set.load(DATA_PATH)
     data = st_set.sts
     data_valid = [t.root.smiles for t in data]
 
@@ -37,14 +37,14 @@ if __name__ == '__main__':
         AllChem.GetMorganFingerprintAsBitVect(
             Chem.MolFromSmiles(smi),
             2,
-            nBits=1024) for smi in data_valid]
+            n_bits=1024) for smi in data_valid]
     fps_test = [
         AllChem.GetMorganFingerprintAsBitVect(
             Chem.MolFromSmiles(smi),
             2,
-            nBits=1024) for smi in data_test]
+            n_bits=1024) for smi in data_test]
 
-    with mp.Pool(processes=ncpu) as pool:
+    with mp.Pool(processes=NCPU) as pool:
         results = pool.map(func, fps_valid)
     similaritys = [r[0] for r in results]
     indices = [data_train[r[1]] for r in results]
@@ -53,7 +53,7 @@ if __name__ == '__main__':
                         'most similar': indices,
                         'similarity': similaritys})
 
-    with mp.Pool(processes=ncpu) as pool:
+    with mp.Pool(processes=NCPU) as pool:
         results = pool.map(func, fps_test)
     similaritys = [r[0] for r in results]
     indices = [data_train[r[1]] for r in results]

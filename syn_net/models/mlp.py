@@ -12,6 +12,9 @@ import numpy as np
 
 
 class MLP(pl.LightningModule):
+    """
+    This class models a multi-layer perceptron based on Lightning Module of pytorch
+    """
 
     def __init__(self, input_dim=3072,
                  output_dim=4,
@@ -40,11 +43,11 @@ class MLP(pl.LightningModule):
         modules.append(nn.BatchNorm1d(hidden_dim))
         modules.append(nn.ReLU())
 
-        for i in range(num_layers - 2):
+        for layer in range(num_layers - 2):
             modules.append(nn.Linear(hidden_dim, hidden_dim))
             modules.append(nn.BatchNorm1d(hidden_dim))
             modules.append(nn.ReLU())
-            if i > num_layers - 3 - num_dropout_layers:
+            if layer > num_layers - 3 - num_dropout_layers:
                 modules.append(nn.Dropout(dropout))
 
         modules.append(nn.Linear(hidden_dim, output_dim))
@@ -53,20 +56,20 @@ class MLP(pl.LightningModule):
 
         self.layers = nn.Sequential(*modules)
 
-    def forward(self, x):
-        return self.layers(x)
+    def forward(self, x_var):
+        return self.layers(x_var)
 
-    def training_step(self, batch, batch_idx):
-        x, y = batch
-        y_hat = self.layers(x)
+    def training_step(self, batch):
+        x_var, y_var = batch
+        y_hat = self.layers(x_var)
         if self.loss == 'cross_entropy':
-            loss = F.cross_entropy(y_hat, y)
+            loss = F.cross_entropy(y_hat, y_var)
         elif self.loss == 'mse':
-            loss = F.mse_loss(y_hat, y)
+            loss = F.mse_loss(y_hat, y_var)
         elif self.loss == 'l1':
-            loss = F.l1_loss(y_hat, y)
+            loss = F.l1_loss(y_hat, y_var)
         elif self.loss == 'huber':
-            loss = F.huber_loss(y_hat, y)
+            loss = F.huber_loss(y_hat, y_var)
         else:
             raise ValueError('Not specified loss function')
         self.log(
@@ -78,7 +81,7 @@ class MLP(pl.LightningModule):
             logger=True)
         return loss
 
-    def validation_step(self, batch, batch_idx):
+    def validation_step(self, batch):
         if self.trainer.current_epoch % self.val_freq == 0:
             out_feat = self.valid_loss[12:]
             if out_feat == 'gin':
@@ -97,30 +100,28 @@ class MLP(pl.LightningModule):
                 bb_emb_rdkit2d = np.load(
                     '/pool001/whgao/data/synth_net/st_hb/enamine_us_emb_rdkit2d.npy')
                 kdtree = BallTree(bb_emb_rdkit2d, metric='euclidean')
-            x, y = batch
-            y_hat = self.layers(x)
+            x_var, y_var = batch
+            y_hat = self.layers(x_var)
             if self.valid_loss == 'cross_entropy':
-                loss = F.cross_entropy(y_hat, y)
+                loss = F.cross_entropy(y_hat, y_var)
             elif self.valid_loss == 'accuracy':
                 y_hat = torch.argmax(y_hat, axis=1)
-                loss = 1 - (sum(y_hat == y) / len(y))
+                loss = 1 - (sum(y_hat == y_var) / len(y_var))
             elif self.valid_loss[:11] == 'nn_accuracy':
-                y = nn_search_list(
-                    y.detach().cpu().numpy(),
+                y_var = nn_search_list(
                     out_feat=out_feat,
                     kdtree=kdtree)
                 y_hat = nn_search_list(
-                    y_hat.detach().cpu().numpy(),
                     out_feat=out_feat,
                     kdtree=kdtree)
-                loss = 1 - (sum(y_hat == y) / len(y))
+                loss = 1 - (sum(y_hat == y_var) / len(y))
                 # import ipdb; ipdb.set_trace(context=11)
             elif self.valid_loss == 'mse':
-                loss = F.mse_loss(y_hat, y)
+                loss = F.mse_loss(y_hat, y_var)
             elif self.valid_loss == 'l1':
-                loss = F.l1_loss(y_hat, y)
+                loss = F.l1_loss(y_hat, y_var)
             elif self.valid_loss == 'huber':
-                loss = F.huber_loss(y_hat, y)
+                loss = F.huber_loss(y_hat, y_var)
             else:
                 raise ValueError('Not specified validation loss function')
             self.log(
@@ -144,36 +145,83 @@ class MLP(pl.LightningModule):
 
 
 def load_array(data_arrays, batch_size, is_train=True, ncpu=-1):
+    """
+    Loads the input arrays from the input as a torch DataLoader instance
+
+    Args:
+        data_arrays: Arrays of the data.
+        batch_size: Size of each batch in the input.
+        is_train: Boolean to signify if the data has to be shuffled (only if it is to be trained).
+        ncpu: Number of cpu workers.
+
+    Returns:
+        DataLoader: The loaded data as an object of the torch.utils.data.DataLoader class.
+    """
     dataset = torch.utils.data.TensorDataset(*data_arrays)
     return torch.utils.data.DataLoader(
         dataset, batch_size, shuffle=is_train, num_workers=ncpu)
 
 
-def cosine_distance(v1, v2, eps=1e-15):
-    return 1 - np.dot(v1, v2) / (np.linalg.norm(v1, ord=2)
-                                 * np.linalg.norm(v2, ord=2) + eps)
+def cosine_distance(v_1, v_2, eps=1e-15):
+    """
+    Calculates the cosine distance between two vectors
+
+    Args:
+        v_1: The first vector to find the cosine distance from
+        v_2: The second vector to find the cosine distance from
+        eps: Epsilon value for approximating floating point error correction
+
+    Returns:
+        float: The cosine distance between the two vectors
+    """
+    return 1 - np.dot(v_1, v_2) / (np.linalg.norm(v_1, ord=2)
+                                 * np.linalg.norm(v_2, ord=2) + eps)
 
 
 def nn_search(_e, _tree, _k=1):
+    """
+    Conducts a nearest neighbor search to find the molecule from the tree most
+    simimilar to the input embedding.
+
+    Args:
+        _e (np.ndarray): A specific point in the dataset.
+        _tree (sklearn.neighbors._kd_tree.KDTree, optional): A k-d tree.
+        _k (int, optional): Indicates how many nearest neighbors to get.
+            Defaults to 1.
+
+    Returns:
+        float: The distance to the nearest neighbor.
+        int: The indices of the nearest neighbor.
+    """
     dist, ind = _tree.query(_e, k=_k)
     return ind[0][0]
 
 
-def nn_search_list(y, out_feat, kdtree):
+def nn_search_list(out_feat, kdtree):
+    """
+    Calls nn_search based on the type of output features required, and
+    raise a ValueError if the feature type is unexpected
+
+    Args:
+        out_feat: Format in which the output features are.
+        kdtree (sklearn.neighbors._kd_tree.KDTree, optional): A k-d tree.
+
+    Returns:
+        array: An array containing the indices of the nearest neighbour
+    """
     if out_feat == 'gin':
         return np.array([nn_search(emb.reshape(1, -1), _tree=kdtree)
-                        for emb in y])
-    elif out_feat == 'fp_4096':
+                        for emb in y_var])
+    if out_feat == 'fp_4096':
         return np.array([nn_search(emb.reshape(1, -1), _tree=kdtree)
-                        for emb in y])
-    elif out_feat == 'fp_256':
+                        for emb in y_var])
+    if out_feat == 'fp_256':
         return np.array([nn_search(emb.reshape(1, -1), _tree=kdtree)
-                        for emb in y])
-    elif out_feat == 'rdkit2d':
+                        for emb in y_var])
+    if out_feat == 'rdkit2d':
         return np.array([nn_search(emb.reshape(1, -1), _tree=kdtree)
-                        for emb in y])
-    else:
-        raise ValueError
+                        for emb in y_var])
+    raise ValueError
 
 
 if __name__ == '__main__':
@@ -198,13 +246,13 @@ if __name__ == '__main__':
     steps = np.concatenate(steps_list, axis=0)
 
     X = states
-    y = steps[:, 0]
+    y_var = steps[:, 0]
 
     X_train = torch.Tensor(X)
     y_train = torch.LongTensor(y)
 
-    batch_size = 64
-    train_data_iter = load_array((X_train, y_train), batch_size, is_train=True)
+    BATCH_SIZE = 64
+    train_data_iter = load_array((X_train, y_train), BATCH_SIZE, is_train=True)
 
     pl.seed_everything(0)
     mlp = MLP()

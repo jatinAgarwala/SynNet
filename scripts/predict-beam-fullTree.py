@@ -47,9 +47,9 @@ if __name__ == '__main__':
 
     # define model to use for molecular embedding
     readout = AvgPooling()
-    model_type = 'gin_supervised_contextpred'
-    device = 'cuda:0'
-    mol_embedder = load_pretrained(model_type).to(device)
+    MODEL_TYPE = 'gin_supervised_contextpred'
+    DEVICE = 'cuda:0'
+    mol_embedder = load_pretrained(MODEL_TYPE).to(DEVICE)
     mol_embedder.eval()
 
     # load the purchasable building block embeddings
@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
     # define path to the reaction templates and purchasable building blocks
     path_to_reaction_file = f'/pool001/whgao/data/synth_net/st_{args.rxn_template}/reactions_{args.rxn_template}.json.gz'
-    path_to_building_blocks = f'/pool001/whgao/data/synth_net/st_{args.rxn_template}/enamine_us_matched.csv.gz'
+    PATH_TO_BUILDING_BLOCKS = f'/pool001/whgao/data/synth_net/st_{args.rxn_template}/enamine_us_matched.csv.gz'
 
     # define paths to pretrained modules
     param_path = f'/home/rociomer/SynthNet/pre-trained-models/{args.rxn_template}_{args.featurize}_{args.radius}_{args.nbits}_v{args.version}/'
@@ -71,7 +71,7 @@ if __name__ == '__main__':
 
     # load the purchasable building block SMILES to a dictionary
     building_blocks = pd.read_csv(
-        path_to_building_blocks,
+        PATH_TO_BUILDING_BLOCKS,
         compression='gzip')['SMILES'].tolist()
     bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
 
@@ -105,7 +105,7 @@ if __name__ == '__main__':
             act (int): The final action (to know if the tree was "properly" terminated)
         """
         if args.featurize == 'fp':
-            z_target = mol_fp(query_smi, nBits=args.nbits)
+            z_target = mol_fp(query_smi, n_bits=args.nbits)
         elif args.featurize == 'gin':
             z_target = get_mol_embedding(query_smi)
         tree, action = synthetic_tree_decoder_fullbeam(
@@ -131,33 +131,33 @@ if __name__ == '__main__':
     output_smis = []
     similaritys = []
     trees = []
-    num_finish = 0
-    num_unfinish = 0
+    NUM_FINISH = 0
+    NUM_UNFINISH = 0
 
     print('Start to decode!')
     for smi in tqdm(query_smis):
 
         try:
-            tree, action = decode_one_molecule(smi)
+            TREE, ACTION = decode_one_molecule(smi)
         except Exception as e:
             print(e)
-            action = 1
-            tree = None
+            ACTION = 1
+            TREE = None
 
-        if action != 3:
-            num_unfinish += 1
+        if ACTION != 3:
+            NUM_UNFINISH += 1
             output_smis.append(None)
             similaritys.append(None)
             trees.append(None)
         else:
-            num_finish += 1
-            output_smis.append(tree.root.smiles)
-            ms = [Chem.MolFromSmiles(sm) for sm in [smi, tree.root.smiles]]
+            NUM_FINISH += 1
+            output_smis.append(TREE.root.smiles)
+            ms = [Chem.MolFromSmiles(sm) for sm in [smi, TREE.root.smiles]]
             fps = [Chem.RDKFingerprint(x) for x in ms]
             similaritys.append(
                 DataStructs.FingerprintSimilarity(
                     fps[0], fps[1]))
-            trees.append(tree)
+            trees.append(TREE)
 
     print('Saving ......')
     save_path = '../results/' + args.rxn_template + '_' + args.featurize + '/'

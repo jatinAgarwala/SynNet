@@ -274,7 +274,7 @@ if __name__ == '__main__':
     st_set.load(args.file)
     data = st_set.sts
 
-    trees_sketched = 0
+    TREES_SKETCHED = 0
     for st_idx, st in enumerate(data):
         if len(st.actions) <= args.actions:
             # don't sketch trees with fewer than n = `args.actions` actions
@@ -289,13 +289,13 @@ if __name__ == '__main__':
                 steps=steps,
                 tree_name=f"{args.saveto}tree{st_idx}")
 
-            trees_sketched += 1
+            TREES_SKETCHED += 1
 
         except Exception as e:
             print(e)
             continue
 
-        if not (args.nsketches == -1) and trees_sketched > args.nsketches:
+        if not (args.nsketches == -1) and TREES_SKETCHED > args.nsketches:
             break
 
     print("Done!")

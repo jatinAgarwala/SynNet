@@ -19,7 +19,7 @@ fps_train = [
     AllChem.GetMorganFingerprintAsBitVect(
         Chem.MolFromSmiles(smi),
         2,
-        nBits=1024) for smi in data_train]
+        n_bits=1024) for smi in data_train]
 
 
 def func(fp):

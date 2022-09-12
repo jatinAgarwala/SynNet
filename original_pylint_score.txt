@@ -1,27 +1,27 @@
 ************* Module syn_net.data_generation.make_dataset
 syn_net/data_generation/make_dataset.py:16:0: C0301: Line too long (109/100) (line-too-long)
-syn_net/data_generation/make_dataset.py:15:4: C0103: Constant name "path_reaction_file" doesn't conform to UPPER_CASE naming style (invalid-name)
-syn_net/data_generation/make_dataset.py:16:4: C0103: Constant name "path_to_building_blocks" doesn't conform to UPPER_CASE naming style (invalid-name)
-syn_net/data_generation/make_dataset.py:24:4: C0103: Constant name "Trial" doesn't conform to UPPER_CASE naming style (invalid-name)
-syn_net/data_generation/make_dataset.py:25:4: C0103: Constant name "num_finish" doesn't conform to UPPER_CASE naming style (invalid-name)
-syn_net/data_generation/make_dataset.py:26:4: C0103: Constant name "num_error" doesn't conform to UPPER_CASE naming style (invalid-name)
-syn_net/data_generation/make_dataset.py:27:4: C0103: Constant name "num_unfinish" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/make_dataset.py:15:4: C0103: Constant name "PATH_REACTION_FILE" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/make_dataset.py:16:4: C0103: Constant name "PATH_TO_BUILDING_BLOCKS" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/make_dataset.py:24:4: C0103: Constant name "TRIAL" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/make_dataset.py:25:4: C0103: Constant name "NUM_FINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/make_dataset.py:26:4: C0103: Constant name "NUM_ERROR" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/make_dataset.py:27:4: C0103: Constant name "NUM_UNFINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
 syn_net/data_generation/make_dataset.py:5:0: C0411: standard import "import gzip" should be placed before "import dill as pickle" (wrong-import-order)
 ************* Module syn_net.data_generation._mp_make
-syn_net/data_generation/_mp_make.py:14:0: C0103: Constant name "path_reaction_file" doesn't conform to UPPER_CASE naming style (invalid-name)
-syn_net/data_generation/_mp_make.py:15:0: C0103: Constant name "path_to_building_blocks" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/_mp_make.py:14:0: C0103: Constant name "PATH_REACTION_FILE" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/_mp_make.py:15:0: C0103: Constant name "PATH_TO_BUILDING_BLOCKS" doesn't conform to UPPER_CASE naming style (invalid-name)
 syn_net/data_generation/_mp_make.py:26:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module syn_net.data_generation._mp_process
 syn_net/data_generation/_mp_process.py:2:66: C0303: Trailing whitespace (trailing-whitespace)
-syn_net/data_generation/_mp_process.py:7:0: C0103: Constant name "path_to_building_blocks" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/_mp_process.py:7:0: C0103: Constant name "PATH_TO_BUILDING_BLOCKS" doesn't conform to UPPER_CASE naming style (invalid-name)
 syn_net/data_generation/_mp_process.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module syn_net.data_generation.filter_unmatch
 syn_net/data_generation/filter_unmatch.py:4:0: W0401: Wildcard import syn_net.utils.data_utils (wildcard-import)
-syn_net/data_generation/filter_unmatch.py:10:4: C0103: Constant name "r_path" doesn't conform to UPPER_CASE naming style (invalid-name)
-syn_net/data_generation/filter_unmatch.py:11:4: C0103: Constant name "bb_path" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/filter_unmatch.py:10:4: C0103: Constant name "R_PATH" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/data_generation/filter_unmatch.py:11:4: C0103: Constant name "BB_PATH" doesn't conform to UPPER_CASE naming style (invalid-name)
 syn_net/data_generation/filter_unmatch.py:5:0: C0411: third party import "import pandas as pd" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
 syn_net/data_generation/filter_unmatch.py:6:0: C0411: third party import "from tqdm import tqdm" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
-syn_net/data_generation/filter_unmatch.py:4:0: W0614: Unused import(s) gzip, json, Chem, Reaction, NodeChemical, NodeRxn, SyntheticTree, SyntheticTreeSet, path_to_building_blocks, path_to_rxn_templates, building_blocks, rxns, line, rxn, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+syn_net/data_generation/filter_unmatch.py:4:0: W0614: Unused import(s) gzip, json, Chem, Reaction, NodeChemical, NodeRxn, SyntheticTree, SyntheticTreeSet, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
 ************* Module syn_net.data_generation.make_dataset_mp
 syn_net/data_generation/make_dataset_mp.py:8:0: C0411: standard import "import multiprocessing as mp" should be placed before "import numpy as np" (wrong-import-order)
 syn_net/data_generation/make_dataset_mp.py:9:0: C0411: standard import "from time import time" should be placed before "import numpy as np" (wrong-import-order)
@@ -80,7 +80,7 @@ syn_net/utils/prep_utils.py:285:20: C0303: Trailing whitespace (trailing-whitesp
 syn_net/utils/prep_utils.py:286:42: C0303: Trailing whitespace (trailing-whitespace)
 syn_net/utils/prep_utils.py:25:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
 syn_net/utils/prep_utils.py:33:13: C0103: Argument name "st" doesn't conform to snake_case naming style (invalid-name)
-syn_net/utils/prep_utils.py:33:61: C0103: Argument name "nBits" doesn't conform to snake_case naming style (invalid-name)
+syn_net/utils/prep_utils.py:33:61: C0103: Argument name "n_bits" doesn't conform to snake_case naming style (invalid-name)
 syn_net/utils/prep_utils.py:33:0: R0913: Too many arguments (6/5) (too-many-arguments)
 syn_net/utils/prep_utils.py:33:0: R0914: Too many local variables (23/15) (too-many-locals)
 syn_net/utils/prep_utils.py:95:12: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
@@ -174,7 +174,7 @@ syn_net/utils/data_utils.py:800:21: C0103: Argument name "x" doesn't conform to 
 syn_net/utils/data_utils.py:802:15: W0621: Redefining name 'r' from outer scope (line 823) (redefined-outer-name)
 syn_net/utils/data_utils.py:802:15: C0103: Variable name "r" doesn't conform to snake_case naming style (invalid-name)
 syn_net/utils/data_utils.py:809:4: W0105: String statement has no effect (pointless-string-statement)
-syn_net/utils/data_utils.py:812:4: C0103: Constant name "path_to_building_blocks" doesn't conform to UPPER_CASE naming style (invalid-name)
+syn_net/utils/data_utils.py:812:4: C0103: Constant name "PATH_TO_BUILDING_BLOCKS" doesn't conform to UPPER_CASE naming style (invalid-name)
 syn_net/utils/data_utils.py:814:4: C0103: Constant name "path_to_rxn_templates" doesn't conform to UPPER_CASE naming style (invalid-name)
 syn_net/utils/data_utils.py:818:16: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
 syn_net/utils/data_utils.py:818:16: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
@@ -313,7 +313,7 @@ syn_net/utils/predict_beam_utils.py:275:0: R0913: Too many arguments (14/5) (too
 syn_net/utils/predict_beam_utils.py:275:0: R0914: Too many local variables (54/15) (too-many-locals)
 syn_net/utils/predict_beam_utils.py:336:8: R1723: Unnecessary "elif" after "break", remove the leading "el" from "elif" (no-else-break)
 syn_net/utils/predict_beam_utils.py:348:12: W0702: No exception type(s) specified (bare-except)
-syn_net/utils/predict_beam_utils.py:360:21: E1123: Unexpected keyword argument 'nBits' in function call (unexpected-keyword-arg)
+syn_net/utils/predict_beam_utils.py:360:21: E1123: Unexpected keyword argument 'n_bits' in function call (unexpected-keyword-arg)
 syn_net/utils/predict_beam_utils.py:375:16: R1724: Unnecessary "else" after "continue", remove the "else" and de-indent the code inside it (no-else-continue)
 syn_net/utils/predict_beam_utils.py:395:16: R1724: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
 syn_net/utils/predict_beam_utils.py:423:24: W0702: No exception type(s) specified (bare-except)
@@ -434,7 +434,7 @@ scripts/search_similar.py:8:0: C0411: third party import "from rdkit import Chem
 scripts/search_similar.py:9:0: C0411: third party import "from rdkit.Chem import AllChem" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
 scripts/search_similar.py:10:0: C0411: standard import "import multiprocessing as mp" should be placed before "import numpy as np" (wrong-import-order)
 scripts/search_similar.py:5:0: W0611: Unused numpy imported as np (unused-import)
-scripts/search_similar.py:7:0: W0614: Unused import(s) gzip, json, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, path_to_building_blocks, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+scripts/search_similar.py:7:0: W0614: Unused import(s) gzip, json, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
 ************* Module scripts._mp_predict
 scripts/_mp_predict.py:8:0: C0301: Line too long (121/100) (line-too-long)
 scripts/_mp_predict.py:28:0: C0301: Line too long (118/100) (line-too-long)
@@ -450,7 +450,7 @@ scripts/_mp_predict.py:16:0: C0103: Constant name "ncpu" doesn't conform to UPPE
 scripts/_mp_predict.py:19:0: C0103: Constant name "model_type" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/_mp_predict.py:20:0: C0103: Constant name "device" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/_mp_predict.py:28:0: C0103: Constant name "path_to_reaction_file" doesn't conform to UPPER_CASE naming style (invalid-name)
-scripts/_mp_predict.py:29:0: C0103: Constant name "path_to_building_blocks" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/_mp_predict.py:29:0: C0103: Constant name "PATH_TO_BUILDING_BLOCKS" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/_mp_predict.py:32:0: C0103: Constant name "param_path" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/_mp_predict.py:33:0: C0103: Constant name "path_to_act" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/_mp_predict.py:34:0: C0103: Constant name "path_to_rt1" doesn't conform to UPPER_CASE naming style (invalid-name)
@@ -477,10 +477,10 @@ scripts/predict-beam-fullTree.py:50:4: C0103: Constant name "model_type" doesn't
 scripts/predict-beam-fullTree.py:51:4: C0103: Constant name "device" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/predict-beam-fullTree.py:108:8: W0621: Redefining name 'tree' from outer scope (line 145) (redefined-outer-name)
 scripts/predict-beam-fullTree.py:108:14: W0621: Redefining name 'action' from outer scope (line 145) (redefined-outer-name)
-scripts/predict-beam-fullTree.py:105:23: E1123: Unexpected keyword argument 'nBits' in function call (unexpected-keyword-arg)
+scripts/predict-beam-fullTree.py:105:23: E1123: Unexpected keyword argument 'n_bits' in function call (unexpected-keyword-arg)
 scripts/predict-beam-fullTree.py:107:23: E1120: No value for argument 'model' in function call (no-value-for-parameter)
-scripts/predict-beam-fullTree.py:138:4: C0103: Constant name "num_finish" doesn't conform to UPPER_CASE naming style (invalid-name)
-scripts/predict-beam-fullTree.py:139:4: C0103: Constant name "num_unfinish" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-fullTree.py:138:4: C0103: Constant name "NUM_FINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-fullTree.py:139:4: C0103: Constant name "NUM_UNFINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/predict-beam-fullTree.py:146:15: W0703: Catching too general exception Exception (broad-except)
 scripts/predict-beam-fullTree.py:148:12: C0103: Constant name "action" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/predict-beam-fullTree.py:149:12: C0103: Constant name "tree" doesn't conform to UPPER_CASE naming style (invalid-name)
@@ -535,7 +535,7 @@ scripts/sketch-synthetic-trees.py:8:0: C0411: third party import "from rdkit.Che
 scripts/sketch-synthetic-trees.py:9:0: C0411: third party import "import networkx as nx" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
 scripts/sketch-synthetic-trees.py:10:0: C0411: third party import "import matplotlib.pyplot as plt" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
 scripts/sketch-synthetic-trees.py:11:0: C0411: third party import "from matplotlib.patches import Rectangle" should be placed before "from syn_net.utils.data_utils import *" (wrong-import-order)
-scripts/sketch-synthetic-trees.py:4:0: W0614: Unused import(s) gzip, json, pd, Chem, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, path_to_building_blocks, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+scripts/sketch-synthetic-trees.py:4:0: W0614: Unused import(s) gzip, json, pd, Chem, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
 ************* Module scripts.compute_embedding_mp
 scripts/compute_embedding_mp.py:7:0: C0301: Line too long (115/100) (line-too-long)
 scripts/compute_embedding_mp.py:27:0: C0301: Line too long (123/100) (line-too-long)
@@ -578,7 +578,7 @@ scripts/_mp_decode.py:90:4: R1705: Unnecessary "else" after "return", remove the
 scripts/read_st_data.py:4:0: W0401: Wildcard import syn_net.utils.data_utils (wildcard-import)
 scripts/read_st_data.py:10:4: C0103: Constant name "path_to_data" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/read_st_data.py:17:8: W0212: Access to a protected member _print of a client class (protected-access)
-scripts/read_st_data.py:4:0: W0614: Unused import(s) gzip, json, pd, Chem, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, path_to_building_blocks, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+scripts/read_st_data.py:4:0: W0614: Unused import(s) gzip, json, pd, Chem, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
 ************* Module scripts._mp_search_similar
 scripts/_mp_search_similar.py:18:0: C0301: Line too long (113/100) (line-too-long)
 scripts/_mp_search_similar.py:33:0: C0301: Line too long (126/100) (line-too-long)
@@ -589,7 +589,7 @@ scripts/_mp_search_similar.py:18:51: E1101: Module 'rdkit.Chem' has no 'MolFromS
 scripts/_mp_search_similar.py:21:9: C0103: Argument name "fp" doesn't conform to snake_case naming style (invalid-name)
 scripts/_mp_search_similar.py:33:72: E1101: Module 'rdkit.DataStructs' has no 'TanimotoSimilarity' member (no-member)
 scripts/_mp_search_similar.py:9:0: W0611: Unused pandas imported as pd (unused-import)
-scripts/_mp_search_similar.py:10:0: W0614: Unused import(s) pd, gzip, json, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, path_to_building_blocks, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+scripts/_mp_search_similar.py:10:0: W0614: Unused import(s) pd, gzip, json, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
 ************* Module scripts.predict_multireactant_mp
 scripts/predict_multireactant_mp.py:29:0: C0301: Line too long (101/100) (line-too-long)
 scripts/predict_multireactant_mp.py:56:51: C0303: Trailing whitespace (trailing-whitespace)
@@ -653,7 +653,7 @@ scripts/st2steps.py:7:0: W0401: Wildcard import syn_net.utils.data_utils (wildca
 scripts/st2steps.py:50:4: C0103: Constant name "idx" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/st2steps.py:51:4: C0103: Constant name "save_idx" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/st2steps.py:55:15: W0703: Catching too general exception Exception (broad-except)
-scripts/st2steps.py:7:0: W0614: Unused import(s) gzip, json, pd, Chem, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, path_to_building_blocks, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+scripts/st2steps.py:7:0: W0614: Unused import(s) gzip, json, pd, Chem, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
 ************* Module scripts.predict
 scripts/predict.py:53:0: C0301: Line too long (101/100) (line-too-long)
 scripts/predict.py:123:0: C0301: Line too long (107/100) (line-too-long)
@@ -663,8 +663,8 @@ scripts/predict.py:48:4: C0103: Constant name "device" doesn't conform to UPPER_
 scripts/predict.py:107:8: W0621: Redefining name 'tree' from outer scope (line 143) (redefined-outer-name)
 scripts/predict.py:107:14: W0621: Redefining name 'action' from outer scope (line 143) (redefined-outer-name)
 scripts/predict.py:106:23: E1120: No value for argument 'model' in function call (no-value-for-parameter)
-scripts/predict.py:136:4: C0103: Constant name "num_finish" doesn't conform to UPPER_CASE naming style (invalid-name)
-scripts/predict.py:137:4: C0103: Constant name "num_unfinish" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict.py:136:4: C0103: Constant name "NUM_FINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict.py:137:4: C0103: Constant name "NUM_UNFINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/predict.py:144:15: W0703: Catching too general exception Exception (broad-except)
 scripts/predict.py:146:12: C0103: Constant name "action" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/predict.py:147:12: C0103: Constant name "tree" doesn't conform to UPPER_CASE naming style (invalid-name)
@@ -702,8 +702,8 @@ scripts/predict-beam-reactantOnly.py:50:4: C0103: Constant name "device" doesn't
 scripts/predict-beam-reactantOnly.py:110:8: W0621: Redefining name 'tree' from outer scope (line 146) (redefined-outer-name)
 scripts/predict-beam-reactantOnly.py:110:14: W0621: Redefining name 'action' from outer scope (line 146) (redefined-outer-name)
 scripts/predict-beam-reactantOnly.py:109:23: E1120: No value for argument 'model' in function call (no-value-for-parameter)
-scripts/predict-beam-reactantOnly.py:139:4: C0103: Constant name "num_finish" doesn't conform to UPPER_CASE naming style (invalid-name)
-scripts/predict-beam-reactantOnly.py:140:4: C0103: Constant name "num_unfinish" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-reactantOnly.py:139:4: C0103: Constant name "NUM_FINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/predict-beam-reactantOnly.py:140:4: C0103: Constant name "NUM_UNFINISH" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/predict-beam-reactantOnly.py:147:15: W0703: Catching too general exception Exception (broad-except)
 scripts/predict-beam-reactantOnly.py:149:12: C0103: Constant name "action" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/predict-beam-reactantOnly.py:150:12: C0103: Constant name "tree" doesn't conform to UPPER_CASE naming style (invalid-name)
@@ -725,7 +725,7 @@ scripts/compute_embedding.py:47:4: C0103: Constant name "path" doesn't conform t
 ************* Module scripts.st_split
 scripts/st_split.py:4:0: W0401: Wildcard import syn_net.utils.data_utils (wildcard-import)
 scripts/st_split.py:10:4: C0103: Constant name "path_to_data" doesn't conform to UPPER_CASE naming style (invalid-name)
-scripts/st_split.py:4:0: W0614: Unused import(s) gzip, json, pd, Chem, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, path_to_building_blocks, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+scripts/st_split.py:4:0: W0614: Unused import(s) gzip, json, pd, Chem, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, tqdm, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
 ************* Module scripts.sample_from_original
 scripts/sample_from_original.py:70:0: C0301: Line too long (109/100) (line-too-long)
 scripts/sample_from_original.py:6:0: C0413: Import "import numpy as np" should be placed at the top of the module (wrong-import-position)
@@ -738,7 +738,7 @@ scripts/sample_from_original.py:25:15: E1101: Module 'rdkit.Chem' has no 'MolToS
 scripts/sample_from_original.py:29:4: C0103: Constant name "data_path" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/sample_from_original.py:40:4: C0103: Constant name "threshold" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/sample_from_original.py:61:8: W0702: No exception type(s) specified (bare-except)
-scripts/sample_from_original.py:8:0: W0614: Unused import(s) gzip, json, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, path_to_building_blocks, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+scripts/sample_from_original.py:8:0: W0614: Unused import(s) gzip, json, Reaction, ReactionSet, NodeChemical, NodeRxn, SyntheticTree, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, r, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
 ************* Module scripts.evaluate_batch
 scripts/evaluate_batch.py:17:0: C0301: Line too long (109/100) (line-too-long)
 scripts/evaluate_batch.py:20:0: C0301: Line too long (113/100) (line-too-long)
@@ -764,9 +764,9 @@ scripts/evaluate_batch_recovery.py:40:4: C0103: Constant name "n_total" doesn't 
 scripts/evaluate_batch_recovery.py:8:0: C0411: standard import "import glob" should be placed before "from tdc import Evaluator" (wrong-import-order)
 ************* Module filter_unmatch_tests
 tests/filter_unmatch_tests.py:7:0: W0401: Wildcard import syn_net.utils.data_utils (wildcard-import)
-tests/filter_unmatch_tests.py:11:4: C0103: Constant name "r_path" doesn't conform to UPPER_CASE naming style (invalid-name)
-tests/filter_unmatch_tests.py:12:4: C0103: Constant name "bb_path" doesn't conform to UPPER_CASE naming style (invalid-name)
-tests/filter_unmatch_tests.py:7:0: W0614: Unused import(s) gzip, json, Chem, Reaction, NodeChemical, NodeRxn, SyntheticTree, SyntheticTreeSet, path_to_building_blocks, path_to_rxn_templates, building_blocks, rxns, line, rxn, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
+tests/filter_unmatch_tests.py:11:4: C0103: Constant name "R_PATH" doesn't conform to UPPER_CASE naming style (invalid-name)
+tests/filter_unmatch_tests.py:12:4: C0103: Constant name "BB_PATH" doesn't conform to UPPER_CASE naming style (invalid-name)
+tests/filter_unmatch_tests.py:7:0: W0614: Unused import(s) gzip, json, Chem, Reaction, NodeChemical, NodeRxn, SyntheticTree, SyntheticTreeSet, PATH_TO_BUILDING_BLOCKS, path_to_rxn_templates, building_blocks, rxns, line, rxn, Draw, AllChem and rdChemReactions from wildcard import of syn_net.utils.data_utils (unused-wildcard-import)
 ************* Module test_Optimization
 tests/test_Optimization.py:42:0: C0301: Line too long (105/100) (line-too-long)
 tests/test_Optimization.py:64:0: C0301: Line too long (108/100) (line-too-long)
@@ -851,8 +851,8 @@ tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
     output_smis  = []
     similaritys  = []
     trees        = []
-    num_finish   = 0
-    num_unfinish = 0
+    NUM_FINISH   = 0
+    NUM_UNFINISH = 0
 
     print('Start to decode!')
     for smi in tqdm(query_smis):
@@ -865,12 +865,12 @@ tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
             tree = None
 
         if action != 3:
-            num_unfinish += 1
+            NUM_UNFINISH += 1
             output_smis.append(None)
             similaritys.append(None)
             trees.append(None)
         else:
-            num_finish += 1
+            NUM_FINISH += 1
             output_smis.append(tree.root.smiles) (duplicate-code)
 tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
 ==rt1:[12:49]
@@ -923,7 +923,7 @@ tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
     np.random.seed(6)
 
     # load the purchasable building block SMILES to a dictionary
-    building_blocks = pd.read_csv(path_to_building_blocks, compression='gzip')['SMILES'].tolist()
+    building_blocks = pd.read_csv(PATH_TO_BUILDING_BLOCKS, compression='gzip')['SMILES'].tolist()
     bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
 
     # load the reaction templates as a ReactionSet object
@@ -998,7 +998,7 @@ bb_emb = np.load('/pool001/whgao/data/synth_net/st_hb/enamine_us_emb_fp_256.npy'
 
 # define path to the reaction templates and purchasable building blocks
 path_to_reaction_file   = f'/pool001/whgao/data/synth_net/st_{rxn_template}/reactions_{rxn_template}.json.gz'
-path_to_building_blocks = f'/pool001/whgao/data/synth_net/st_{rxn_template}/enamine_us_matched.csv.gz'
+PATH_TO_BUILDING_BLOCKS = f'/pool001/whgao/data/synth_net/st_{rxn_template}/enamine_us_matched.csv.gz'
 
 # define paths to pretrained modules
 param_path  = f'/home/whgao/synth_net/synth_net/params/{param_dir}/'
@@ -1008,7 +1008,7 @@ path_to_rxn = f'{param_path}rxn.ckpt'
 path_to_rt2 = f'{param_path}rt2.ckpt'
 
 # load the purchasable building block SMILES to a dictionary
-building_blocks = pd.read_csv(path_to_building_blocks, compression='gzip')['SMILES'].tolist()
+building_blocks = pd.read_csv(PATH_TO_BUILDING_BLOCKS, compression='gzip')['SMILES'].tolist()
 bb_dict         = {building_blocks[i]: i for i in range(len(building_blocks))}
 
 # load the reaction templates as a ReactionSet object
@@ -1049,7 +1049,7 @@ path_to_rxn = f'{param_path}rxn.ckpt'
 path_to_rt2 = f'{param_path}rt2.ckpt'
 
 # load the purchasable building block SMILES to a dictionary
-building_blocks = pd.read_csv(path_to_building_blocks, compression='gzip')['SMILES'].tolist()
+building_blocks = pd.read_csv(PATH_TO_BUILDING_BLOCKS, compression='gzip')['SMILES'].tolist()
 bb_dict         = {building_blocks[i]: i for i in range(len(building_blocks))}
 
 # load the reaction templates as a ReactionSet object
@@ -1120,7 +1120,7 @@ path_to_rxn = f'{param_path}rxn.ckpt'
 path_to_rt2 = f'{param_path}rt2.ckpt'
 
 # load the purchasable building block SMILES to a dictionary
-building_blocks = pd.read_csv(path_to_building_blocks, compression='gzip')['SMILES'].tolist()
+building_blocks = pd.read_csv(PATH_TO_BUILDING_BLOCKS, compression='gzip')['SMILES'].tolist()
 bb_dict         = {building_blocks[i]: i for i in range(len(building_blocks))}
 
 # load the reaction templates as a ReactionSet object
@@ -1158,12 +1158,12 @@ tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
             tree = None
 
         if action != 3:
-            num_unfinish += 1
+            NUM_UNFINISH += 1
             output_smis.append(None)
             similaritys.append(None)
             trees.append(None)
         else:
-            num_finish += 1
+            NUM_FINISH += 1
             output_smis.append(tree.root.smiles)
             ms = [Chem.MolFromSmiles(sm) for sm in [smi, tree.root.smiles]]
             fps = [Chem.RDKFingerprint(x) for x in ms]
@@ -1253,7 +1253,7 @@ tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
     # define path to the reaction templates and purchasable building blocks
     path_to_reaction_file   = ('/pool001/whgao/data/synth_net/st_' + args.rxn_template
                                + '/reactions_' + args.rxn_template + '.json.gz')
-    path_to_building_blocks = ('/pool001/whgao/data/synth_net/st_' + args.rxn_template
+    PATH_TO_BUILDING_BLOCKS = ('/pool001/whgao/data/synth_net/st_' + args.rxn_template
                                + '/enamine_us_matched.csv.gz')
 
     # define paths to pretrained modules (duplicate-code)
@@ -1577,24 +1577,24 @@ if __name__ == '__main__':
 tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
 ==filter_unmatch_tests:[11:25]
 ==syn_net.data_generation.filter_unmatch:[10:24]
-    bb_path = '/home/whgao/scGen/synth_net/data/enamine_us.csv.gz'
-    r_set = ReactionSet()
-    r_set.load(r_path)
-    matched_mols = set()
-    for r in tqdm(r_set.rxns):
+    BB_PATH = '/home/whgao/scGen/synth_net/data/enamine_us.csv.gz'
+    R_SET = ReactionSet()
+    R_SET.load(R_PATH)
+    MATCHED_MOLS = set()
+    for r in tqdm(R_SET.rxns):
         for a_list in r.available_reactants:
-            matched_mols = matched_mols | set(a_list)
+            MATCHED_MOLS = MATCHED_MOLS | set(a_list)
 
-    original_mols = pd.read_csv(bb_path, compression='gzip')['SMILES'].tolist()
+    ORIGINAL_MOLS = pd.read_csv(BB_PATH, compression='gzip')['SMILES'].tolist()
 
-    print('Total building blocks number:', len(original_mols))
-    print('Matched building blocks number:', len(matched_mols))
+    print('Total building blocks number:', len(ORIGINAL_MOLS))
+    print('Matched building blocks number:', len(MATCHED_MOLS))
 
-    df = pd.DataFrame({'SMILES': list(matched_mols)}) (duplicate-code)
+    df = pd.DataFrame({'SMILES': list(MATCHED_MOLS)}) (duplicate-code)
 tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
 ==scripts._mp_predict:[38:52]
 ==scripts.predict:[70:84]
-    building_blocks = pd.read_csv(path_to_building_blocks, compression='gzip')['SMILES'].tolist()
+    building_blocks = pd.read_csv(PATH_TO_BUILDING_BLOCKS, compression='gzip')['SMILES'].tolist()
     bb_dict = {building_blocks[i]: i for i in range(len(building_blocks))}
 
     # load the reaction templates as a ReactionSet object
@@ -1762,12 +1762,12 @@ tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
             tree = None
 
         if action != 3:
-            num_unfinish += 1
+            NUM_UNFINISH += 1
             output_smis.append(None)
             similaritys.append(None)
             trees.append(None)
         else:
-            num_finish += 1
+            NUM_FINISH += 1
             output_smis.append(tree.root.smiles) (duplicate-code)
 tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
 ==scripts._mp_decode:[74:83]
@@ -1881,7 +1881,7 @@ bb_emb = np.load('/pool001/whgao/data/synth_net/st_hb/enamine_us_emb_fp_256.npy'
 
 # define path to the reaction templates and purchasable building blocks
 path_to_reaction_file   = f'/pool001/whgao/data/synth_net/st_{rxn_template}/reactions_{rxn_template}.json.gz'
-path_to_building_blocks = f'/pool001/whgao/data/synth_net/st_{rxn_template}/enamine_us_matched.csv.gz'
+PATH_TO_BUILDING_BLOCKS = f'/pool001/whgao/data/synth_net/st_{rxn_template}/enamine_us_matched.csv.gz'
 
 # define paths to pretrained modules (duplicate-code)
 tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
@@ -2102,7 +2102,7 @@ tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
 tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
 ==scripts.predict-beam-fullTree:[138:147]
 ==scripts.predict:[136:145]
-    num_unfinish = 0
+    NUM_UNFINISH = 0
 
     print('Start to decode!')
     for smi in tqdm(query_smis):
@@ -2201,11 +2201,11 @@ tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
 ==test_DataPreparation:[91:99]
         if action == 3:
             trees.append(tree)
-            num_finish += 1
+            NUM_FINISH += 1
         elif action == -1:
-            num_error += 1
+            NUM_ERROR += 1
         else:
-            num_unfinish += 1
+            NUM_UNFINISH += 1
  (duplicate-code)
 tests/test_DataPreparation.py:1:0: R0801: Similar lines in 2 files
 ==scripts.evaluate_batch:[8:16]
